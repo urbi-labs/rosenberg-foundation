@@ -20,7 +20,7 @@ include 'inc/navigation.php';
 include 'inc/options.php';
 include 'inc/widgets.php';
 include 'inc/pagination.php';
-
+include 'inc/acf.php';
 
 function getSvgFile($imgFile){
 	$url = IMAGES_SERVER.'/'.$imgFile.'.svg';
