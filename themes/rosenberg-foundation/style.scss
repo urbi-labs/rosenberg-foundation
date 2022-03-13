@@ -1,0 +1,34 @@
+/*!
+Theme Name: Theme Name
+Theme URI: https://urbilabs.com
+Author: Urbi Labs
+Author URI: https://urbilabs.com
+Description: Custom WordPress theme created by Urbi Labs.
+Version:      1.0.0
+*/
+// Libs
+@import 'css/libs/reset';
+@import 'css/libs/slick';
+@import 'css/libs/fancybox';
+@import 'css/libs/wp-core';
+
+// Includes
+@import 'css/includes/vars';
+@import 'css/includes/fonts';
+@import 'css/includes/extends';
+
+// Global
+@import 'css/global/buttons';
+@import 'css/global/forms';
+@import 'css/global/typography';
+@import 'css/global/structure';
+@import 'css/global/header';
+@import 'css/global/footer';
+@import 'css/global/variables';
+@import 'css/global/mixins';
+
+// Partials
+//@import 'css/partials/hero';
+
+// Pages
+//@import 'css/pages/home';

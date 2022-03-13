@@ -1,0 +1,48 @@
+html,
+body {
+    height: 100%;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: $standard-family;
+    font-size: 18px;
+    line-height: 1.3;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    color: $black;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 0;
+    height: 0;
+    overflow: hidden;
+
+    > iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: $site-width;
+    padding-left: $site-gutter;
+    padding-right: $site-gutter;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    @media #{$phone} {
+        padding-left: $mobile-gutter;
+        padding-right: $mobile-gutter;
+    }
+}
