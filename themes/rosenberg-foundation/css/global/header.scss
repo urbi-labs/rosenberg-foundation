@@ -1,0 +1,41 @@
+header {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header__logo {
+    max-width: 176px;
+}
+.header__navigation {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    .header__menu {
+        list-style: none;
+        display: flex;
+        gap: 32px;
+        .header__menu__link {
+            font-family: 'Glacial Indifference-Bold', sans-serif;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: $dark_gray;
+        }
+        .header__menu--leadingedgefund {
+            .header__menu__link {
+                font-family: 'Jost', sans-serif;
+                color: $leading_edge_blue;
+                font-size: 23px;
+                span {
+                    color: $leading_edge_dark_blue;
+                }
+            }
+        }
+    }
+}
