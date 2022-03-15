@@ -24,5 +24,5 @@
 
     <body <?php body_class(); ?>>
         <header data-class="header" class="header">
-            <?php echo get_template_part('template-parts/blocks/block', 'header') ?>
+            <?php echo get_template_part('template-parts/tpl', 'header') ?>
         </header>

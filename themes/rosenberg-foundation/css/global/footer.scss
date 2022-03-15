@@ -9,3 +9,104 @@
     background-size: cover;
     height: 192px;
 }
+.footer-content {
+    padding-top: 50px;
+    padding-bottom: 80px;
+}
+
+.footer__menu {
+    display: flex;
+    column-gap: 24px;
+    align-items: center;
+    margin-bottom: 60px;
+    .footer__menu__link {
+        font-family: 'Glacial Indifference-Bold', sans-serif;
+        color: $bright;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .footer__menu--leadingedgefund {
+        .footer__menu__link {
+            font-family: 'Jost', sans-serif;
+            color: $gray_0;
+            font-size: 23px;
+
+            span {
+                color: $gray_2;
+            }
+            &::after {
+                bottom: -10px;
+            }
+        }
+    }
+}
+
+.footer__social-updates {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 65px;
+    border-bottom: 1px solid #8d8c8b;
+
+    h4 {
+        color: $orange;
+        font-size: 29px;
+        line-height: 36px;
+        margin-bottom: 24px;
+        font-family: 'Glacial Indifference-Regular', sans-serif;
+    }
+    .footer__social-media__menu {
+        display: flex;
+        align-items: center;
+        column-gap: 30px;
+        margin-top: 30px; /*to align bottom with updates sign up*/
+        a {
+            img {
+                vertical-align: middle;
+            }
+        }
+    }
+    .footer-signup {
+        display: flex;
+        column-gap: 16px;
+        color: #fff;
+
+        input[type='text'],
+        input[type='email'] {
+            color: $bright;
+            border-bottom: 1px solid #ffffff;
+            padding-bottom: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 16px;
+            line-height: 24px;
+            &::placeholder {
+                color: $bright;
+            }
+        }
+        .footer-signup__name {
+            width: 176px;
+        }
+    }
+}
+.button_white {
+    background: #f9f8f8;
+    color: $dark_gray;
+    border-radius: 2px;
+    padding: 8px 40px;
+    text-transform: uppercase;
+    font-family: 'Glacial Indifference-Bold', sans-serif;
+    font-weight: 700;
+    img {
+        vertical-align: middle;
+    }
+}
+.footer-bottom {
+    padding-top: 33px;
+    display: flex;
+    color: #fff;
+    column-gap: 70px;
+    font-size: 16px;
+    line-height: 24px;
+}
