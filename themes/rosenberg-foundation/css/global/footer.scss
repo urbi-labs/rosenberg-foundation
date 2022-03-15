@@ -1,0 +1,11 @@
+.footer {
+    background-color: $dark_gray;
+    width: 100%;
+}
+.footer__top {
+    /** top image  as background  **/
+    width: 100%;
+    background: url('./images/footer-image-v2-1.jpg');
+    background-size: cover;
+    height: 192px;
+}
