@@ -22,7 +22,7 @@ header {
         .header__menu__link {
             font-family: 'Glacial Indifference-Bold', sans-serif;
             font-size: 16px;
-            line-height: 24px;
+            line-height: 1;
             font-weight: 700;
             text-transform: uppercase;
             color: $dark_gray;
@@ -36,6 +36,16 @@ header {
                     color: $leading_edge_dark_blue;
                 }
             }
+        }
+    }
+    .header__social-icons {
+        display: flex;
+        align-items: center;
+        column-gap: 16px;
+        img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
         }
     }
 }

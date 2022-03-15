@@ -29,7 +29,19 @@
         </ul>
         <ul class="header__social-icons">
             <li>
-
+                <a href="">
+                    <img src="<?php echo get_template_directory_uri()  ?>/images/social-icons/facebook-container.svg" />
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="<?php echo get_template_directory_uri()  ?>/images/social-icons/twitter-container.svg" />
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="<?php echo get_template_directory_uri()  ?>/images/social-icons/youtube-container.svg" />
+                </a>
             </li>
         </ul>
     </nav>
