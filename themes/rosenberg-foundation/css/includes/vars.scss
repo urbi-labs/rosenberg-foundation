@@ -9,6 +9,7 @@ $mobile-gutter: 20px;
 $tablet-width: 1024px;
 $phone-width: 767px;
 $header-width: 920px;
+$header-break: 1079px;
 
 $desktop: 'screen and (max-width: #{$site-width})';
 $tablet: 'screen and (max-width: #{$tablet-width})';
