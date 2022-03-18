@@ -63,16 +63,28 @@ class Menu_Walker extends Walker_Nav_Menu
         $title = $item->title;
         $permalink = $item->url;
 
-        $classesLink = "menu__header__link";
 
-        $classes = is_object($item) && is_array($item->classes) ? implode(" ", $item->classes) : false;
+        $classes =         "";
+        if (is_object($item) && is_array($item->classes)) {
+            $classes = implode(" ", $item->classes);
+            $classes .= in_array("current_page_item", $item->classes) ? ' menu__header__link--active' : '';
+        }
+
+
+
+
+
         if ($title == "LEADINGEDGEFUND") {
             $classes .= " menu__header--leadingedgefund ";
             $title =  "LEADING<span>EDGE</span>FUND";
         }
 
+
+        $classesLink = "menu__header__link";
+
+
         $output .= '<li id="menu-item-' . $item->ID . '" class="' .  $classes . '" >';
-        $output .= '<a href="' . $permalink . '" class="menu__header__link ">';
+        $output .= '<a href="' . $permalink . '" class="' . $classesLink . '">';
         $output .= $title;
         $output .= '</a>';
     }
