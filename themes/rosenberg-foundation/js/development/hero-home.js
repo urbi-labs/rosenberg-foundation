@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('.hero-home').slick({
+    $('.hero-home-slick').slick({
         dots:true,
         autoplay: true,
         infinite: true,
@@ -27,7 +27,7 @@ $(document).ready(function(){
 $(window).resize(function(){  
     var width = $(window).width();
     console.log(width);
-    if (width < 700) {
+    if (width < 1025) {
         $('.hero-home__carousel-caption').removeClass('visible-div').addClass( 'invisible-div');
         $('.hero-home__carousel-caption-sm').removeClass('invisible-div').addClass('visible-div');
     } else {
