@@ -6,29 +6,7 @@
              alt="<?php echo get_bloginfo('name') ?>" class="header__logo--mobile" />
      </a>
      <nav class="header__navigation">
-         <ul class="header__menu">
-             <li>
-                 <a href="" class="header__menu__link">
-                     Grantmaking
-                 </a>
-             </li>
-             <li>
-                 <a href="" class="header__menu__link">
-                     News
-                 </a>
-             </li>
-             <li>
-                 <a href="" class="header__menu__link">
-                     About Us
-                 </a>
-
-             </li>
-             <li class="header__menu--leadingedgefund">
-                 <a href="" class="header__menu__link">
-                     LEADING<span>EDGE</span>FUND
-                 </a>
-             </li>
-         </ul>
+         <?php echo get_template_part('template-parts/navigation/menu', 'header') ?>
          <ul class="header__social-icons">
 
              <li>

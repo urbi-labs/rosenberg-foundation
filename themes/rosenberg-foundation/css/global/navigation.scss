@@ -1,0 +1,49 @@
+.menu__header {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    .menu__header__link {
+        font-family: 'Glacial Indifference-Bold', sans-serif;
+        font-size: 16px;
+        line-height: 1;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $dark_gray;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -17px;
+            height: 4px;
+            background: $orange;
+            width: 0%;
+            left: 0;
+        }
+        &:hover {
+            &::after {
+                width: 100%;
+                transition: width 0.5s ease;
+            }
+        }
+        &.menu__header__link--active {
+            &::after {
+                width: 100%;
+                transition: width 0.5s ease;
+            }
+        }
+    }
+    .menu__header--leadingedgefund {
+        .menu__header__link {
+            font-family: 'Jost', sans-serif;
+            color: $leading_edge_blue;
+            font-size: 23px;
+            span {
+                color: $leading_edge_dark_blue;
+            }
+            &::after {
+                bottom: -10px;
+            }
+        }
+    }
+}
