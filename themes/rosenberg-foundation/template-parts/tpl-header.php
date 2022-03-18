@@ -14,44 +14,13 @@ $youtube_url = get_field('youtube', 'option');
     </a>
     <nav class="header__navigation">
         <?php echo get_template_part('template-parts/navigation/menu', 'header') ?>
-        <ul class="header__social-icons">
-
-            <?php
-            if ($facebook_url) { ?>
-            <li>
-                <a href="<?php echo esc_url($facebook_url); ?>">
-                    <img src="<?php echo get_template_directory_uri()  ?>/images/social-icons/facebook-container.svg" />
-                </a>
-            </li>
-
-            <?php    }
-            ?>
-            <?php
-            if ($twitter_url) { ?>
-
-            <li>
-                <a href="<?php echo esc_url($twitter_url); ?>">
-                    <img src="<?php echo get_template_directory_uri()  ?>/images/social-icons/twitter-container.svg" />
-                </a>
-            </li>
-            <?php    }
-            ?>
-            <?php
-            if ($youtube_url) { ?>
-
-            <li>
-                <a href="<?php echo esc_url($youtube_url) ?>">
-                    <img src="<?php echo get_template_directory_uri()  ?>/images/social-icons/youtube-container.svg" />
-                </a>
-            </li>
-            <?php    }
-            ?>
-
-        </ul>
+        <?php echo get_template_part('template-parts/navigation/menu', 'social-icons') ?>
     </nav>
     <div class="header-navigation__mobile">
-        <a href="" class="burguer-button">
+        <a href="" class="mobile__burguer-button" id="">
             <img src="<?php echo get_template_directory_uri()  ?>/images/icons/icon-hamburguer-fill.svg" />
         </a>
+        <?php echo get_template_part('template-parts/navigation/menu', 'mobile') ?>
     </div>
+
 </div>

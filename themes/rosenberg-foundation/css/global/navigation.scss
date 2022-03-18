@@ -47,3 +47,113 @@
         }
     }
 }
+
+.mobile-menu--overlay {
+    background-color: rgba(black, 0.5);
+    z-index: 2020;
+    opacity: 0;
+    width: 0;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    &.mobile-menu--overlay--show {
+        opacity: 1;
+        width: 100vw;
+        transition: opactity 0.2s ease;
+    }
+}
+
+.mobile-menu {
+    background: white;
+    z-index: 2020;
+    position: fixed;
+
+    min-width: 300px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-end;
+    opacity: 0;
+
+    .mobile__menu__close {
+        padding-right: 10px;
+        text-align: right;
+        display: block;
+        margin-bottom: 50px;
+    }
+}
+
+.mobile__menu--container {
+    .menu__mobile__list {
+        margin-right: 30px;
+        text-align: right;
+
+        .menu__mobile__link {
+            padding: 17px 0;
+            margin-bottom: 0;
+            position: relative;
+            display: block;
+            color: $dark_gray;
+            font-weight: 700;
+            &::after {
+                content: '';
+                height: 1px;
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                background: $light_gray;
+            }
+        }
+    }
+    .mobile_menu__actions {
+        margin-right: 30px;
+        padding-top: 17px;
+        display: flex;
+        column-gap: 15px;
+        .btn {
+            display: inline-block;
+        }
+    }
+}
+
+.mobile__menu--show {
+    display: flex;
+
+    opacity: 1;
+    transition: all 0.2s ease-in 0.1s;
+}
+.mobile__menu__close {
+    color: $black;
+    margin-bottom: 57px;
+}
+.mobile-menu__social-icons {
+    margin-top: 30px;
+    padding-right: 30px;
+    .menu-social-icons {
+        justify-content: flex-end;
+    }
+}
+
+.menu-social-icons {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    a {
+        border-radius: 50%;
+        background: none;
+        &:hover {
+            background: $orange;
+            transition: background 0.5s ease;
+        }
+        img {
+            width: 24px;
+            height: 24px;
+            vertical-align: text-bottom;
+        }
+    }
+}

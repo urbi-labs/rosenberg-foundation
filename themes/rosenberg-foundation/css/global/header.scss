@@ -36,17 +36,6 @@ header {
     @media screen and (max-width: $header-break) {
         display: none;
     }
-
-    .header__social-icons {
-        display: flex;
-        align-items: center;
-        column-gap: 16px;
-        img {
-            width: 24px;
-            height: 24px;
-            vertical-align: middle;
-        }
-    }
 }
 
 .header-navigation__mobile {
