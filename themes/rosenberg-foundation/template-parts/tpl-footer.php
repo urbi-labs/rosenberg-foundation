@@ -1,4 +1,3 @@
- <div class="footer__top"></div>
  <div class="footer-content container">
 
      <ul class="footer__menu">

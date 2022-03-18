@@ -1,4 +1,10 @@
-        <footer class="footer">
+        <?php
+        $footer_image = get_field('footer_image', 'option');
+
+        ?>
+
+        <footer class="footer" <?php if ($footer_image) { ?>
+            style="background-image: url('<?php echo $footer_image['url'] ?>')" <?php } ?>>
             <?php echo get_template_part('template-parts/tpl', 'footer') ?>
             <?php wp_footer(); ?>
         </footer>

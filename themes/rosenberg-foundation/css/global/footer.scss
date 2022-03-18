@@ -1,14 +1,12 @@
 .footer {
     background-color: $dark_gray;
     width: 100%;
+    padding-top: 192px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
 }
-.footer__top {
-    /** top image  as background  **/
-    width: 100%;
-    background: url('./images/footer-image-v2-1.jpg');
-    background-size: cover;
-    height: 192px;
-}
+
 .footer-content {
     padding-top: 50px;
     padding-bottom: 80px;

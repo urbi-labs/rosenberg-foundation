@@ -49,7 +49,7 @@
 }
 
 .mobile-menu--overlay {
-    background-color: rgba(black, 0.5);
+    background-color: $dark_gray;
     z-index: 2020;
     opacity: 0;
     width: 0;
@@ -57,7 +57,7 @@
     position: fixed;
     top: 0;
     left: 0;
-
+    opacity: 1;
     &.mobile-menu--overlay--show {
         opacity: 1;
         width: 100vw;
@@ -66,48 +66,44 @@
 }
 
 .mobile-menu {
-    background: white;
+    background: $dark_gray;
     z-index: 2020;
     position: fixed;
 
-    min-width: 300px;
+    width: 100vw;
+    height: 100vh;
     height: 100%;
     top: 0;
     right: 0;
-    padding: 20px;
+    padding: 15px 30px;
     flex-direction: column;
     align-items: flex-end;
     opacity: 0;
+    box-sizing: border-box;
 
     .mobile__menu__close {
         padding-right: 10px;
         text-align: right;
         display: block;
-        margin-bottom: 50px;
+        margin-bottom: 100px;
     }
 }
 
 .mobile__menu--container {
+    width: 100%;
     .menu__mobile__list {
-        margin-right: 30px;
-        text-align: right;
+        text-align: center;
 
         .menu__mobile__link {
             padding: 17px 0;
             margin-bottom: 0;
             position: relative;
             display: block;
-            color: $dark_gray;
+            color: $bright;
             font-weight: 700;
-            &::after {
-                content: '';
-                height: 1px;
-                width: 100%;
-                position: absolute;
-                bottom: 0;
-                right: 0;
-                background: $light_gray;
-            }
+            font-family: 'Glacial Indifference-Bold', sans-serif;
+            font-size: 16px;
+            line-height: 24px;
         }
     }
     .mobile_menu__actions {
@@ -127,15 +123,12 @@
     opacity: 1;
     transition: all 0.2s ease-in 0.1s;
 }
-.mobile__menu__close {
-    color: $black;
-    margin-bottom: 57px;
-}
+
 .mobile-menu__social-icons {
-    margin-top: 30px;
-    padding-right: 30px;
+    width: 100%;
     .menu-social-icons {
-        justify-content: flex-end;
+        padding-top: 17px;
+        justify-content: center;
     }
 }
 
