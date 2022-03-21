@@ -1,49 +1,20 @@
 .footer {
     background-color: $dark_gray;
     width: 100%;
-    padding-top: 192px;
+
     background-size: contain;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
 }
 
+.footer-top {
+    height: 192px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 .footer-content {
     padding-top: 50px;
     padding-bottom: 80px;
-}
-
-.footer__menu {
-    display: flex;
-    column-gap: 24px;
-    align-items: center;
-    margin-bottom: 60px;
-    @media screen and (max-width: $tablet-width) {
-        flex-direction: column;
-        row-gap: 24px;
-        margin-bottom: 50px;
-    }
-    .footer__menu__link {
-        font-family: 'Glacial Indifference-Bold', sans-serif;
-        color: $bright;
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 24px;
-    }
-    .footer__menu--leadingedgefund {
-        .footer__menu__link {
-            font-family: 'Jost', sans-serif;
-            color: $gray_0;
-            font-size: 23px;
-
-            span {
-                color: $gray_2;
-            }
-            &::after {
-                bottom: -10px;
-            }
-        }
-    }
 }
 
 .footer__social-updates {
@@ -68,7 +39,7 @@
             text-align: center;
         }
     }
-    .footer__social-media__menu {
+    ul {
         display: flex;
         align-items: center;
         column-gap: 30px;

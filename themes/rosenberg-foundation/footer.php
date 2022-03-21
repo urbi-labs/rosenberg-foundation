@@ -1,15 +1,9 @@
-        <?php
-        $footer_image = get_field('footer_image', 'option');
+<footer class="footer">
+    <?php echo get_template_part('template-parts/tpl', 'footer') ?>
+    <?php wp_footer(); ?>
+</footer>
 
-        ?>
-
-        <footer class="footer" <?php if ($footer_image) { ?>
-            style="background-image: url('<?php echo $footer_image['url'] ?>')" <?php } ?>>
-            <?php echo get_template_part('template-parts/tpl', 'footer') ?>
-            <?php wp_footer(); ?>
-        </footer>
-
-        <script>
+<script>
 (function(i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r;
     i[r] = i[r] || function() {
@@ -24,7 +18,7 @@
 
 ga('create', 'UA-XXXXXX-X', 'auto');
 ga('send', 'pageview');
-        </script>
-        </body>
+</script>
+</body>
 
-        </html>
+</html>

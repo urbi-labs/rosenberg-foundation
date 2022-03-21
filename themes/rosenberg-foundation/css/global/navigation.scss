@@ -33,19 +33,11 @@
             }
         }
     }
-    .menu__header--leadingedgefund {
-        .menu__header__link {
-            color: rgba(white, 0);
-            width: 226px;
-            background-size: contain;
-            height: 35px;
-            background-repeat: no-repeat;
+
+    .menu__leadingedgefund {
+        a {
             background-position: 50% 35%;
-            display: inline-block;
             background-image: url('images/icons/LEADINGEDGEFUND.svg');
-            &::after {
-                bottom: -10px;
-            }
         }
     }
 }
@@ -100,7 +92,7 @@
             padding: 17px 0;
             margin-bottom: 0;
             position: relative;
-            display: block;
+            display: inline-block;
             color: $bright;
             font-weight: 700;
             font-family: 'Glacial Indifference-Bold', sans-serif;
@@ -108,19 +100,11 @@
             line-height: 24px;
         }
     }
-    .menu__mobile--leadingedgefund {
-        .menu__mobile__link {
-            color: rgba(white, 0);
-            width: 226px;
-            background-size: contain;
-            height: 35px;
-            background-repeat: no-repeat;
-            background-position: 50%%;
-            display: inline-block;
+
+    .menu__leadingedgefund {
+        a {
+            background-position: 35% 40%;
             background-image: url('images/icons/LEADINGEDGEFUND-gray.svg');
-            &::after {
-                bottom: -10px;
-            }
         }
     }
     .mobile_menu__actions {
@@ -130,6 +114,34 @@
         column-gap: 15px;
         .btn {
             display: inline-block;
+        }
+    }
+}
+
+.footer__menu {
+    display: flex;
+    column-gap: 24px;
+    align-items: center;
+    margin-bottom: 60px;
+    @media screen and (max-width: $tablet-width) {
+        flex-direction: column;
+        row-gap: 24px;
+        margin-bottom: 50px;
+    }
+    .footer__menu__link {
+        font-family: 'Glacial Indifference-Bold', sans-serif;
+        color: $bright;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        &:hover {
+            color: $orange;
+        }
+    }
+    .menu__leadingedgefund {
+        a {
+            background-position: 35% 40%;
         }
     }
 }
@@ -164,6 +176,22 @@
             width: 24px;
             height: 24px;
             vertical-align: text-bottom;
+        }
+    }
+}
+
+.menu__leadingedgefund {
+    a {
+        color: rgba(white, 0) !important;
+        width: 226px;
+        background-size: contain;
+        height: 35px;
+        background-repeat: no-repeat;
+        background-position: 50%;
+        display: inline-block;
+        background-image: url('images/icons/LEADINGEDGEFUND-gray.svg');
+        &::after {
+            bottom: -10px;
         }
     }
 }
