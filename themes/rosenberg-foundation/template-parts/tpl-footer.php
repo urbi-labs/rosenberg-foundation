@@ -1,6 +1,7 @@
 <?php
 $footer_image = get_field('footer_image', 'option');
-
+$email = get_field('email', 'option');
+$phone = get_field('phone_number', 'option');
 ?>
 
 <?php
@@ -29,13 +30,23 @@ if ($footer_image) {
     </div>
     <div class="footer-bottom">
         <div>
-            © 2021 Rosenberg Foundation<br />
-            All Rights Reserved. Credits
+            <p>
+                © 2021 Rosenberg Foundation<br />
+                All Rights Reserved. <a href="https://rosenbergfound.org/photo-credits/"> Credits</a>
+            </p>
         </div>
         <div>
-            131 Steuart Street, Suite 650, San Francisco, CA 94105<br />
+            <p>
+                131 Steuart Street, Suite 650, San Francisco, CA 94105<br />
 
-            (415) 644-9777 | info@rosenbergfound.org
+                <?php if ($phone) { ?>
+                <a href="tel:<?php echo $phone ?>" class="footer-phone"><?php echo $phone ?></a>
+                <?php } ?>
+
+                <?php if ($phone) { ?>
+                <a href="mailto:<?php echo $email ?>" class="email-phone"><?php echo $email ?></a>
+                <?php } ?>
+            </p>
         </div>
     </div>
 
