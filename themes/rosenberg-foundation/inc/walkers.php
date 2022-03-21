@@ -121,7 +121,7 @@ class Menu_Mobile_Walker extends Walker_Nav_Menu
 
 
         if ($title == "LEADINGEDGEFUND") {
-            $classes .= " menu__header--leadingedgefund ";
+            $classes .= " menu__mobile--leadingedgefund ";
             $title =  "LEADING<span>EDGE</span>FUND";
         }
 

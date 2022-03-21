@@ -35,12 +35,14 @@
     }
     .menu__header--leadingedgefund {
         .menu__header__link {
-            font-family: 'Jost', sans-serif;
-            color: $leading_edge_blue;
-            font-size: 23px;
-            span {
-                color: $leading_edge_dark_blue;
-            }
+            color: rgba(white, 0);
+            width: 226px;
+            background-size: contain;
+            height: 35px;
+            background-repeat: no-repeat;
+            background-position: 50% 35%;
+            display: inline-block;
+            background-image: url('images/icons/LEADINGEDGEFUND.svg');
             &::after {
                 bottom: -10px;
             }
@@ -104,6 +106,21 @@
             font-family: 'Glacial Indifference-Bold', sans-serif;
             font-size: 16px;
             line-height: 24px;
+        }
+    }
+    .menu__mobile--leadingedgefund {
+        .menu__mobile__link {
+            color: rgba(white, 0);
+            width: 226px;
+            background-size: contain;
+            height: 35px;
+            background-repeat: no-repeat;
+            background-position: 50%%;
+            display: inline-block;
+            background-image: url('images/icons/LEADINGEDGEFUND-gray.svg');
+            &::after {
+                bottom: -10px;
+            }
         }
     }
     .mobile_menu__actions {
