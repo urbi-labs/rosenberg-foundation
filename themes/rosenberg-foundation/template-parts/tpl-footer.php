@@ -28,6 +28,7 @@ if ($footer_image) {
             </form>
         </div>
     </div>
+    <hr />
     <div class="footer-bottom">
         <div>
             <p>
