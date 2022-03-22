@@ -25,6 +25,8 @@ $(function () {
                 }
             }
         });
+
+    /** scroll fix menu top */
     var header = $('header');
     $(window).scroll(function () {
         var windowTop = $(window).scrollTop();
@@ -34,4 +36,23 @@ $(function () {
             header.removeClass('sticky');
         }
     })
+
+    /** copy text from email footer * */
+    $("#email-button-copy").click(function (e) {
+        e.preventDefault();
+        // Copy Address
+        var copyText = $("#email-button-copy")[0];
+        var textArea = document.createElement("textarea");
+        textArea.value = copyText.textContent;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand("Copy");
+        textArea.remove();
+        // Show Tooltip
+        $(this).addClass("copy-show");
+        setTimeout(function () {
+            $("#email-button-copy").removeClass("copy-show");
+        }, 1200);
+    });
+
 });
