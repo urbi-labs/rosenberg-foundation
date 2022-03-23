@@ -39,15 +39,15 @@ $(function () {
         });
 
     /** scroll fix menu top */
-    var header = $('header');
-    $(window).scroll(function () {
-        var windowTop = $(window).scrollTop();
-        if (windowTop > header.height()) {
-            header.addClass('sticky');
-        } else {
-            header.removeClass('sticky');
-        }
-    })
+    // var header = $('header');
+    // $(window).scroll(function () {
+    //     var windowTop = $(window).scrollTop();
+    //     if (windowTop > header.height()) {
+    //         header.addClass('sticky');
+    //     } else {
+    //         header.removeClass('sticky');
+    //     }
+    // })
 
     /** copy text from email footer * */
     $("#email-button-copy").click(function (e) {
@@ -74,38 +74,13 @@ $(document).ready(function(){
         dots:true,
         autoplay: true,
         infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
         prevArrow: $('.hero-home__prev-arrow.slick-prev'),
-        nextArrow: $('.hero-home__next-arrow.slick-next'),
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                }
-            },
-            {
-                breakpoint: 1000,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            },
-        ]
+        nextArrow: $('.hero-home__next-arrow.slick-next')
     });
 });
 
-$(window).resize(function(){  
-    var width = $(window).width();
-    console.log(width);
-    if (width < 1025) {
-        $('.hero-home__carousel-caption').removeClass('visible-div').addClass( 'invisible-div');
-        $('.hero-home__carousel-caption-sm').removeClass('invisible-div').addClass('visible-div');
-    } else {
-        $('.hero-home__carousel-caption').removeClass('invisible-div').addClass( 'visible-div');
-        $('.hero-home__carousel-caption-sm').removeClass('visible-div').addClass('invisible-div');
-    }
-});
 $(function () {
 
     var open_button = $('.mobile__burguer-button');

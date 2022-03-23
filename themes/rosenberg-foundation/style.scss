@@ -24,7 +24,6 @@ Version:      1.0.0
 @import 'css/global/structure';
 @import 'css/global/header';
 @import 'css/global/footer';
-//@import 'css/global/variables';
 @import 'css/global/mixins';
 @import 'css/global/navigation';
 
@@ -32,6 +31,6 @@ Version:      1.0.0
 @import 'css/blocks/title';
 @import 'css/blocks/text__gray-bg';
 // Partials
-@import 'css/partials/hero';
+@import 'css/blocks/hero-home';
 @import 'css/blocks/internal-intro-section';
 
