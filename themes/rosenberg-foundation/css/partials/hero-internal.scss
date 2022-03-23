@@ -1,11 +1,38 @@
 .hero-internal__container {
     height: 285px;
+    max-height: 285px;
     width: 100%;
     background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
     background-blend-mode: multiply;
-    background-color:#41403F;
     background-color: #1f6399;
-    //background-color: linear-gradient(0deg, rgba(65,64,63,1) 26%, rgba(65,64,63,1) 26%);
+    opacity: 0.8;
+    text-align: center;
+}
+
+.hero-internal__text {
+    font-family: 'glacial-regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 58.452px;
+    line-height: 125%;
+    text-align: center;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    position: relative;
+    top: 35%;
+}
+
+@media screen and (max-width: 1200px) {
+    .hero-internal__container {
+        background-image: none!important;
+        max-height: 108px;
+    }
+
+    .hero-internal__text {
+        padding: 10px;
+        font-size: 40px;
+        top: 20%;
+    }
 }
