@@ -1,0 +1,16 @@
+.title__orange-bg {
+    padding: 12px;
+    & > h2 > span {
+        background-color: $orange;
+        color: #fff;
+
+        box-shadow: -10px 0px 0 10px $orange, 10px 0px 0 10px $orange, 0 0 0 10px $orange;
+    }
+    & > h2 {
+        max-width: 460px;
+        font-family: $alt-family, sans-serif;
+        font-size: 46px;
+        line-height: 1.5;
+        letter-spacing: -0.03em;
+    }
+}

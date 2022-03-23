@@ -79,7 +79,7 @@
 
 .hero-home__highlighted-text-span {
     background-color: #006CB6;
-    font-family: 'glacial-regular';
+    font-family: $standard-family;
     font-style: normal;
     font-weight: 400;
     font-size: 65px;
@@ -90,7 +90,7 @@
 .hero-home__call-to-action {
     position: relative;
     margin-top: 391px;
-    font-family: 'dmsans-regular';
+    font-family: $standard-family;
     background-color: #F9F8F8;
     display: inline-block;
     margin-left: 248px;
@@ -105,8 +105,8 @@
 }
 
 .hero-home__call-to-action-content-p {
-    font-family: 'dmsans-regular';
-    font-style: normal;
+    font-family: $standard-family;
+    font-style: regular;
     font-weight: 400;
     font-size: 20.25px;
     line-height: 150%;
@@ -116,7 +116,7 @@
 }
 
 .hero-home__btn-lg {
-    font-family: 'glacial-bold';
+    font-family: $standard-family;
     font-style: normal;
     font-weight: 700;
     font-size: 20.25px;
@@ -179,7 +179,7 @@
         padding: 16px;
         height: auto;
         width: auto;
-        font-family: 'dmsans-regular';
+        font-family: $standard-family;
         font-style: normal;
         font-weight: 400;
         font-size: 20.25px;

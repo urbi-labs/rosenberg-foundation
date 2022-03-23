@@ -27,3 +27,22 @@
         color: black;
     }
 }
+
+.button-white {
+    background: $lighter-gray;
+    color: $dark_gray;
+    border-radius: 2px;
+    padding: 8px 0;
+    width: 176px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: $alt-family, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover {
+        background: $orange;
+    }
+    img {
+        vertical-align: middle;
+    }
+}

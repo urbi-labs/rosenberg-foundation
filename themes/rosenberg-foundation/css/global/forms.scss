@@ -1,0 +1,10 @@
+.form-signup {
+    input[type='text'],
+    input[type='email'] {
+        border: none;
+        background-color: transparent;
+        &:focus-visible {
+            outline: none;
+        }
+    }
+}
