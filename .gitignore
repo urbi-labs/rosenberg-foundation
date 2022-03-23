@@ -1,6 +1,7 @@
-index.php
+*/**/.DS_Store
 
 # Node
 /themes/node_modules
 
+# User content
 /uploads

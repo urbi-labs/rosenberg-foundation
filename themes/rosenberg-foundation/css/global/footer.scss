@@ -1,0 +1,141 @@
+.footer {
+    background-color: $dark_gray;
+    width: 100%;
+}
+.footer__top {
+    /** top image  as background  **/
+    width: 100%;
+    background: url('./images/footer-image-v2-1.jpg');
+    background-size: cover;
+    height: 192px;
+}
+.footer-content {
+    padding-top: 50px;
+    padding-bottom: 80px;
+}
+
+.footer__menu {
+    display: flex;
+    column-gap: 24px;
+    align-items: center;
+    margin-bottom: 60px;
+    @media screen and (max-width: $tablet-width) {
+        flex-direction: column;
+        row-gap: 24px;
+        margin-bottom: 50px;
+    }
+    .footer__menu__link {
+        font-family: 'Glacial Indifference-Bold', sans-serif;
+        color: $bright;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .footer__menu--leadingedgefund {
+        .footer__menu__link {
+            font-family: 'Jost', sans-serif;
+            color: $gray_0;
+            font-size: 23px;
+
+            span {
+                color: $gray_2;
+            }
+            &::after {
+                bottom: -10px;
+            }
+        }
+    }
+}
+
+.footer__social-updates {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 65px;
+    border-bottom: 1px solid #8d8c8b;
+
+    @media screen and (max-width: $tablet-width) {
+        flex-direction: column;
+    }
+    h4 {
+        color: $orange;
+        font-size: 29px;
+        line-height: 36px;
+        margin-bottom: 24px;
+        font-family: 'Glacial Indifference-Regular', sans-serif;
+        @media screen and (max-width: $tablet-width) {
+            font-size: 25px;
+            line-height: 32px;
+            text-align: center;
+        }
+    }
+    .footer__social-media__menu {
+        display: flex;
+        align-items: center;
+        column-gap: 30px;
+        margin-top: 30px; /*to align bottom with updates sign up*/
+        a {
+            img {
+                vertical-align: middle;
+            }
+        }
+        @media screen and (max-width: $tablet-width) {
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+    }
+    .footer__updates,
+    .footer__social_media {
+        @media screen and (max-width: $tablet-width) {
+            width: 100%;
+        }
+    }
+    .footer-signup {
+        display: flex;
+        column-gap: 16px;
+        color: #fff;
+        @media screen and (max-width: $tablet-width) {
+            flex-direction: column;
+            row-gap: 32px;
+            align-items: center;
+        }
+        input[type='text'],
+        input[type='email'] {
+            color: $bright;
+            border-bottom: 1px solid #ffffff;
+            padding-bottom: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 16px;
+            line-height: 24px;
+            &::placeholder {
+                color: $bright;
+            }
+            @media screen and (max-width: $tablet-width) {
+                width: 100%;
+                max-width: 255px;
+            }
+        }
+        .footer-signup__name {
+            width: 176px;
+            @media screen and (max-width: $tablet-width) {
+                width: 100%;
+            }
+        }
+        .button-white {
+            @media screen and (max-width: $tablet-width) {
+                width: 100%;
+                max-width: 255px;
+            }
+        }
+    }
+}
+
+.footer-bottom {
+    padding-top: 33px;
+    display: flex;
+    color: #fff;
+    column-gap: 70px;
+    font-size: 16px;
+    line-height: 24px;
+}
