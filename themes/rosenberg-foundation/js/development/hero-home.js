@@ -26,7 +26,6 @@ $(document).ready(function(){
 
 $(window).resize(function(){  
     var width = $(window).width();
-    console.log(width);
     if (width < 1025) {
         $('.hero-home__carousel-caption').removeClass('visible-div').addClass( 'invisible-div');
         $('.hero-home__carousel-caption-sm').removeClass('invisible-div').addClass('visible-div');
