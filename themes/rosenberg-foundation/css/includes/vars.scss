@@ -1,6 +1,6 @@
 //--------------------
 // Structure
-$site-width: 1152px;
+$site-width: 1136px;
 $site-gutter: 32px;
 $mobile-gutter: 20px;
 
@@ -15,14 +15,23 @@ $tablet: 'screen and (max-width: #{$tablet-width})';
 $phone: 'screen and (max-width: #{$phone-width})';
 $header: 'screen and (max-width: #{$header-width})';
 
-
 //--------------------
 // Other
-
 
 //--------------------s
 // Colors
 $black: #272727;
+
+$blue: #006cb6;
+$orange: #ff664b;
+$dark_gray: #41403f;
+$light_gray: #e1dcdb;
+$gray_0: #fafafa;
+$gray_2: #c6c6c6;
+$gray_1: #f7f7f7;
+$bright: #ffffff;
+$leading_edge_blue: #207ef2;
+$leading_edge_dark_blue: #0e4275;
 
 //--------------------
 // Fonts
@@ -43,11 +52,11 @@ $flickr: #ff0084;
 $dribbble: #ea4c89;
 $quora: #a82400;
 $foursquare: #0072b1;
-$forrst: #5B9A68;
+$forrst: #5b9a68;
 $vk: #45668e;
 $wordpress: #21759b;
-$stumbleupon: #EB4823;
-$yahoo: #7B0099;
+$stumbleupon: #eb4823;
+$yahoo: #7b0099;
 $blogger: #fb8f3d;
 $soundcloud: #ff3a00;
 $github: #703083;
