@@ -1,85 +1,56 @@
- <div class="footer__top"></div>
- <div class="footer-content container">
+<?php
+$footer_image = get_field('footer_image', 'option');
+$email = get_field('email', 'option');
+$phone = get_field('phone_number', 'option');
+?>
 
-     <ul class="footer__menu">
-         <li>
-             <a href="" class="footer__menu__link">
-                 Grantmaking
-             </a>
-         </li>
-         <li>
-             <a href="" class="footer__menu__link">
-                 News
-             </a>
-         </li>
-         <li>
-             <a href="" class="footer__menu__link">
-                 About Us
-             </a>
+<?php
+if ($footer_image) {
 
-         </li>
-         <li>
-             <a href="" class="footer__menu__link">
-                 Connect
-             </a>
+?>
+<div class="footer-top" style="background-image: url('<?php echo $footer_image['url'] ?>')"></div>
+<?php } ?>
+<div class="footer-content container">
+    <?php echo get_template_part('template-parts/navigation/menu', 'footer'); ?>
+    <div class="footer__social-updates">
+        <div class="footer__social_media">
+            <h4>Stay Connected on Social Media</h4>
+            <?php echo get_template_part('template-parts/navigation/menu', 'social-icons', ['color' => 'white']) ?>
+        </div>
+        <div class="footer__updates">
+            <h4>Sign Up for Updates</h4>
+            <form class="form-signup footer-signup">
+                <input type="text" value="" placeholder="First name" class="footer-signup__name" />
+                <input type="email" value="" placeholder="Email address" />
+                <button role="submit" class="button-white">Sign up <img
+                        src="<?php echo get_template_directory_uri() ?>/images/icons/icon-arrow-right-small-fill.svg">
+                </button>
+            </form>
+        </div>
+    </div>
+    <hr />
+    <div class="footer-bottom">
+        <div>
+            <p>
+                © 2021 Rosenberg Foundation<br />
+                All Rights Reserved. <a href="https://rosenbergfound.org/photo-credits/"> Credits</a>
+            </p>
+        </div>
+        <div>
+            <p>
+                131 Steuart Street, Suite 650, San Francisco, CA 94105<br />
 
-         </li>
-         <li class="footer__menu--leadingedgefund">
-             <a href="" class="footer__menu__link">
-                 LEADING<span>EDGE</span>FUND
-             </a>
-         </li>
-     </ul>
-     <div class="footer__social-updates">
-         <div class="footer__social_media">
-             <h4>Stay Connected on Social Media</h4>
-             <ul class="footer__social-media__menu">
+                <?php if ($phone) { ?>
+                <a href="tel:<?php echo $phone ?>" class="footer-phone"><?php echo $phone ?></a>
+                <?php } ?>
 
-                 <li>
-                     <a href="<?php echo esc_url($facebook_url); ?>">
-                         <img
-                             src="<?php echo get_template_directory_uri()  ?>/images/social-icons/facebook-container-footer.svg" />
-                     </a>
-                 </li>
-
-                 <li>
-                     <a href="<?php echo esc_url($twitter_url); ?>">
-                         <img
-                             src="<?php echo get_template_directory_uri()  ?>/images/social-icons/twitter-container-footer.svg" />
-                     </a>
-                 </li>
-
-                 <li>
-                     <a href="<?php echo esc_url($youtube_url) ?>">
-                         <img
-                             src="<?php echo get_template_directory_uri()  ?>/images/social-icons/youtube-container-footer.svg" />
-                     </a>
-                 </li>
-
-             </ul>
-         </div>
-         <div class="footer__updates">
-             <h4>Sign Up for Updates</h4>
-             <form class="form-signup footer-signup">
-                 <input type="text" value="" placeholder="First name" class="footer-signup__name" />
-                 <input type="email" value="" placeholder="Email address" />
-                 <button role="submit" class="button-white">Sign up <img
-                         src="<?php echo get_template_directory_uri() ?>/images/icons/icon-arrow-right-small-fill.svg">
-                 </button>
-             </form>
-         </div>
-     </div>
-     <div class="footer-bottom">
-         <div>
-             © 2021 Rosenberg Foundation<br />
-             All Rights Reserved. Credits
-         </div>
-         <div>
-             131 Steuart Street, Suite 650, San Francisco, CA 94105<br />
-
-             (415) 644-9777 | info@rosenbergfound.org
-         </div>
-     </div>
+                <?php if ($phone) { ?>
+                <a href="mailto:<?php echo $email ?>" id="email-button-copy"
+                    class="email-phone"><?php echo $email ?></a>
+                <?php } ?>
+            </p>
+        </div>
+    </div>
 
 
- </div>
+</div>
