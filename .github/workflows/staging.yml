@@ -1,4 +1,4 @@
-# name: Main
+# name: Staging
 
 env:
   THEME_NAME: rosenberg-foundation
@@ -50,6 +50,6 @@ jobs:
     - name: GitHub Action Deploy to WP Engine
       uses: wpengine/github-action-wpe-site-deploy@v3.0
       env:
-        WPE_ENV: rosenbergstg
+        WPE_ENV: $WPE_ENV
         LOCAL_BRANCH: build
-        WPENGINE_SSH_KEY_PRIVATE: ${{ secrets.WPENGINE_SSH_KEY_PRIVATE }}
+        WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
