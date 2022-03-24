@@ -1,2 +1,2 @@
 #!/bin/bash
-wp db import wp-content/dump-stg.sql
+wp db import dump-stg.sql
