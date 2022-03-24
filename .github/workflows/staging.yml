@@ -37,12 +37,9 @@ jobs:
       run: |
         git config --global user.name "Github Deploy"
         git config --global user.email "nando.emmanuel@gmail.com"
-        git branch build
-        git checkout build
 
     - name: Git commit
       run: |
-        git rm -r --cached .
         git add .
         git commit -m "Build"
 
