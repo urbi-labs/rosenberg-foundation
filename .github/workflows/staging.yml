@@ -51,5 +51,4 @@ jobs:
       uses: wpengine/github-action-wpe-site-deploy@v3.0
       with:
         WPE_ENV: rosenbergstg
-        LOCAL_BRANCH: build
         WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
