@@ -1,6 +1,71 @@
+h1, h2, h3 ,h4, h5, h6, .giant-heading {
+    font-family: $alt-family;
+    line-height: 1.3;
+    margin-bottom: 32px;
+    letter-spacing: -0.03em;
+}
+
+.giant-heading {
+    font-size: 74px;
+}
+
+h1, .h1 {
+    font-size: 58px;
+}
+
+h2, .h2 {
+    font-size: 46px;
+}
+
+h3, .h3 {
+    font-size: 36px;
+}
+
+h4, .h4 {
+    font-size: 28px;
+}
+
+h5, .h5 {
+    font-size: 26px;
+}
+
+h6, .h6 {
+    font-size: 23px;
+}
+
+p, b, a, li, span {
+    font-family: $standard-family;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: normal;
+}
+
+p {
+    margin-bottom: 32px;
+}
+
+.p-giant {
+    font-size: 32px;
+}
+
+.p-big {
+    font-size: 26px;
+}
+
+.p-mid {
+    font-size: 20px;
+}
+
+.p-small {
+    font-size: 12px;
+}
+
+.p-micro {
+    font-size: 10px;
+}
+
 a {
     text-decoration: none;
-
     &:hover {
         text-decoration: none;
     }
