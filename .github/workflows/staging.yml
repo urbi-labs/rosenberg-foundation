@@ -41,12 +41,6 @@ jobs:
         git branch build
         git checkout build
 
-    - name: Set WP Engine gitignore - theme
-      run: |
-        cd themes/$THEME_NAME
-        rm .gitignore
-        mv .wpegitignore .gitignore
-
     - name: Git commit
       run: |
         git rm -r --cached .
