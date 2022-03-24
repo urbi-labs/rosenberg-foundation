@@ -26,7 +26,7 @@ jobs:
 
     - name: npm install, build - theme
       run: |
-        cd wp-content/themes/$THEME_NAME
+        cd themes/$THEME_NAME
         npm ci
         gulp scss
         gulp scripts
@@ -47,6 +47,8 @@ jobs:
         git commit -m "Build"
 
     - name: GitHub Action Deploy to WP Engine
+      run: |
+          cd wp-content
       uses: wpengine/github-action-wpe-site-deploy@v3.0
       with:
         WPE_ENV: rosenbergststg
