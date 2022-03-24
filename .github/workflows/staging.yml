@@ -17,26 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-
-    - name: Use Node.js 16.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: 16.x
-
-    - name: npm install, build - theme
-      run: |
-        cd themes/$THEME_NAME
-        npm ci
-        gulp scss
-        gulp scripts
-
-    - name: Git setup
-      run: |
-        git config --global user.name "Github Deploy"
-        git config --global user.email "nando.emmanuel@gmail.com"
-        git add .
-        git commit -m "Build"
+    - uses: actions/checkout@v3
         
     - name: GitHub Action Deploy to WP Engine
       uses: wpengine/github-action-wpe-site-deploy@v3.0
@@ -44,4 +25,5 @@ jobs:
         REMOTE_PATH: wp-content/
         CACHE_CLEAR: TRUE
         WPE_ENV: rosenbergststg
+        SCROPT: import-db-stg.sh
         WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
