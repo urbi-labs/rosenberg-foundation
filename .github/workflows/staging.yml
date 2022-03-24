@@ -30,25 +30,18 @@ jobs:
         npm ci
         gulp scss
         gulp scripts
-      env:
-        CI: true
 
     - name: Git setup
       run: |
         git config --global user.name "Github Deploy"
         git config --global user.email "nando.emmanuel@gmail.com"
-        git branch build
-        git checkout build
-
-    - name: Git commit
-      run: |
-        git rm -r --cached .
         git add .
         git commit -m "Build"
-
+        
     - name: GitHub Action Deploy to WP Engine
       uses: wpengine/github-action-wpe-site-deploy@v3.0
-      working-directory: wp-content
       with:
+        REMOTE_PATH: wp-content/
+        CACHE_CLEAR: TRUE
         WPE_ENV: rosenbergststg
         WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
