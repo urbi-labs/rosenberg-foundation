@@ -6,6 +6,10 @@
     }
 }
 
+.container-cards {
+    margin-bottom: 32px;
+}
+
 .overlapping-cards__image {
     width: calc(100% / 3 * 2);
     max-width: 752px;
@@ -62,7 +66,6 @@
 }
 
 /* Add Read More option */
-
 .hidden-text {
     display: none;
 }
