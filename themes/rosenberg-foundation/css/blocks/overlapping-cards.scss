@@ -1,5 +1,10 @@
-.overlapping-cards__image {
-    position: absolute;
+// .overlapping-cards__image {
+//     position: absolute;
+// }
+
+.card-expanded {
+    display: flex;
+    align-items: center;
 }
 
 .overlapping-cards__image.card-expanded-image {
@@ -17,21 +22,21 @@
 }
 
 .overlapping-cards__text.card-expanded-text {
-    position: absolute;
-    max-width: 320px;
-    margin-top: 32px;
-    margin-left: 232px;
+    // position: absolute;
+    // max-width: 320px;
+    // margin-top: 32px;
+    // margin-left: 232px;
 }
 
 .overlapping-cards__text.card-link-text {
-    position:absolute;
-    max-width: 615px;
-    margin-top: 56px;
-    margin-left: 526px;
+    // position:absolute;
+    // max-width: 615px;
+    // margin-top: 56px;
+    // margin-left: 526px;
 } 
 
 .overlapping-cards__text-heading {
-    font-family: 'glacial-regular';
+    font-family: $alt-family;
     font-style: normal;
     font-weight: 400;
     font-size: 36px;
@@ -41,7 +46,7 @@
 }
 
 .overlapping-cards__text-lead {
-    font-family: 'dmsans-regular';
+    font-family: $standard-family;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -61,7 +66,7 @@
 
 .overlapping-cards__read-more-link,
 .read-more__link{
-    font-family: 'glacial-regular';
+    font-family: $alt-family;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
