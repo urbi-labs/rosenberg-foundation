@@ -26,7 +26,7 @@ jobs:
 
     - name: npm install, build - theme
       run: |
-        cd themes/$THEME_NAME
+        cd wp-content/themes/$THEME_NAME
         npm ci
         gulp scss
         gulp scripts
@@ -37,9 +37,12 @@ jobs:
       run: |
         git config --global user.name "Github Deploy"
         git config --global user.email "nando.emmanuel@gmail.com"
+        git branch build
+        git checkout build
 
     - name: Git commit
       run: |
+        git rm -r --cached .
         git add .
         git commit -m "Build"
 

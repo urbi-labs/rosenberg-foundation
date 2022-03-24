@@ -1,2 +1,6 @@
 .DS_Store
 node_modules
+
+style.css
+js/scripts.js
+js/scripts.min.js
