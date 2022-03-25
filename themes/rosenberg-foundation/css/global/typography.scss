@@ -33,10 +33,18 @@ h6, .h6 {
     font-size: 23px;
 }
 
+.title__orange-bg {
+    padding: 12px;
+    background-color: $orange;
+    color: #fff;
+    box-decoration-break: clone;
+    font-family: $alt-family, sans-serif;
+}
+
 p, b, a, li, span {
     font-family: $standard-family;
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.55;
     font-weight: normal;
 }
 
@@ -69,6 +77,16 @@ a {
     &:hover {
         text-decoration: none;
     }
+}
+
+.text__gray-bg {
+    background-color: $lighter-gray;
+    padding: 64px 32px 32px;
+    font-size: 20px;
+    line-height: 30px;
+    color: $dark_gray;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
 }
 
 .entry-content {
