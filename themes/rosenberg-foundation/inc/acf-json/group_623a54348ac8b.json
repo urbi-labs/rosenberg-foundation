@@ -3,6 +3,22 @@
     "title": "Internal Intro Section",
     "fields": [
         {
+            "key": "field_623dfa5a57265",
+            "label": "Image",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
             "key": "field_623a5458113e4",
             "label": "Image",
             "name": "image",
@@ -27,6 +43,22 @@
             "mime_types": ""
         },
         {
+            "key": "field_623dfa6557266",
+            "label": "Text",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
             "key": "field_623a5469113e5",
             "label": "Title",
             "name": "title",
@@ -35,7 +67,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -59,9 +91,9 @@
                 "id": ""
             },
             "default_value": "",
-            "tabs": "all",
+            "tabs": "visual",
             "toolbar": "basic",
-            "media_upload": 1,
+            "media_upload": 0,
             "delay": 0
         }
     ],
@@ -82,5 +114,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1648226771
+    "modified": 1648229040
 }
