@@ -11,6 +11,20 @@ function urbi_acf_init_block_types()
     // Check function exists.
     if (function_exists('acf_register_block_type')) {
 
+
+        acf_register_block_type(
+            array(
+                'name'              => 'internal-intro-section',
+                'title'             => __('Rosenberg Fundation: Internal intro section'),
+                'description'       => __('A simple intruoduction.'),
+                'render_template'   => 'template-parts/blocks/block-internal-intro-section.php',
+                'category'          => 'formatting',
+                'icon'              => 'text',
+                'mode'              => 'edit',
+                'keywords'          => array('text', 'list'),
+            )
+        );
+
         // List with icons
         acf_register_block_type(
             array(
@@ -24,7 +38,6 @@ function urbi_acf_init_block_types()
                 'keywords'          => array('text', 'card'),
             )
         );
-
     }
 }
 
