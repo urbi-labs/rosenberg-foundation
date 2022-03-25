@@ -25,5 +25,4 @@ jobs:
         REMOTE_PATH: wp-content/
         CACHE_CLEAR: TRUE
         WPE_ENV: rosenbergststg
-        SCRIPT: wp-content/import-db-stg.sh
         WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
