@@ -10,13 +10,13 @@
         align-items: center;
         gap: 15px;
         margin-bottom: 64px;
-        @media screen and (max-width: $phone-width) {
-            flex-wrap: wrap;
-        }
+        flex-wrap: wrap;
+
         .people-block__item {
             background: #fff;
             display: flex;
             flex-direction: column;
+            flex-basis: calc(calc(25%) - calc(15px));
             @media screen and (max-width: $phone-width) {
                 flex-basis: calc(calc(50%) - calc(8px));
             }
