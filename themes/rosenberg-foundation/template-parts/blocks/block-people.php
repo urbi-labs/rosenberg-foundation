@@ -15,5 +15,10 @@
         }
         ?>
     </div>
-    <a href="" class="btn btn-secondary btn--blue"></a>
+    <div class="people-block__button__container">
+        <a href="" class="btn btn--blue btn--secondary  people-block__button">
+            Meet the people behind the foundation<img
+                src="<?php echo get_template_directory_uri() . "/images/icons/icon-arrow-right-small-fill-blue.svg" ?>" />
+        </a>
+    </div>
 </div>
