@@ -12,6 +12,7 @@ function user_register_post_types() {
             'has_archive' => true,
 			'exclude_from_search' => false,
 		)*/
+        
 	);
 
 
@@ -99,5 +100,3 @@ function reorder_admin_menu( $__return_true ) {
 }
 add_filter( 'custom_menu_order', 'reorder_admin_menu', 10, 1 );
 add_filter( 'menu_order', 'reorder_admin_menu', 10, 1 );
-
-?>
