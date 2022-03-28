@@ -1,6 +1,31 @@
 .people-block {
+    padding: 64px 0;
     .people-block__title {
         text-align: center;
         margin-bottom: 64px;
+    }
+    .people-block__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        .people-block__item {
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+
+            .people-block__item__image {
+                margin-bottom: 15px;
+            }
+            .people-block__item__name {
+                margin-bottom: 8px;
+                color: $blue;
+                text-align: center;
+            }
+            .people-block__item__position {
+                margin-bottom: 8px;
+                text-align: center;
+            }
+        }
     }
 }

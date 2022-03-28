@@ -1,5 +1,19 @@
 <div class="people-block">
     <h2 class="h2 people-block__title">People</h2>
-    <div class="people-block-list"></div>
+    <div class="people-block__list">
+        <?php
+        $i = 0;
+        while ($i < 4) { ?>
+        <div class="people-block__item">
+            <img src="<?php echo get_template_directory_uri() . "/images/timothy1.jpg" ?>" alt=""
+                class="people-block__item__image" />
+            <h5 class="h5 people-block__item__name">
+                Timothy P. Silard</h5>
+            <p class="people-block__item__position">President</p>
+        </div>
+        <?php $i++;
+        }
+        ?>
+    </div>
     <a href="" class="btn btn-secondary btn--blue"></a>
 </div>
