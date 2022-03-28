@@ -28,56 +28,14 @@ function urbi_acf_init_block_types()
         // List with icons
         acf_register_block_type(
             array(
-                'name'              => 'sage-list',
-                'title'             => __('Sage Street: List'),
-                'description'       => __('A simple list with icons.'),
-                'render_template'   => 'template-parts/blocks/block-sage-list.php',
+                'name'              => 'overlapping-cards',
+                'title'             => __('Rosenberg: Overlapping Cards'),
+                'description'       => __('Cards with an overlap effect on their text.'),
+                'render_template'   => 'template-parts/blocks/block-overlapping-cards.php',
                 'category'          => 'formatting',
                 'icon'              => 'text',
-                'mode'              => 'edit',
-                'keywords'          => array('text', 'list'),
-            )
-        );
-
-        // Large list with icons
-        acf_register_block_type(
-            array(
-                'name'              => 'sage-list-large',
-                'title'             => __('Sage Street: List (Large)'),
-                'description'       => __('A large list block.'),
-                'render_template'   => 'template-parts/blocks/block-sage-list-large.php',
-                'category'          => 'formatting',
-                'icon'              => 'text',
-                'mode'              => 'edit',
-                'keywords'          => array('text', 'list'),
-            )
-        );
-
-        // Table Slider
-        acf_register_block_type(
-            array(
-                'name'              => 'sage-table-slider',
-                'title'             => __('Sage Street: Table Slider'),
-                'description'       => __('A slider for table data.'),
-                'render_template'   => 'template-parts/blocks/block-sage-table-slider.php',
-                'category'          => 'formatting',
-                'icon'              => 'text',
-                'mode'              => 'edit',
-                'keywords'          => array('text', 'table', 'slider'),
-            )
-        );
-
-        // Closing Rules
-        acf_register_block_type(
-            array(
-                'name'              => 'sage-closing-rules',
-                'title'             => __('Sage Street: Closing Rules'),
-                'description'       => __('A block to display a list of closing rules.'),
-                'render_template'   => 'template-parts/blocks/block-sage-closing-rules.php',
-                'category'          => 'formatting',
-                'icon'              => 'text',
-                'mode'              => 'edit',
-                'keywords'          => array('text', 'closing rules'),
+                'mode'              => 'preview',
+                'keywords'          => array('text', 'card'),
             )
         );
     }

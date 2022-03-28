@@ -31,7 +31,7 @@
         font-size: 29px;
         line-height: 36px;
         margin-bottom: 24px;
-        font-family: 'Glacial Indifference-Regular', sans-serif;
+        font-family: $alt-family, sans-serif;
         @media screen and (max-width: $tablet-width) {
             font-size: 25px;
             line-height: 32px;

@@ -4,10 +4,10 @@
     gap: 32px;
     align-items: center;
     .menu__header__link {
-        font-family: 'Glacial Indifference-Bold', sans-serif;
+        font-family: $alt-family, sans-serif;
         font-size: 16px;
         line-height: 1;
-        font-weight: 700;
+        font-weight: bold;
         text-transform: uppercase;
         color: $dark_gray;
         position: relative;
@@ -63,7 +63,7 @@
     background: $dark_gray;
     z-index: 2020;
     position: fixed;
-
+    display: none;
     width: 100vw;
     height: 100vh;
     height: 100%;
@@ -94,8 +94,8 @@
             position: relative;
             display: inline-block;
             color: $bright;
-            font-weight: 700;
-            font-family: 'Glacial Indifference-Bold', sans-serif;
+            font-weight: bold;
+            font-family: $alt-family, sans-serif;
             font-size: 16px;
             line-height: 24px;
         }
@@ -129,10 +129,10 @@
         margin-bottom: 50px;
     }
     .footer__menu__link {
-        font-family: 'Glacial Indifference-Bold', sans-serif;
+        font-family: $alt-family, sans-serif;
         color: $bright;
         text-transform: uppercase;
-        font-weight: 700;
+        font-weight: bold;
         font-size: 16px;
         line-height: 24px;
         &:hover {

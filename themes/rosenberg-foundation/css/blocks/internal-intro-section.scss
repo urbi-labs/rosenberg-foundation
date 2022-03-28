@@ -1,12 +1,12 @@
 .internal-intro-section {
     display: flex;
     align-items: flex-start;
-
     @media screen and (max-width: $phone-width) {
         flex-direction: column;
     }
     .internal-intro-section__img {
-        min-width: 656px;
+        width: 57%;
+        max-width: 656px;
         @media screen and (max-width: $tablet-width) {
             min-width: 500px;
         }
@@ -26,8 +26,11 @@
             padding: 10px;
             margin-top: -100px;
         }
-        .title__orange-bg {
+        .title__orange-bg__container {
             margin-left: -100px;
+            max-width: 500px;
+        }
+        .title__orange-bg {
             @media screen and (max-width: $phone-width) {
                 margin-left: 10px;
             }

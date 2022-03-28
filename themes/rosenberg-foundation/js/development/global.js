@@ -27,15 +27,15 @@ $(function () {
         });
 
     /** scroll fix menu top */
-    var header = $('header');
-    $(window).scroll(function () {
-        var windowTop = $(window).scrollTop();
-        if (windowTop > header.height()) {
-            header.addClass('sticky');
-        } else {
-            header.removeClass('sticky');
-        }
-    })
+    // var header = $('header');
+    // $(window).scroll(function () {
+    //     var windowTop = $(window).scrollTop();
+    //     if (windowTop > header.height()) {
+    //         header.addClass('sticky');
+    //     } else {
+    //         header.removeClass('sticky');
+    //     }
+    // })
 
     /** copy text from email footer * */
     $("#email-button-copy").click(function (e) {

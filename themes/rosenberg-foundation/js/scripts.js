@@ -39,15 +39,15 @@ $(function () {
         });
 
     /** scroll fix menu top */
-    var header = $('header');
-    $(window).scroll(function () {
-        var windowTop = $(window).scrollTop();
-        if (windowTop > header.height()) {
-            header.addClass('sticky');
-        } else {
-            header.removeClass('sticky');
-        }
-    })
+    // var header = $('header');
+    // $(window).scroll(function () {
+    //     var windowTop = $(window).scrollTop();
+    //     if (windowTop > header.height()) {
+    //         header.addClass('sticky');
+    //     } else {
+    //         header.removeClass('sticky');
+    //     }
+    // })
 
     /** copy text from email footer * */
     $("#email-button-copy").click(function (e) {
@@ -69,21 +69,110 @@ $(function () {
 
 });
 
+$(document).ready(function(){
+    $('.hero-home-slick').slick({
+        dots:true,
+        autoplay: true,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: $('.hero-home__prev-arrow.slick-prev'),
+        nextArrow: $('.hero-home__next-arrow.slick-next')
+    });
+});
+
 $(function () {
 
-    var open_button = $('.mobile__burguer-button');
+    var open_button = $('.mobile__burger-button');
     var close_button = $('.mobile__menu__close');
     var overlay = $('.mobile-menu--overlay');
     var mobile_menu = $('#mobile__menu');
 
-    open_button.on('click', toogleClass)
+    open_button.on('click', toggleClass)
 
-    close_button.on('click', toogleClass)
+    close_button.on('click', toggleClass)
 
-    function toogleClass(e) {
+    function toggleClass(e) {
         e.preventDefault();
         overlay.toggleClass('mobile-menu--overlay--show');
-        //overlay.classList.add('overlay--show');
         mobile_menu.toggleClass('mobile__menu--show');
+    }
+});
+$(document).ready(function(){
+
+	$('.has-read-more').each(function (index, el) {
+
+		var maxLength = 153;
+		var content = $(el).html();
+
+		var titleText = $('#overlapping-cards__text-heading').text();
+		
+		var leadText = $('#overlapping-cards__text-content').text();
+		var cleanLeadText = $.trim(leadText);
+		cleanLeadText = cleanLeadText.replace(/(\s|\r\n|\n|\r)/g, " ");
+
+		var totalText = titleText + " " + cleanLeadText;
+		
+		var newTextCut = totalText.substring(0, maxLength);
+		var myLastWord = newTextCut.split(" ").pop();
+
+		var indexLastWord = content.indexOf(myLastWord);
+
+		var index = indexLastWord + myLastWord.length;
+
+		var visibleText = content.substr(0, index);
+		var hiddenText = content.substring(index , content.length);
+
+		var html = visibleText
+		 			+ '<div class="hidden-text">' + hiddenText + '</div>'
+		 			+ '<div class="read-more"><a href="#" class="read-more__link more"> Learn more </a></div>';
+
+		$(el).html(html);
+
+	});
+
+	//Read More and Read Less Click Event binding
+	$(document).on("click", ".read-more", function (e) {
+		e.preventDefault()
+		var container = $(this);
+
+		if (container.hasClass('less')) {
+			container.removeClass('less');
+			container.siblings('.overlapping-cards__text-content').find('.hidden-text').removeClass('show');
+			$(container).children().text('Learn more').removeClass('less');
+		} else {
+			container.addClass('less');
+			container.siblings('.overlapping-cards__text-content').find('.hidden-text').addClass('show');
+			$(container).children().text('Less').addClass('less');
+		}
+	});
+
+});
+
+$(window).resize(function(){  
+    var width = $(window).width();
+    if (width < 530) {
+        $('.overlapping-cards__text.card-expanded-text-sm').removeClass('hidden');
+        $('.overlapping-cards__text.card-expanded-text').addClass('hidden');
+
+		$('.overlapping-cards__text.card-link-text-sm').removeClass('hidden');
+        $('.overlapping-cards__text.card-link-text').addClass('hidden');
+    } else {
+        $('.overlapping-cards__text.card-expanded-text-sm').addClass( 'hidden');
+        $('.overlapping-cards__text.card-expanded-text').removeClass('hidden');
+
+		$('.overlapping-cards__text.card-link-text-sm').addClass( 'hidden');
+        $('.overlapping-cards__text.card-link-text').removeClass('hidden');
+    }
+});
+
+$(window).resize(function(){  
+    var width = $(window).width();
+    if (width < 850) {
+		$('.overlapping-cards__text.card-link-text-sm').removeClass('hidden');
+        $('.overlapping-cards__text.card-link-text').addClass('hidden');
+    } else {
+		$('.overlapping-cards__text.card-link-text-sm').addClass( 'hidden');
+        $('.overlapping-cards__text.card-link-text').removeClass('hidden');
     }
 });

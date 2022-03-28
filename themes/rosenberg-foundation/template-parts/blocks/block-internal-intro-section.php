@@ -13,15 +13,14 @@ if ($image) { ?>
     <div class="internal-intro-section__content">
         <?php
             if ($title) { ?>
-        <div class="title__orange-bg">
-            <h2><span><?php echo $title ?></span>
-            </h2>
+        <div class="title__orange-bg__container">
+            <span class="h2 title__orange-bg"><?php echo $title ?></span>
         </div>
         <?php    }
             ?>
         <?php
             if ($content) { ?>
-        <div class="text__gray-bg">
+        <div class="text__gray-bg p-mid">
             <?php echo $content; ?>
         </div>
         <?php    }

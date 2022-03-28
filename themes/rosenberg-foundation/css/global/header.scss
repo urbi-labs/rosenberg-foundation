@@ -1,7 +1,6 @@
-header {
-    padding-top: 25px;
-    padding-bottom: 25px;
-
+.header {
+    background-color: $gray_0;
+    padding: 25px 0;
     &.sticky {
         position: fixed !important;
         top: 0;
@@ -42,7 +41,5 @@ header {
     display: none;
     @media screen and (max-width: $header-break) {
         display: inline-block;
-    }
-    .burguer-button {
     }
 }

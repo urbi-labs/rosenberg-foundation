@@ -36,8 +36,8 @@
     width: 176px;
     text-align: center;
     text-transform: uppercase;
-    font-family: 'Glacial Indifference-Bold', sans-serif;
-    font-weight: 700;
+    font-family: $alt-family, sans-serif;
+    font-weight: bold;
     cursor: pointer;
     &:hover {
         background: $orange;
