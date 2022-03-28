@@ -1,0 +1,74 @@
+.divider-image-text__second-container {
+    background-color:#41403F;
+    margin-top: 11%;
+}
+
+.divider-image-text__container__theird-container {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 64px;
+}
+
+.divider-image-text__image {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-width: 52%;
+    padding-top: 419px;
+    margin-top: -48px;
+}
+
+.divider-image-text__text {
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 48px;
+}
+
+.divider-image-text__title {
+    font-family: $alt-family;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 46.184px;
+    line-height: 125%;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    margin-bottom: 32px;
+}
+
+.divider-image-text__content {
+    font-family: $standard-family;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #FFFFFF;
+    margin-bottom: 32px;
+}
+
+.divider-image-text__link {
+    font-family: $alt-family;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: #FFFFFF!important;
+    width: max-content;
+    border: 1px solid transparent;
+}
+
+.divider-image-text__link:hover {
+    text-decoration: none!important;
+    border-bottom: 1px solid #FF664B;
+}
+
+.divider-image-text__link::after {
+    content: url('/wp-content/themes/rosenberg-foundation/images/icon-arrow-right-small-fill-white.png');
+    margin-left: 7px;
+}
+
+@media screen and (max-width: 1100px) {
+    .divider-image-text__container__theird-container {
+        flex-direction: column;
+    }
+}

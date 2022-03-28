@@ -14,7 +14,7 @@ $(function () {
 
     // Select all links with hashes
     $('a[href*="#"]')
-    // Remove links that don't actually link to anything
+        // Remove links that don't actually link to anything
         .not('[href="#"]')
         .not('[href="#0"]')
         .click(function (event) {
@@ -38,6 +38,35 @@ $(function () {
             }
         });
 
+    /** scroll fix menu top */
+    // var header = $('header');
+    // $(window).scroll(function () {
+    //     var windowTop = $(window).scrollTop();
+    //     if (windowTop > header.height()) {
+    //         header.addClass('sticky');
+    //     } else {
+    //         header.removeClass('sticky');
+    //     }
+    // })
+
+    /** copy text from email footer * */
+    $("#email-button-copy").click(function (e) {
+        e.preventDefault();
+        // Copy Address
+        var copyText = $("#email-button-copy")[0];
+        var textArea = document.createElement("textarea");
+        textArea.value = copyText.textContent;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand("Copy");
+        textArea.remove();
+        // Show Tooltip
+        $(this).addClass("copy-show");
+        setTimeout(function () {
+            $("#email-button-copy").removeClass("copy-show");
+        }, 1200);
+    });
+
 });
 
 $(document).ready(function(){
@@ -45,35 +74,28 @@ $(document).ready(function(){
         dots:true,
         autoplay: true,
         infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
         prevArrow: $('.hero-home__prev-arrow.slick-prev'),
-        nextArrow: $('.hero-home__next-arrow.slick-next'),
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                }
-            },
-            {
-                breakpoint: 1000,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            },
-        ]
+        nextArrow: $('.hero-home__next-arrow.slick-next')
     });
 });
 
-$(window).resize(function(){  
-    var width = $(window).width();
-    if (width < 1025) {
-        $('.hero-home__carousel-caption').removeClass('visible-div').addClass( 'invisible-div');
-        $('.hero-home__carousel-caption-sm').removeClass('invisible-div').addClass('visible-div');
-    } else {
-        $('.hero-home__carousel-caption').removeClass('invisible-div').addClass( 'visible-div');
-        $('.hero-home__carousel-caption-sm').removeClass('visible-div').addClass('invisible-div');
+$(function () {
+
+    var open_button = $('.mobile__burger-button');
+    var close_button = $('.mobile__menu__close');
+    var overlay = $('.mobile-menu--overlay');
+    var mobile_menu = $('#mobile__menu');
+
+    open_button.on('click', toggleClass)
+
+    close_button.on('click', toggleClass)
+
+    function toggleClass(e) {
+        e.preventDefault();
+        overlay.toggleClass('mobile-menu--overlay--show');
+        mobile_menu.toggleClass('mobile__menu--show');
     }
 });
 $(document).ready(function(){

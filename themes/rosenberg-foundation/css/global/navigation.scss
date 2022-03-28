@@ -1,0 +1,197 @@
+.menu__header {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    .menu__header__link {
+        font-family: $alt-family, sans-serif;
+        font-size: 16px;
+        line-height: 1;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: $dark_gray;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -17px;
+            height: 4px;
+            background: $orange;
+            width: 0%;
+            left: 0;
+        }
+        &:hover {
+            &::after {
+                width: 100%;
+                transition: width 0.5s ease;
+            }
+        }
+        &.menu__header__link--active {
+            &::after {
+                width: 100%;
+                transition: width 0.5s ease;
+            }
+        }
+    }
+
+    .menu__leadingedgefund {
+        a {
+            background-position: 50% 35%;
+            background-image: url('images/icons/LEADINGEDGEFUND.svg');
+        }
+    }
+}
+
+.mobile-menu--overlay {
+    background-color: $dark_gray;
+    z-index: 2020;
+    opacity: 0;
+    width: 0;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    &.mobile-menu--overlay--show {
+        opacity: 1;
+        width: 100vw;
+        transition: opactity 0.2s ease;
+    }
+}
+
+.mobile-menu {
+    background: $dark_gray;
+    z-index: 2020;
+    position: fixed;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    height: 100%;
+    top: 0;
+    right: 0;
+    padding: 15px 30px;
+    flex-direction: column;
+    align-items: flex-end;
+    opacity: 0;
+    box-sizing: border-box;
+
+    .mobile__menu__close {
+        padding-right: 10px;
+        text-align: right;
+        display: block;
+        margin-bottom: 100px;
+    }
+}
+
+.mobile__menu--container {
+    width: 100%;
+    .menu__mobile__list {
+        text-align: center;
+
+        .menu__mobile__link {
+            padding: 17px 0;
+            margin-bottom: 0;
+            position: relative;
+            display: inline-block;
+            color: $bright;
+            font-weight: bold;
+            font-family: $alt-family, sans-serif;
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+
+    .menu__leadingedgefund {
+        a {
+            background-position: 35% 40%;
+            background-image: url('images/icons/LEADINGEDGEFUND-gray.svg');
+        }
+    }
+    .mobile_menu__actions {
+        margin-right: 30px;
+        padding-top: 17px;
+        display: flex;
+        column-gap: 15px;
+        .btn {
+            display: inline-block;
+        }
+    }
+}
+
+.footer__menu {
+    display: flex;
+    column-gap: 24px;
+    align-items: center;
+    margin-bottom: 60px;
+    @media screen and (max-width: $tablet-width) {
+        flex-direction: column;
+        row-gap: 24px;
+        margin-bottom: 50px;
+    }
+    .footer__menu__link {
+        font-family: $alt-family, sans-serif;
+        color: $bright;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 24px;
+        &:hover {
+            color: $orange;
+        }
+    }
+    .menu__leadingedgefund {
+        a {
+            background-position: 35% 40%;
+        }
+    }
+}
+
+.mobile__menu--show {
+    display: flex;
+
+    opacity: 1;
+    transition: all 0.2s ease-in 0.1s;
+}
+
+.mobile-menu__social-icons {
+    width: 100%;
+    .menu-social-icons {
+        padding-top: 17px;
+        justify-content: center;
+    }
+}
+
+.menu-social-icons {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    a {
+        border-radius: 50%;
+        background: none;
+        &:hover {
+            background: $orange;
+            transition: background 0.5s ease;
+        }
+        img {
+            width: 24px;
+            height: 24px;
+            vertical-align: text-bottom;
+        }
+    }
+}
+
+.menu__leadingedgefund {
+    a {
+        color: rgba(white, 0) !important;
+        width: 226px;
+        background-size: contain;
+        height: 35px;
+        background-repeat: no-repeat;
+        background-position: 50%;
+        display: inline-block;
+        background-image: url('images/icons/LEADINGEDGEFUND-gray.svg');
+        &::after {
+            bottom: -10px;
+        }
+    }
+}

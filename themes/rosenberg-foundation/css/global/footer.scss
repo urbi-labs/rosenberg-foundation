@@ -1,0 +1,186 @@
+.footer {
+    background-color: $dark_gray;
+    width: 100%;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+}
+
+.footer-top {
+    height: 192px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.footer-content {
+    padding-top: 50px;
+    padding-bottom: 80px;
+}
+
+.footer__social-updates {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 65px;
+
+    @media screen and (max-width: $tablet-width) {
+        flex-direction: column;
+    }
+    h4 {
+        color: $orange;
+        font-size: 29px;
+        line-height: 36px;
+        margin-bottom: 24px;
+        font-family: $alt-family, sans-serif;
+        @media screen and (max-width: $tablet-width) {
+            font-size: 25px;
+            line-height: 32px;
+            text-align: center;
+        }
+    }
+    ul {
+        display: flex;
+        align-items: center;
+        column-gap: 30px;
+        margin-top: 30px; /*to align bottom with updates sign up*/
+        a {
+            img {
+                vertical-align: middle;
+            }
+        }
+        @media screen and (max-width: $tablet-width) {
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+    }
+    .footer__updates,
+    .footer__social_media {
+        @media screen and (max-width: $tablet-width) {
+            width: 100%;
+        }
+    }
+    .footer-signup {
+        display: flex;
+        column-gap: 16px;
+        color: #fff;
+        @media screen and (max-width: $tablet-width) {
+            flex-direction: column;
+            row-gap: 32px;
+            align-items: center;
+        }
+        input[type='text'],
+        input[type='email'] {
+            color: $bright;
+            border-bottom: 1px solid #ffffff;
+            padding-bottom: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 16px;
+            line-height: 24px;
+            &::placeholder {
+                color: $bright;
+            }
+            @media screen and (max-width: $tablet-width) {
+                width: 100%;
+                max-width: 255px;
+            }
+        }
+        .footer-signup__name {
+            width: 176px;
+            @media screen and (max-width: $tablet-width) {
+                width: 100%;
+            }
+        }
+        .button-white {
+            @media screen and (max-width: $tablet-width) {
+                width: 100%;
+                max-width: 255px;
+            }
+        }
+    }
+}
+hr {
+    color: #8d8c8c;
+    border-style: double;
+    height: 1px;
+    margin: 0;
+    border: none;
+    background: #8d8c8c;
+    width: 258px;
+    margin: 0 auto;
+    @media screen and (min-width: calc($tablet-width + 1px)) {
+        display: none;
+    }
+}
+
+.footer-bottom {
+    padding-top: 33px;
+    display: flex;
+
+    column-gap: 70px;
+    font-size: 16px;
+    line-height: 24px;
+    @media screen and (max-width: $tablet-width) {
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 30px;
+        text-align: center;
+    }
+    p {
+        font-size: 16px;
+        line-height: 24px;
+        color: #fff;
+        font-weight: 400;
+    }
+    a {
+        color: white;
+        text-decoration: underline;
+        display: inline-block;
+        position: relative;
+        margin-right: 20px;
+        margin-top: 30px;
+        &::after {
+            content: '';
+            width: 1px;
+            height: 13px;
+            position: absolute;
+            left: -12px;
+            bottom: 5px;
+            background: #fff;
+            @media screen and (max-width: $tablet-width) {
+                display: none;
+            }
+        }
+        &:nth-of-type(1) {
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
+/** email contact copied */
+#email-button-copy {
+    position: relative;
+    &::before {
+        content: 'Email address copied!';
+        background-color: $gray_2;
+        padding: 4px 8px;
+        border-radius: 2px;
+        font-size: 16px;
+        color: #000;
+        position: absolute;
+        left: 0%;
+        width: auto;
+        height: auto;
+        opacity: 0;
+        transition: opacity 0.5s ease, transform 0.5s ease-in;
+        width: 170px;
+        text-emphasis: center;
+    }
+    &.copy-show {
+        &::before {
+            transform: translateY(-30px);
+            opacity: 1;
+        }
+    }
+}
