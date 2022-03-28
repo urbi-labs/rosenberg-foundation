@@ -1,7 +1,8 @@
 <?php
-$footer_image = get_field('footer_image', 'option');
+$footer_image = get_field('footer_background_image', 'option');
 $email = get_field('email', 'option');
 $phone = get_field('phone_number', 'option');
+$address = get_field('address', 'option');
 ?>
 
 <?php
@@ -38,7 +39,7 @@ if ($footer_image) {
         </div>
         <div>
             <p>
-                131 Steuart Street, Suite 650, San Francisco, CA 94105<br />
+                <?php echo $address ? $address . "<br/>" : ""; ?>
 
                 <?php if ($phone) { ?>
                 <a href="tel:<?php echo $phone ?>" class="footer-phone"><?php echo $phone ?></a>
