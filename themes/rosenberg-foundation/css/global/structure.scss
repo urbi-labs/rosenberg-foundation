@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 html,
 body {
     height: 100%;
@@ -39,7 +43,6 @@ body {
     padding-left: $site-gutter;
     padding-right: $site-gutter;
     margin: 0 auto;
-    box-sizing: border-box;
 
     @media #{$phone} {
         padding-left: $mobile-gutter;

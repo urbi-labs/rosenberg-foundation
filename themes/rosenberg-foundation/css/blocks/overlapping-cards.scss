@@ -1,30 +1,34 @@
 .overlapping-cards__container {
     display: flex;
     align-items: center;
-    &.text-left {
+    margin-bottom: 24px;
+    &.image-right {
         flex-direction: row-reverse;
     }
 }
 
-.container-cards {
-    margin-bottom: 32px;
+.overlapping-cards__image {
+    width: 50%;
+    max-width: 752px;
+    display: flex;
+    align-items: center;
 }
 
-.overlapping-cards__image {
-    width: calc(100% / 3 * 2);
-    max-width: 752px;
+.overlapping-cards__image__image {
+    min-height: 314px;
+    object-fit: cover;
 }
 
 .overlapping-cards__text {
-    width: calc(80%);
-    max-width: 464px;
+    width: 55%;
     padding: 32px;
     background-color: #FFFFFF;
     box-shadow: 0px 4px 8px rgba(65, 64, 63, 0.08);
-    margin-left: -20%;
-    &.text-left {
+    margin-left: -5%;
+    z-index: 2;
+    &.image-right {
         margin-left: 0;
-        margin-right: -20%;
+        margin-right: -5%;
     }
 }
 
@@ -37,41 +41,22 @@
     max-width: 500px;
 }
 
-.overlapping-cards__text.card-expanded-text {
-    // position: absolute;
-    // max-width: 320px;
-    // margin-top: 32px;
-    // margin-left: 232px;
-}
-
-.overlapping-cards__text.card-link-text {
-    // position:absolute;
-    // max-width: 615px;
-    // margin-top: 56px;
-    // margin-left: 526px;
-} 
-
 .overlapping-cards__text-heading {
-    color: #41403F;
-    margin-bottom: 16px;
-}
-
-.overlapping-cards__text-lead {
     font-family: $standard-family;
-    font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
-    color: #41403F;
+    line-height: 1.5;
+    color: $dark_gray;
 }
 
-/* Add Read More option */
-.hidden-text {
-    display: none;
-}
-
-.hidden-text.show {
-    display: inline;
+.overlapping-cards__text-excerpt {
+    line-height: 1.5;
+    max-height: 96px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    transition: max-height 0.5s ease;
+    &.show {
+        max-height: 1000px;
+    }
 }
 
 .overlapping-cards__read-more-link,
@@ -87,13 +72,13 @@
 
 .overlapping-cards__read-more-link::after,
 .read-more__link::after {
-    content: url('/wp-content/themes/rosenberg-foundation/images/icon-arrow-right-small-fill-1.png');
+    content: url('/wp-content/themes/rosenberg-foundation/images/icons/icon-arrow-right-small-fill.svg');
     margin-left: 7px;
     margin-bottom: 4px;
 }
 
-.read-more__link.less::after {
-    content: url('/wp-content/themes/rosenberg-foundation/images/icon-up-fill.png');
+.read-more__link.expand::after {
+    content: url('/wp-content/themes/rosenberg-foundation/images/icons/icon-up-fill.svg');
     margin-left: 7px;
 }
 
@@ -103,32 +88,25 @@
     border-bottom: 2px solid $orange;
 }
 
-.overlapping-cards__text.card-expanded-text-sm.hidden,
-.overlapping-cards__text.card-expanded-text.hidden,
-.overlapping-cards__text.card-link-text.hidden,
-.overlapping-cards__text.card-link-text-sm.hidden {
-    display: none!important;
-    visibility: hidden
-}
-
-@media screen and (min-width: 200px) and (max-width: 530px) {
-    .overlapping-cards__text.card-expanded-text-sm {
-        max-width: 320px;
+@media screen and (max-width: $phone-width) {
+    
+    .overlapping-cards__container {
+        flex-direction: column;
+        &.image-right {
+            flex-direction: column;
+        }
+    }
+    
+    .overlapping-cards__image, .overlapping-cards__text {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .overlapping-cards__text {
         margin-left: 0;
-        margin-top: 0;
+        &.image-right {
+            margin-right: 0;
+        }
     }
-    .overlapping-cards__image {
-        position: relative;
-    }
-}
 
-@media screen and (min-width: 200px) and (max-width: 850px) {
-    .overlapping-cards__text.card-link-text-sm {
-        max-width: 560px;
-        margin-left: 0;
-        margin-top: 0;
-    }
-    .overlapping-cards__image {
-        position: relative;
-    }
 }
