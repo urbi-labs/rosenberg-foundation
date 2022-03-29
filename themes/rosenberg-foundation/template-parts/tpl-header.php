@@ -25,7 +25,7 @@ $social_profiles = array(
         <a href="#" class="mobile__burger-button" id="">
             <img src="<?php echo get_template_directory_uri()  ?>/images/icons/icon-hamburguer-fill.svg" />
         </a>
-        <?php echo get_template_part('template-parts/navigation/menu', 'mobile') ?>
+        <?php echo get_template_part('template-parts/navigation/menu', 'mobile', array('social_profiles' => $social_profiles)) ?>
     </div>
 
 </div>
