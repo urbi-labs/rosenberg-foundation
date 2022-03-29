@@ -28,6 +28,22 @@
     }
 }
 
+.btn--blue {
+    background: $blue;
+    color: white;
+    border: 2px solid $blue;
+    font-family: $alt-family, sans-serif;
+    border-radius: 2px;
+    &.btn--secondary {
+        background: none;
+        color: $blue;
+        &:hover {
+            background: $blue;
+            color: white;
+            transition: background color 0.2s ease;
+        }
+    }
+}
 .button-white {
     background: $lighter-gray;
     color: $dark_gray;

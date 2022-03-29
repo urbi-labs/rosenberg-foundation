@@ -10,13 +10,24 @@ function urbi_acf_init_block_types()
 {
     // Check function exists.
     if (function_exists('acf_register_block_type')) {
-
+        acf_register_block_type(
+            array(
+                'name'              => 'people-block',
+                'title'             => __('Rosenberg Fundation: People block'),
+                'description'       => __('People block'),
+                'render_template'   => 'template-parts/blocks/block-people.php',
+                'category'          => 'formatting',
+                'icon'              => 'text',
+                'mode'              => 'edit',
+                'keywords'          => array('text', 'list'),
+            )
+        );
 
         acf_register_block_type(
             array(
                 'name'              => 'internal-intro-section',
                 'title'             => __('Rosenberg Fundation: Internal intro section'),
-                'description'       => __('A simple intruoduction.'),
+                'description'       => __('Internal intro section.'),
                 'render_template'   => 'template-parts/blocks/block-internal-intro-section.php',
                 'category'          => 'formatting',
                 'icon'              => 'text',
