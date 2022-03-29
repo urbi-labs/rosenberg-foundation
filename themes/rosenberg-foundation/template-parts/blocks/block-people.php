@@ -36,7 +36,6 @@ if ($people) { ?>
         </div>
         <?php    }
             ?>
-
     </div>
     <?php
         if ($button_text && $button_link) { ?>
