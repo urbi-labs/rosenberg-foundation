@@ -1,0 +1,63 @@
+.card__container {
+   max-width: 368px;
+   position: relative;
+   background: $bright;
+   box-shadow: 0px 4px 8px rgba(65, 64, 63, 0.08);
+}
+
+.card__post-featured-image {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 246px;
+}
+
+.card__post-content {
+    padding-top: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 24px;
+}
+
+.card__post-categories {
+    font-family: $alt-family;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12.6px;
+    line-height: 150%;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $orange;
+    margin-bottom: 4px;
+}
+
+.card__post-title {
+    margin-bottom: 12px;
+    font-family: $alt-family;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28.833px;
+    line-height: 125%;
+    letter-spacing: -0.03em;
+    color: $dark_gray;
+}
+
+.card__post-data {
+    font-family: $standard-family;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.64px;
+    line-height: 150%;
+    color: $gray_3;
+    margin-bottom: 24px;
+}
+
+.card__post-excerpt {
+    font-family: $standard-family;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;  
+    color: $dark_gray;
+}
