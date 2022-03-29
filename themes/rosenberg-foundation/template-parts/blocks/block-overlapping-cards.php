@@ -13,11 +13,11 @@
     </div>
 </div>
 
-<div class="overlapping-cards__container card-link text-left">
+<div class="overlapping-cards__container card-link image-right">
     <div class="overlapping-cards__image card-link-image">
         <img src="<?php echo get_stylesheet_directory_uri() . '/images/michael-tubbs-article-thumbnail1.png' ?>" class="overlapping-cards__image__image">
     </div>
-    <div class="overlapping-cards__text card-link-text text-left">
+    <div class="overlapping-cards__text card-link-text image-right">
         <div class="overlapping-cards__text-lead">
             <h3 class="overlapping-cards__text-heading">Michael Tubbs Joins Rosenberg Foundation as First Senior Fellow</h3>
         </div>

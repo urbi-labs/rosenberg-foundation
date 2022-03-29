@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 24px;
-    &.text-left {
+    &.image-right {
         flex-direction: row-reverse;
     }
 }
@@ -26,7 +26,7 @@
     box-shadow: 0px 4px 8px rgba(65, 64, 63, 0.08);
     margin-left: -5%;
     z-index: 2;
-    &.text-left {
+    &.image-right {
         margin-left: 0;
         margin-right: -5%;
     }
@@ -92,7 +92,7 @@
     
     .overlapping-cards__container {
         flex-direction: column;
-        &.text-left {
+        &.image-right {
             flex-direction: column;
         }
     }
@@ -104,7 +104,7 @@
     
     .overlapping-cards__text {
         margin-left: 0;
-        &.text-left {
+        &.image-right {
             margin-right: 0;
         }
     }
