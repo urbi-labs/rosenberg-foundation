@@ -167,14 +167,19 @@
     column-gap: 16px;
     a {
         border-radius: 50%;
+        width: 32px;
+        height: 32px;
         background: none;
+        font-size: 32px;
+        line-height: 0;
+        display: inline-block;
         &:hover {
             background: $orange;
             transition: background 0.5s ease;
         }
-        img {
-            width: 24px;
-            height: 24px;
+        .menu-social-icons__icon {
+            width: 32px;
+            height: 32px;
             vertical-align: text-bottom;
         }
     }
