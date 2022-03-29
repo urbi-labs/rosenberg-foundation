@@ -10,6 +10,12 @@ function urbi_acf_init_block_types()
 {
     // Check function exists.
     if (function_exists('acf_register_block_type')) {
+        /**
+         * People bloc
+         * A title
+         * A button
+         * People list is as loop of post custom type person
+         */
         acf_register_block_type(
             array(
                 'name'              => 'people-block',
@@ -23,6 +29,12 @@ function urbi_acf_init_block_types()
             )
         );
 
+        //Internal intro section
+        /*
+        As an administrator 
+        I would like to be able to add an intro section with a summary of the content of the page
+        */
+        // An image, a title and a body text
         acf_register_block_type(
             array(
                 'name'              => 'internal-intro-section',
@@ -33,6 +45,21 @@ function urbi_acf_init_block_types()
                 'icon'              => 'text',
                 'mode'              => 'edit',
                 'keywords'          => array('text', 'list'),
+            )
+        );
+        // Featured slider
+        //As an administrator 
+        //I would like to be able to add a a slider with images and text
+        acf_register_block_type(
+            array(
+                'name'              => 'overlapping-cards',
+                'title'             => __('Rosenberg: Overlapping Cards'),
+                'description'       => __('Cards with an overlap effect on their text.'),
+                'render_template'   => 'template-parts/blocks/block-overlapping-cards.php',
+                'category'          => 'formatting',
+                'icon'              => 'text',
+                'mode'              => 'preview',
+                'keywords'          => array('text', 'card'),
             )
         );
 
