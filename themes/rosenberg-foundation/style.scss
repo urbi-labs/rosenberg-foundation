@@ -6,6 +6,7 @@ Author URI: https://yippa.com/
 Description: Custom WordPress theme for Rosenberg Foundation created by Yippa.
 Version:      1.0.0
 */
+
 // Libs
 @import 'css/libs/reset.scss';
 @import 'css/libs/slick.scss';
@@ -26,10 +27,10 @@ Version:      1.0.0
 @import 'css/global/footer';
 @import 'css/global/mixins';
 @import 'css/global/navigation';
+@import 'css/global/cards.scss';
 
 //blocks
 @import 'css/blocks/hero-home';
 @import 'css/blocks/internal-intro-section';
 @import 'css/blocks/overlapping-cards';
 @import 'css/blocks/divider-image-text.scss';
-@import 'css/card.scss';

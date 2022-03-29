@@ -1,33 +1,9 @@
-
-<!-- <div class="main">
-
-	<div class="card__container">
-
-		<div class="card__post-featured-image" style="background-image: url(<?php echo get_stylesheet_directory_uri() . '/images/post-image.png' ?>)"></div>
-		
-		<div class="card__post-content">
-			<p class="card__post-categories">Press Releases</p>
-			
-			<p class="card__post-title">$30 Million Public-Private Partnership Launched to Support Returning Citizens, as California Urgently Reduces Prison Populations to Curb Impact of COVID-19</p>
-
-			<p class="card__post-data">
-				<span class="card__post-author">Max Waters</span>・<span class="card__post-date-publish">December 7, 2020</span>
-			</p>
-
-			<div class="card__post-excerpt">
-				Id interdum velit laoreet id donec ultrices tincidunt arcu. Sit amet cursus sit amet dictum. Sem et tortor consequat id porta nibh venenatis cras.
-			</div>
-		</div>
-	</div>
-
-</div> -->
-
 <?php 
 $posts = get_posts( array( 'posts_per_page' => 5 ) );
 
 foreach ( $posts as $the_post ):?>
 
-	<div class="card__container">
+	<div class="card">
 
 		<?php if (has_post_thumbnail($the_post->ID)) : ?>
 
