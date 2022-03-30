@@ -1,0 +1,16 @@
+.feature-slider {
+}
+.feature-slider__slide {
+    display: flex;
+    column-gap: 20px;
+    .features-slider__slide__image {
+        flex-basis: calc(calc(66%) - 5px);
+    }
+    .feature-slider__slide__content {
+        flex-basis: calc(calc(33%) - 5px);
+        padding-top: 32px;
+        .feature-slider__slide__title {
+            margin-bottom: 16px;
+        }
+    }
+}
