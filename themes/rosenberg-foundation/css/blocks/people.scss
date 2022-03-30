@@ -16,20 +16,27 @@
             background: #fff;
             display: flex;
             flex-direction: column;
-            flex-basis: calc(calc(25%) - calc(15px));
-            @media screen and (max-width: $phone-width) {
-                flex-basis: calc(calc(50%) - calc(8px));
-            }
-            @media screen and (max-width: $mobile-width) {
-                flex-basis: 100%;
-            }
+            // flex-basis: calc(calc(25%) - calc(15px));
+            // @media screen and (max-width: $phone-width) {
+            //     flex-basis: calc(calc(50%) - calc(8px));
+            // }
+            // @media screen and (max-width: $mobile-width) {
+            //     flex-basis: 100%;
+            // }
             .people-block__item__image {
                 margin-bottom: 15px;
+                width: 100%;
+                max-width: 272px;
+                height: 272px;
+                object-fit: cover;
+                object-position: center
             }
             .people-block__item__name {
                 margin-bottom: 8px;
+                margin-top: 0;
                 color: $blue;
                 text-align: center;
+                font-weight: 400;
             }
             .people-block__item__position {
                 margin-bottom: 8px;

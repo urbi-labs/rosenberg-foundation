@@ -57,7 +57,7 @@ function urbi_acf_init_block_types()
                 'render_template'   => 'template-parts/blocks/block-hero-internal.php',
                 'category'          => 'formatting',
                 'icon'              => 'text',
-                'mode'              => 'preview',
+                'mode'              => 'edit',
                 'keywords'          => array('text', 'card'),
             )
         );
