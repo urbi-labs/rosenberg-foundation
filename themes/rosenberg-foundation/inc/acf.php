@@ -57,10 +57,23 @@ function urbi_acf_init_block_types()
                 'render_template'   => 'template-parts/blocks/block-hero-internal.php',
                 'category'          => 'formatting',
                 'icon'              => 'text',
-                'mode'              => 'preview',
+                'mode'              => 'edit',
                 'keywords'          => array('text', 'card'),
             )
         );
+
+        // acf_register_block_type(
+        //     array(
+        //         'name'              => 'hero-internal',
+        //         'title'             => __('Rosenberg: Divider (Image/Text)'),
+        //         'description'       => __('Cards with an overlap effect on their text.'),
+        //         'render_template'   => 'template-parts/blocks/block-hero-internal.php',
+        //         'category'          => 'formatting',
+        //         'icon'              => 'text',
+        //         'mode'              => 'edit',
+        //         'keywords'          => array('text', 'card'),
+        //     )
+        // );
 
     }
 }
