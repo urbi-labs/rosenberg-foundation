@@ -22,7 +22,6 @@
     align-items: baseline;
     justify-content: space-between;
     padding-bottom: 65px;
-
     @media screen and (max-width: $tablet-width) {
         flex-direction: column;
     }
@@ -73,7 +72,7 @@
             color: $bright;
             border-bottom: 1px solid #ffffff;
             padding-bottom: 8px;
-            font-family: 'DM Sans', sans-serif;
+            font-family: $alt-family, sans-serif;
             font-size: 16px;
             line-height: 24px;
             &::placeholder {
@@ -162,7 +161,7 @@ hr {
 #email-button-copy {
     position: relative;
     &::before {
-        content: 'Email address copied!';
+        content: 'Email address copied.';
         background-color: $gray_2;
         padding: 4px 8px;
         border-radius: 2px;

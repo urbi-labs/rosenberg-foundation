@@ -13,7 +13,7 @@
             'walker' => new Menu_Mobile_Walker()
         )); ?>
         <div class="mobile-menu__social-icons">
-            <?php echo get_template_part('template-parts/navigation/menu', 'social-icons', ['color' => 'white']) ?>
+            <?php echo get_template_part('template-parts/navigation/menu', 'social-icons', ['color' => 'white', 'social_profiles' => $args['social_profiles']]) ?>
         </div>
     </div>
 </div>

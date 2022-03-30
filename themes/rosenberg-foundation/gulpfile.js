@@ -45,6 +45,7 @@ const onError = function( err ) {
 
 gulp.task('scss', () => {
 	return gulp.src(themePath + 'style.scss')
+		.pipe(sourcemaps.init())
 	    .pipe(sass().on('error', sass.logError))
 		.pipe(autoprefixer('last 4 version'))
 		.pipe(minifyCSS({keepBreaks:false}))
@@ -56,10 +57,12 @@ gulp.task('scss', () => {
 
 gulp.task('scripts', ()  =>{
 	return gulp.src( [themePath + 'js/libs/**/*.js', themePath + 'js/development/**/*.js'] )
+		.pipe(sourcemaps.init())
 		.pipe(concat('js/scripts.js'))
 		.pipe(gulp.dest(themePath))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(uglify())
+		.pipe(sourcemaps.write('./maps'))
 		.pipe(gulp.dest(themePath))
 		.pipe(livereload())
 });
