@@ -20,12 +20,14 @@ $link = get_field('link');
             <?php echo $body ?>
         </div>
         <?php endif; ?>
-        <a href="<?php echo get_the_permalink($link) ?>" class="overlapping-cards__read-more-link <?php echo $is_expandable ? 'read-more__expand' : '' ?>">
-            <?php if( $is_expandable ) : ?>
-            Learn more
-            <?php else : ?>
-            Read more
-            <?php endif; ?>
-        </a>
+        <p class="overlapping-cards__read-more-link__container">
+            <a href="<?php echo get_the_permalink($link) ?>" class="overlapping-cards__read-more-link <?php echo $is_expandable ? 'read-more__expand' : '' ?>">
+                <?php if( $is_expandable ) : ?>
+                Learn more
+                <?php else : ?>
+                Read more
+                <?php endif; ?>
+            </a>
+        </p>
     </div>
 </div>

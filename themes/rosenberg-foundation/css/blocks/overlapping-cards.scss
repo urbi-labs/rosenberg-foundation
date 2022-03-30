@@ -1,9 +1,13 @@
 .overlapping-cards__container {
     display: flex;
     align-items: center;
-    margin-bottom: 24px;
+    margin-bottom: 56px;
     &.image-right {
         flex-direction: row-reverse;
+        .overlapping-cards__text-heading,
+        .overlapping-cards__read-more-link__container {
+            text-align: right;
+        }
     }
     &.is-expandable {
         align-items: flex-start;
@@ -18,6 +22,15 @@
     }
 }
 
+.card-expanded {
+    display: flex;
+    align-items: center;
+}
+
+.overlapping-cards__image.card-expanded-image {
+    max-width: 500px;
+}
+
 .overlapping-cards__image {
     width: 50%;
     max-width: 752px;
@@ -28,6 +41,26 @@
 .overlapping-cards__image__image {
     height: 314px;
     object-fit: cover;
+}
+
+.overlapping-cards__text-heading {
+    font-family: $standard-family;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $dark_gray;
+    margin-bottom: 0;
+    margin-bottom: 16px;
+}
+
+.overlapping-cards__text-excerpt {
+    line-height: 1.5;
+    max-height: 96px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    transition: max-height 0.5s ease;
+    &.expanded {
+        max-height: 1000px;
+    }
 }
 
 .overlapping-cards__text {
@@ -52,36 +85,13 @@
     }
 }
 
-.card-expanded {
-    display: flex;
-    align-items: center;
-}
-
-.overlapping-cards__image.card-expanded-image {
-    max-width: 500px;
-}
-
-.overlapping-cards__text-heading {
-    font-family: $standard-family;
-    font-weight: 400;
-    line-height: 1.5;
-    color: $dark_gray;
-    margin-bottom: 0;
-}
-
-.overlapping-cards__text-excerpt {
-    line-height: 1.5;
-    max-height: 96px;
-    overflow: hidden;
-    margin-bottom: 16px;
-    transition: max-height 0.5s ease;
-    &.expanded {
-        max-height: 1000px;
-    }
+.overlapping-cards__read-more-link__container {
+    margin: 0;
 }
 
 .overlapping-cards__read-more-link,
-.read-more__link{
+.read-more__link {
+    text-align: left;
     font-family: $alt-family;
     font-style: normal;
     font-weight: 400;
@@ -99,7 +109,7 @@
 
 .read-more__expand::after {
     content: "";
-    background-image: url(/wp-content/themes/rosenberg-foundation/images/icons/icon-down-fill.svg);
+    background-image: url('/wp-content/themes/rosenberg-foundation/images/icons/icon-down-fill.svg');
     width: 12px;
     height: 8px;
     margin-left: 7px;
