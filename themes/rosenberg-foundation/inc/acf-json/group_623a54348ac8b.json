@@ -1,6 +1,6 @@
 {
     "key": "group_623a54348ac8b",
-    "title": "Internal Intro Section",
+    "title": "Block: Internal Intro Section",
     "fields": [
         {
             "key": "field_623dfa5a57265",
@@ -114,5 +114,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1648229040
+    "modified": 1648606175
 }
