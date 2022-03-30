@@ -18,7 +18,7 @@ $people = get_posts(array(
 
                 <?php
                 $image = wp_get_attachment_image_srcset(get_post_thumbnail_id($person->ID));
-                $position = get_field('position', $person->ID);
+                $position = get_field('role', $person->ID);
                 ?>
 
                 <div class="people-block__item">
