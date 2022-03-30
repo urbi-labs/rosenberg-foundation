@@ -8,8 +8,9 @@ get_header(); ?>
     <div class="container">
         <?php get_template_part('template-parts/blocks/block', 'latest-posts'); ?>
         <?php the_content() ?>
+        <?php get_template_part('template-parts/blocks/block', 'feature-slider'); ?>
     </div>
 
-    <?php get_template_part('template-parts/blocks/block', 'feature-slider'); ?>
+
 </main>
 <?php get_footer(); ?>
