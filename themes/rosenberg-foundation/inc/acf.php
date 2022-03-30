@@ -13,7 +13,7 @@ function urbi_acf_init_block_types()
         acf_register_block_type(
             array(
                 'name'              => 'people-block',
-                'title'             => __('Rosenberg Fundation: People block'),
+                'title'             => __('Rosenberg: People Block'),
                 'description'       => __('People block'),
                 'render_template'   => 'template-parts/blocks/block-people.php',
                 'category'          => 'formatting',
@@ -26,8 +26,8 @@ function urbi_acf_init_block_types()
         acf_register_block_type(
             array(
                 'name'              => 'internal-intro-section',
-                'title'             => __('Rosenberg Fundation: Internal intro section'),
-                'description'       => __('Internal intro section.'),
+                'title'             => __('Rosenberg: Intro Section'),
+                'description'       => __('Inner Page intro section.'),
                 'render_template'   => 'template-parts/blocks/block-internal-intro-section.php',
                 'category'          => 'formatting',
                 'icon'              => 'text',
@@ -36,7 +36,6 @@ function urbi_acf_init_block_types()
             )
         );
 
-        // List with icons
         acf_register_block_type(
             array(
                 'name'              => 'overlapping-cards',
@@ -49,6 +48,20 @@ function urbi_acf_init_block_types()
                 'keywords'          => array('text', 'card'),
             )
         );
+
+        acf_register_block_type(
+            array(
+                'name'              => 'hero-internal',
+                'title'             => __('Rosenberg: Inner Page Hero'),
+                'description'       => __('Cards with an overlap effect on their text.'),
+                'render_template'   => 'template-parts/blocks/block-hero-internal.php',
+                'category'          => 'formatting',
+                'icon'              => 'text',
+                'mode'              => 'preview',
+                'keywords'          => array('text', 'card'),
+            )
+        );
+
     }
 }
 
