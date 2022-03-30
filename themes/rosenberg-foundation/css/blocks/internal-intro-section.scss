@@ -29,10 +29,13 @@
         .title__orange-bg__container {
             margin-left: -100px;
             max-width: 500px;
+            @media screen and (max-width: $phone-width) {
+                margin-left: 0;
+            }
         }
         .title__orange-bg {
             @media screen and (max-width: $phone-width) {
-                margin-left: 10px;
+                margin-left: 0;
             }
         }
         .text__gray-bg {
