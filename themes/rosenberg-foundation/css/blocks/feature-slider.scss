@@ -4,9 +4,15 @@
 .feature-slider__slide {
     display: flex !important;
     column-gap: 20px;
+    @media screen and (max-width: $tablet-width) {
+        flex-direction: column;
+    }
     .features-slider__slide__image {
         flex-basis: calc(calc(66%) - 5px);
         max-height: 500px;
+        @media screen and (max-width: $tablet-width) {
+            max-height: fit-content;
+        }
         img {
             width: 100%;
             max-height: 100%;
@@ -19,16 +25,12 @@
             margin-bottom: 16px;
             margin-left: -100px;
             width: 400px;
+            @media screen and (max-width: $tablet-width) {
+                margin-left: 10px;
+                width: 100%;
+            }
         }
     }
-}
-
-.feature-slider__carousel-control-next-icon {
-    background-image: url('/wp-content/themes/rosenberg-foundation/images/icon-next-fill.png');
-}
-
-.feature-slider__carousel-control-prev-icon {
-    background-image: url('/wp-content/themes/rosenberg-foundation/images/icon-prev-fill.png');
 }
 
 .feature-slider__carousel-control-next-icon,
@@ -43,10 +45,22 @@
     height: 116px;
     background: rgba($dark_gray, 0.4);
     cursor: pointer;
+    @media screen and (max-width: $tablet-width) {
+        width: 58px;
+        height: 58px;
+        top: 20%;
+        & > img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+    }
 }
 .feature-slider__prev-arrow {
     left: 0;
 }
 .feature-slider__next-arrow {
     left: calc(calc(calc(66%) - 5px) - 116px);
+    @media screen and (max-width: $tablet-width) {
+        left: calc(calc(100%) - 58px);
+    }
 }
