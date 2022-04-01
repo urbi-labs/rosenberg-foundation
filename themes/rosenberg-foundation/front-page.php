@@ -7,7 +7,7 @@ get_header(); ?>
     <?php get_template_part('template-parts/blocks/block', 'hero-home'); ?>
     <div class="container">
         <?php the_content() ?>
-        <?php get_template_part('template-parts/blocks/block', 'feature-slider'); ?>
+
     </div>
 
 
