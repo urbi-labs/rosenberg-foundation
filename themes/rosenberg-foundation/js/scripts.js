@@ -11,9 +11,21 @@
 /*! ScrollMagic v2.0.8 | (c) 2020 Jan Paepke (@janpaepke) | license & info: http://scrollmagic.io */
 !function(e,i){"function"==typeof define&&define.amd?define(["ScrollMagic","jquery"],i):"object"==typeof exports?i(require("scrollmagic"),require("jquery")):i(e.ScrollMagic,e.jQuery)}(this,function(e,t){"use strict";e._util.get.elements=function(e){return t(e).toArray()},e._util.addClass=function(e,i){t(e).addClass(i)},e._util.removeClass=function(e,i){t(e).removeClass(i)},t.ScrollMagic=e});
 $(document).ready(function () {
-    $('.feature-slider').slick({
+    $('.feature-slider__image').slick({
+        asNavFor: '.feature-slider__content__container',
         prevArrow: $('.feature-slider__prev-arrow.slick-prev'),
-        nextArrow: $('.feature-slider__next-arrow.slick-next')
+        nextArrow: $('.feature-slider__next-arrow.slick-next'),
+        autoplay: true
+    });
+
+    $('.feature-slider__content__container').slick({
+        asNavFor: '.feature-slider__image',
+        arrows: false,
+        fade: true,
+        cssEase: 'linear',
+        autoplay: false,
+        draggable: false
+
     });
 });
 
