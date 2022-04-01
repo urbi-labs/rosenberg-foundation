@@ -34,6 +34,7 @@
     @media screen and (max-width: $phone-width) {
         flex-basis: 100%;
         width: 100%;
+        left: 0;
     }
 }
 .feature-slider__image__slide {
@@ -52,12 +53,14 @@
 
         width: 400px;
         @media screen and (max-width: $tablet-width) {
-            margin-left: 10px;
             width: 100%;
         }
     }
     .feature-slider_content__text {
         margin-left: 100px;
+        @media screen and (max-width: $phone-width) {
+            margin-left: 0px;
+        }
     }
 }
 
