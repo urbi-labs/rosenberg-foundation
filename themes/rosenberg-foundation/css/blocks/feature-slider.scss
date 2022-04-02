@@ -87,6 +87,7 @@
     @media screen and (max-width: $phone-width) {
         width: 58px;
         height: 58px;
+        top: calc(calc(50%) - 29px);
         img {
             max-width: 80%;
             max-height: 80%;
