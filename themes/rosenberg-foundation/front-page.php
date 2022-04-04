@@ -7,6 +7,9 @@ get_header(); ?>
     <?php get_template_part('template-parts/blocks/block', 'hero-home'); ?>
     <div class="container">
         <?php the_content() ?>
+
     </div>
+
+
 </main>
 <?php get_footer(); ?>
