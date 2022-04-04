@@ -25,9 +25,8 @@
 .feature-slider__content__container {
     flex-basis: calc(calc(33%) - 5px);
     width: calc(calc(33%) + 100px);
-    padding-top: 32px;
-    position: relative;
-    left: -100px;
+
+    margin-left: -100px;
     @media screen and (min-width: calc($phone-width + 1px)) and (max-width: $tablet-width) {
         flex-basis: calc(calc(50%) - 5px);
         width: calc(calc(50%) + 100px);
@@ -61,7 +60,10 @@
         }
     }
     .feature-slider_content__text {
-        margin-left: 100px;
+        margin-left: 80px;
+        margin-top: -40px;
+        background-color: $lighter-gray;
+        padding: 48px 32px;
         @media screen and (max-width: $phone-width) {
             margin-left: 0px;
         }
@@ -75,7 +77,7 @@
 .feature-slider__next-arrow,
 .feature-slider__prev-arrow {
     position: absolute;
-    top: calc(calc(50%));
+    top: calc(calc(50%) - 38px);
     width: 116px;
     height: 116px;
     background: rgba($dark_gray, 0.4);
