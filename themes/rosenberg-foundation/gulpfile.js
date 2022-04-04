@@ -54,6 +54,16 @@ gulp.task('scss', () => {
 		.pipe(livereload())
 });
 
+gulp.task('block-styles', () => {
+	return gulp.src(themePath + 'style-blocks.scss')
+		.pipe(sourcemaps.init())
+	    .pipe(sass().on('error', sass.logError))
+		.pipe(autoprefixer('last 4 version'))
+		.pipe(minifyCSS({keepBreaks:false}))
+	  	.pipe(sourcemaps.write('./maps'))
+		.pipe(gulp.dest(themePath))
+		.pipe(livereload())
+});
 
 gulp.task('scripts', ()  =>{
 	return gulp.src( [themePath + 'js/libs/**/*.js', themePath + 'js/development/**/*.js'] )
@@ -77,9 +87,10 @@ gulp.task( 'watch', ()  =>{
 		livereload.changed(file);
 	});
 	// Watch all .scss files
-	gulp.watch( themePath + 'css/**/**/*.*css', gulp.series('scss') );
+	gulp.watch( themePath + 'css/**/**/*.*css', gulp.series('scss', 'block-styles') );
 	// Watch main style.scss file for new inclusions
-	gulp.watch( themePath + 'style.scss', gulp.series('scss') );
+	gulp.watch( themePath + 'style.scss', gulp.series('scss', 'block-styles') );
+	gulp.watch( themePath + 'style-blocks.scss', gulp.series('scss', 'block-styles') );
 
 	// Watch js files
 	gulp.watch( themePath + 'js/development/**/*.js', gulp.series('scripts') );
@@ -88,4 +99,4 @@ gulp.task( 'watch', ()  =>{
 
 
 // Default task -- runs scss and watch functions
-gulp.task( 'default', gulp.parallel('scripts', 'scss', 'watch'));
+gulp.task( 'default', gulp.parallel('scripts', 'scss', 'block-styles', 'watch'));
