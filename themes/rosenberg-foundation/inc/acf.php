@@ -67,7 +67,7 @@ function urbi_acf_init_block_types()
             array(
                 'name'              => 'hero-internal',
                 'title'             => __('Rosenberg: Inner Page Hero'),
-                'description'       => __('Cards with an overlap effect on their text.'),
+                'description'       => __('Inner page hero section.'),
                 'render_template'   => 'template-parts/blocks/block-hero-internal.php',
                 'category'          => 'formatting',
                 'icon'              => 'text',
@@ -75,6 +75,20 @@ function urbi_acf_init_block_types()
                 'keywords'          => array('text', 'card'),
             )
         );
+
+        acf_register_block_type(
+            array(
+                'name'              => 'divider-image-text',
+                'title'             => __('Rosenberg: Divider Image/Text'),
+                'description'       => __('A content divider with support for image and text.'),
+                'render_template'   => 'template-parts/blocks/block-hero-internal.php',
+                'category'          => 'formatting',
+                'icon'              => 'text',
+                'mode'              => 'edit',
+                'keywords'          => array('text', 'card'),
+            )
+        );
+
     }
 }
 
