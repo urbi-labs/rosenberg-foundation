@@ -12,7 +12,11 @@
             object-fit: cover;
         }
         @media screen and (max-width: $tablet-width) {
-            flex-basis: 50%;
+            flex-basis: 60%;
+            img {
+                min-height: 400px;
+                object-position: center;
+            }
         }
         @media screen and (max-width: $phone-width) {
             width: 100%;
@@ -27,7 +31,10 @@
         box-sizing: border-box;
         flex-basis: 43%;
         @media screen and (max-width: $phone-width) {
-            width: 100%;
+            flex-basis: 40%;
+        }
+        @media screen and (max-width: $phone-width) {
+            flex-basis: 100%;
             padding: 10px;
             margin-top: -100px;
         }
