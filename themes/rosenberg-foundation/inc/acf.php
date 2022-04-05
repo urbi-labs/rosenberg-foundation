@@ -68,6 +68,22 @@ function urbi_acf_init_block_types()
                 'name'              => 'hero-internal',
                 'title'             => __('Rosenberg: Inner Page Hero'),
                 'description'       => __('Inner page hero section.'),
+<<<<<<< HEAD
+=======
+                'render_template'   => 'template-parts/blocks/block-hero-internal.php',
+                'category'          => 'formatting',
+                'icon'              => 'text',
+                'mode'              => 'edit',
+                'keywords'          => array('text', 'card'),
+            )
+        );
+
+        acf_register_block_type(
+            array(
+                'name'              => 'divider-image-text',
+                'title'             => __('Rosenberg: Divider Image/Text'),
+                'description'       => __('A content divider with support for image and text.'),
+>>>>>>> Adjustments to expandable cards
                 'render_template'   => 'template-parts/blocks/block-hero-internal.php',
                 'category'          => 'formatting',
                 'icon'              => 'text',
