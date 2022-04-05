@@ -22,8 +22,7 @@
     &:after {
         background-image: url('#{$theme-path}/images/icons/icon-arrow-right-small-fill-white.svg');
     }
-    &:hover,
-    &:focus {
+    &:hover {
         background-color: transparent;
         color: $orange;
         &:after {
@@ -78,6 +77,7 @@
 .btn-blue,
 .btn-blue__outline,
 .wp-block-button.is-style-outline .wp-block-button__link {
+    font-family: $alt-family;
     position: relative;
     &:after {
         content: "";
