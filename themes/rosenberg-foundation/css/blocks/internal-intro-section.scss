@@ -5,10 +5,14 @@
         flex-direction: column;
     }
     .internal-intro-section__img {
-        width: 57%;
-        max-width: 656px;
+        flex-basis: 57%;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
         @media screen and (max-width: $tablet-width) {
-            min-width: 500px;
+            flex-basis: 50%;
         }
         @media screen and (max-width: $phone-width) {
             width: 100%;
@@ -21,6 +25,7 @@
     .internal-intro-section__content {
         padding-top: 70px;
         box-sizing: border-box;
+        flex-basis: 43%;
         @media screen and (max-width: $phone-width) {
             width: 100%;
             padding: 10px;
@@ -28,7 +33,7 @@
         }
         .title__orange-bg__container {
             margin-left: -100px;
-            max-width: 500px;
+            max-width: calc(calc(100%) + 100px);
             @media screen and (max-width: $phone-width) {
                 margin-left: 0;
             }
@@ -39,9 +44,10 @@
             }
         }
         .text__gray-bg {
-            max-width: 560px;
+            max-width: calc(calc(100%) + 75px);
             margin-left: -75px;
             margin-top: -40px;
+            box-sizing: border-box;
             @media screen and (max-width: $tablet-width) {
                 max-width: none;
             }
