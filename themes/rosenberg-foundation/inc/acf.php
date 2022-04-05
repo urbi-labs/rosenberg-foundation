@@ -81,7 +81,7 @@ function urbi_acf_init_block_types()
                 'name'              => 'divider-image-text',
                 'title'             => __('Rosenberg: Divider Image/Text'),
                 'description'       => __('A content divider with support for image and text.'),
-                'render_template'   => 'template-parts/blocks/block-hero-internal.php',
+                'render_template'   => 'template-parts/blocks/block-divider-image-text.php',
                 'category'          => 'formatting',
                 'icon'              => 'text',
                 'mode'              => 'edit',

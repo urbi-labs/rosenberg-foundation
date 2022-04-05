@@ -1,6 +1,7 @@
 .divider-image-text__container {
     background-color:$dark_gray;
-    margin-top: 48px;
+    width: 100vw;
+    margin-left: calc((100vw - 100%) / -2);
 }
 
 .divider-image-text__container__inner {
@@ -16,7 +17,7 @@
     background-size: cover;
     min-width: 52%;
     padding-top: 419px;
-    margin-top: -48px;
+    margin-top: -48px!important;
 }
 
 .divider-image-text__text {

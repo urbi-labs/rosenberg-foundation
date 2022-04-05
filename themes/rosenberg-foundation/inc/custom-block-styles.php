@@ -10,12 +10,14 @@ if (function_exists("register_block_style")) {
         /**
          * Register stylesheet
          */
-        wp_register_style(
-            "block-alt-styles",
-            get_stylesheet_directory_uri() . "/style-blocks.css",
-            [],
-            "1.1"
-        );
+        if (is_admin()) {
+            wp_register_style(
+                "block-alt-styles",
+                get_stylesheet_directory_uri() . "/style-blocks.css",
+                [],
+                "1.1"
+            );
+        }
 
         /**
          * Register block style
@@ -25,6 +27,7 @@ if (function_exists("register_block_style")) {
             "label" => "Paragraph Blue Border",
             "style_handle" => "block-alt-styles",
         ]);
+
     }
 
     add_action("init", "block_styles_register_block_styles");
