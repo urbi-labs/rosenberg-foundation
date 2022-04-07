@@ -1,7 +1,6 @@
 .hero-internal__container {
-    height: 285px;
-    max-height: 285px;
-    width: 100%;
+    width: 100vw;
+    margin-left: calc((100vw - 100%) / -2);
     background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -12,27 +11,19 @@
 }
 
 .hero-internal__text {
-    font-family: 'glacial-regular';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 58.452px;
+    padding: 106px 0;
+    font-family: $alt-family;
     line-height: 125%;
     text-align: center;
     letter-spacing: -0.03em;
-    color: #FFFFFF;
-    position: relative;
-    top: 35%;
+    font-size: 58px!important;
+    font-weight: 400!important;
+    color: #FFFFFF!important;
 }
 
-@media screen and (max-width: 1200px) {
-    .hero-internal__container {
-        background-image: none!important;
-        max-height: 108px;
-    }
-
+@media screen and (max-width: $tablet-width) {
     .hero-internal__text {
-        padding: 10px;
+        padding: 54px 0;
         font-size: 40px;
-        top: 20%;
     }
 }

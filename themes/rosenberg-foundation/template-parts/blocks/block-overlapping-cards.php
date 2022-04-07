@@ -1,50 +1,33 @@
-<div class="overlapping-cards__container card-link">
+<?php
+
+$image = get_field('image');
+$image_right = get_field('image_alignment') === 'right';
+$is_expandable = get_field('is_expandable');
+$title = get_field('title');
+$body = get_field('body');
+$link = get_field('link');
+
+?>
+
+<div class="overlapping-cards__container card-link <?php echo $image_right ? 'image-right' : '' ?> <?php echo $is_expandable ? 'is-expandable' : '' ?>">
     <div class="overlapping-cards__image card-link-image">
-        <img src="<?php echo get_stylesheet_directory_uri() . '/images/michael-tubbs-article-thumbnail1.png' ?>" class="overlapping-cards__image__image">
+        <img srcset="<?php echo wp_get_attachment_image_srcset($image) ?>" class="overlapping-cards__image__image">
     </div>
-    <div class="overlapping-cards__text card-link-text">
-        <h3 class="overlapping-cards__text-heading">Michael Tubbs Joins Rosenberg Foundation as First Senior Fellow</h3>
+    <div class="overlapping-cards__text <?php echo $image_right ? 'image-right' : '' ?>">
+        <h3 class="overlapping-cards__text-heading"><?php echo $title ?></h3>
+        <?php if(!empty($body)) : ?>
         <div class="overlapping-cards__text-excerpt">
-            <p>Dolor sit amet consectetur adipiscing elit duis tristique sollicitudin nibh. Arcu vitae elementum curabitur vitae nunc.</p>
-            <p>Dolor sit amet consectetur adipiscing elit duis tristique sollicitudin nibh. Arcu vitae elementum curabitur vitae nunc.</p>
-            <p>Sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper eget. Imperdiet sed euismod nisi porta lorem mollis aliquam ut porttitor. Malesuada proin libero nunc consequat interdum varius sit amet mattis. Nulla pellentesque dignissim enim sit. Quisque egestas diam in arcu cursus euismod.</p>
+            <?php echo $body ?>
         </div>
-        <a href="#" class="overlapping-cards__read-more-link read-more__expand">Read more</a>
+        <?php endif; ?>
+        <p class="overlapping-cards__read-more-link__container">
+            <a href="<?php echo get_the_permalink($link) ?>" class="overlapping-cards__read-more-link <?php echo $is_expandable ? 'read-more__expand' : '' ?>">
+                <?php if( $is_expandable ) : ?>
+                Learn more
+                <?php else : ?>
+                Read more
+                <?php endif; ?>
+            </a>
+        </p>
     </div>
 </div>
-
-<div class="overlapping-cards__container card-link image-right">
-    <div class="overlapping-cards__image card-link-image">
-        <img src="<?php echo get_stylesheet_directory_uri() . '/images/michael-tubbs-article-thumbnail1.png' ?>" class="overlapping-cards__image__image">
-    </div>
-    <div class="overlapping-cards__text card-link-text image-right">
-        <div class="overlapping-cards__text-lead">
-            <h3 class="overlapping-cards__text-heading">Michael Tubbs Joins Rosenberg Foundation as First Senior Fellow</h3>
-        </div>
-        <div class="overlapping-cards__read-more"><a href="#" class="overlapping-cards__read-more-link"> Read more </a></div>
-    </div>
-</div>
-
-<!-- <div class="overlapping-cards__container card-expanded">
-    <div class="overlapping-cards__image card-expanded-image">
-        <img src="<?php echo get_stylesheet_directory_uri() . '/images/leading-edge-fund-1.png' ?>">
-    </div>
-    <div class="overlapping-cards__text card-expanded-text">
-        <div class="overlapping-cards__text-lead has-read-more">
-            <p  id="overlapping-cards__text-heading" class="overlapping-cards__text-heading">Criminal and Youth Justice Reform</p>
-            <div id="overlapping-cards__text-content" class="overlapping-cards__text-content">
-                <p>Dolor sit amet consectetur adipiscing elit duis tristique sollicitudin nibh. Arcu vitae elementum curabitur vitae nunc.</p>
-                <p>Sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper eget. Imperdiet sed euismod nisi porta lorem mollis aliquam ut porttitor. Malesuada proin libero nunc consequat interdum varius sit amet mattis. Nulla pellentesque dignissim enim sit. Quisque egestas diam in arcu cursus euismod.</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="overlapping-cards__text card-expanded-text-sm hidden">
-    <div class="overlapping-cards__text-lead has-read-more">
-        <p class="overlapping-cards__text-heading">Criminal and Youth Justice Reform</p>
-        <div class="overlapping-cards__text-content">
-            <p>Dolor sit amet consectetur adipiscing elit duis tristique sollicitudin nibh. Arcu vitae elementum curabitur vitae nunc.</p>
-            <p>Sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper eget. Imperdiet sed euismod nisi porta lorem mollis aliquam ut porttitor. Malesuada proin libero nunc consequat interdum varius sit amet mattis. Nulla pellentesque dignissim enim sit. Quisque egestas diam in arcu cursus euismod.</p>
-        </div>
-    </div>
-</div> -->

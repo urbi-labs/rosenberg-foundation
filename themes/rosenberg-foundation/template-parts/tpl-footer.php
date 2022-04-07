@@ -1,8 +1,15 @@
 <?php
 $footer_image = get_field('footer_background_image', 'option');
-$email = get_field('email', 'option');
-$phone = get_field('phone_number', 'option');
+$email = get_field('contact_email', 'option');
+$phone = get_field('contact_phone_number', 'option');
 $address = get_field('address', 'option');
+
+// Social Profiles
+$social_profiles = array(
+    'twitter' => get_field('twitter', 'option'),
+    'facebook' => get_field('facebook', 'option'),
+    'youtube' => get_field('youtube', 'option')
+);
 ?>
 
 <?php
@@ -14,10 +21,14 @@ if ($footer_image) {
 <div class="footer-content container">
     <?php echo get_template_part('template-parts/navigation/menu', 'footer'); ?>
     <div class="footer__social-updates">
+
+        <?php if(array_filter($social_profiles)) : ?>
         <div class="footer__social_media">
             <h4>Stay Connected on Social Media</h4>
-            <?php echo get_template_part('template-parts/navigation/menu', 'social-icons', ['color' => 'white']) ?>
+            <?php echo get_template_part('template-parts/navigation/menu', 'social-icons', ['color' => 'white', 'social_profiles' => $social_profiles]) ?>
         </div>
+        <?php endif; ?>
+
         <div class="footer__updates">
             <h4>Sign Up for Updates</h4>
             <form class="form-signup footer-signup">
@@ -33,8 +44,10 @@ if ($footer_image) {
     <div class="footer-bottom">
         <div>
             <p>
-                © 2021 Rosenberg Foundation<br />
-                All Rights Reserved. <a href="https://rosenbergfound.org/photo-credits/"> Credits</a>
+                © 2021 Rosenberg Foundation
+                <br />
+                All Rights Reserved.
+                <a href="https://rosenbergfound.org/photo-credits/"> Credits</a>
             </p>
         </div>
         <div>

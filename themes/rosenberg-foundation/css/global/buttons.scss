@@ -1,55 +1,105 @@
-.btn {
-    display: inline-block;
+.btn,
+.wp-block-button__link {
+    display: inline-flex;
+    align-items: center;
     vertical-align: top;
-    padding: 16px;
-    min-width: 200px;
+    padding: 14px;
     box-sizing: border-box;
     text-align: center;
     margin: 0;
     outline: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
+    appearance: none;
     cursor: pointer;
-    background-color: black;
+    background-color: $orange;
     color: #ffffff;
-    font-size: 16px;
-    line-height: 1.3;
-    font-weight: 700;
-    font-style: normal;
-    border-radius: 3px;
-    border: 1px solid black;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 0;
+    border: solid 2px $orange;
     text-transform: uppercase;
-    transition: 0.3s ease;
-
-    &:hover,
-    &:focus {
-        background-color: white;
-        color: black;
+    transition: background-color 0.25s ease, border 0.25s ease;
+    padding-right: 48px;
+    &:after {
+        background-image: url('#{$theme-path}/images/icons/icon-arrow-right-small-fill-white.svg');
+    }
+    &:hover {
+        background-color: transparent;
+        color: $orange;
+        &:after {
+            background-image: url('#{$theme-path}/images/icons/icon-arrow-right-small-fill-orange.svg');
+        }
     }
 }
 
-.btn--blue {
+.btn--blue,
+.btn-blue {
     background: $blue;
     color: white;
     border: 2px solid $blue;
     font-family: $alt-family, sans-serif;
     border-radius: 2px;
+    appearance: none;
+    transition: background-color 0.25s ease, border 0.25s ease;
     &.btn--secondary {
         background: none;
         color: $blue;
         &:hover {
             background: $blue;
             color: white;
-            transition: background color 0.2s ease;
+            transition: background-color 0.25s ease, border 0.25s ease;
         }
     }
 }
+
+.btn-blue__outline,
+.wp-block-button.is-style-outline .wp-block-button__link {
+    @extend .btn;
+    background: none;
+    color: $blue;
+    border: solid 2px $blue;
+    transition: background-color 0.25s ease, border 0.25s ease;
+    &:after {
+        background-image: url('#{$theme-path}/images/icons/icon-arrow-right-small-fill-blue.svg');
+    }
+    &:hover {
+        background: $blue;
+        color: white;
+        transition: background-color 0.2s ease;
+        &:after {
+            background-image: url('#{$theme-path}/images/icons/icon-arrow-right-small-fill-white.svg');
+        }
+    }
+}
+
+.btn,
+.wp-block-button__link,
+.btn--blue,
+.btn-blue,
+.btn-blue__outline,
+.wp-block-button.is-style-outline .wp-block-button__link {
+    font-family: $alt-family;
+    position: relative;
+    &:after {
+        content: "";
+        width: 24px;
+        height: 8px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        right: 12px;
+    }
+    &:hover:after {
+        animation-name: animate-arrow;
+        animation-duration: 0.5s;
+    }
+}
+
 .button-white {
     background: $lighter-gray;
     color: $dark_gray;
     border-radius: 2px;
     padding: 8px 0;
-    width: 176px;
     text-align: center;
     text-transform: uppercase;
     font-family: $alt-family, sans-serif;
@@ -60,5 +110,17 @@
     }
     img {
         vertical-align: middle;
+    }
+}
+
+@keyframes animate-arrow {
+    from {
+        right: 12px;
+    }
+    50% {
+        right: 8px;
+    }
+    to {
+        right: 12px;
     }
 }

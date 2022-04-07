@@ -1,8 +1,11 @@
 <?php
 
-$twitter_url = get_field('twitter', 'option');
-$facebook_url = get_field('facebook', 'option');
-$youtube_url = get_field('youtube', 'option');
+// Social Profiles
+$social_profiles = array(
+    'twitter' => get_field('twitter', 'option'),
+    'facebook' => get_field('facebook', 'option'),
+    'youtube' => get_field('youtube', 'option')
+);
 ?>
 
 <div class="container header-container">
@@ -14,13 +17,15 @@ $youtube_url = get_field('youtube', 'option');
     </a>
     <nav class="header__navigation">
         <?php echo get_template_part('template-parts/navigation/menu', 'header') ?>
-        <?php echo get_template_part('template-parts/navigation/menu', 'social-icons') ?>
+        <?php if(array_filter($social_profiles)) : ?>
+        <?php echo get_template_part('template-parts/navigation/menu', 'social-icons', array('social_profiles' => $social_profiles)) ?>
+        <?php endif; ?>
     </nav>
     <div class="header-navigation__mobile">
         <a href="#" class="mobile__burger-button" id="">
             <img src="<?php echo get_template_directory_uri()  ?>/images/icons/icon-hamburguer-fill.svg" />
         </a>
-        <?php echo get_template_part('template-parts/navigation/menu', 'mobile') ?>
+        <?php echo get_template_part('template-parts/navigation/menu', 'mobile', array('social_profiles' => $social_profiles)) ?>
     </div>
 
 </div>
