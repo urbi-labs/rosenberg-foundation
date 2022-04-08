@@ -11,7 +11,6 @@ $last_post = wp_get_recent_posts($args_last_post);
 $categories = get_categories();
 
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-echo $paged;
 $args_recenpost = array(
     'orderby' => 'date',
     'order' => 'desc',
@@ -19,7 +18,8 @@ $args_recenpost = array(
     'paged' => $paged
 
 );
-$recent_posts = new WP_Query($args_recenpost);;
+
+$recent_posts = new WP_Query($args_recenpost);
 
 ?>
 <main class="page__news">
@@ -88,7 +88,11 @@ $recent_posts = new WP_Query($args_recenpost);;
                     $recent_posts->the_post();
                     $image = get_the_post_thumbnail_url($recent_posts->post->ID, 'medium');
 
+<<<<<<< HEAD
                     $excerpt =  get_the_excerpt($recent_posts->post->ID) ? get_the_excerpt($recent_posts->post->ID) : substr($recent_posts->post->get_the_content(), 0, 200);
+=======
+                    $excerpt =  get_the_excerpt($recent_posts->post->ID) ? get_the_excerpt($recent_posts->post->ID) : substr(get_the_content(null, null, $recent_posts->post->ID), 0, 200);
+>>>>>>> feature/page-news
                     $excerpt  = wp_strip_all_tags($excerpt);
                     $new_categories = wp_get_post_categories($recent_posts->post->ID);
                     $author = get_the_author_meta("first_name") . " " .  get_the_author_meta("last_name");
