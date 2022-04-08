@@ -1,5 +1,6 @@
 .btn,
-.wp-block-button__link {
+.wp-block-button__link,
+.wpcf7-form-control.wpcf7-submit.btn {
     display: inline-flex;
     align-items: center;
     vertical-align: top;
@@ -78,7 +79,8 @@
 .btn-blue__outline,
 .wp-block-button.is-style-outline .wp-block-button__link,
 .styled-link,
-.wp-block-button.is-style-styled-link .wp-block-button__link {
+.wp-block-button.is-style-styled-link .wp-block-button__link,
+.wpcf7-form-control.wpcf7-submit.btn {
     font-family: $alt-family;
     position: relative;
     &:after {
