@@ -1,5 +1,5 @@
  <div class="search-container news__search__container" data-class="search-container">
-     <form role="search" method="get" id="searchform" class="news__search" action="<?php echo get_permalink(); ?>">
+     <form role="search" method="get" id="searchform" class="news__search" action="<?php echo get_site_url() ?>">
          <label class="accessible-text" for="s">Search news</label>
          <input class="news__search__input" data-class="search-input" name="s" id="s" type="search" placeholder="Search"
              autocomplete="off" />
