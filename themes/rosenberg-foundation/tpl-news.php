@@ -19,8 +19,10 @@ $args_recenpost = array(
     'paged' => $paged
 
 );
+$recent_posts = new WP_Query($args_recenpost);
+$placeholder = get_template_directory_uri() . '/images/rosenberg-logo.svg';
 ?>
-<main class="page__news">
+<main class="page__news container">
 
     <div class="page__news__header">
         <h1><?php the_title(); ?></h1>
