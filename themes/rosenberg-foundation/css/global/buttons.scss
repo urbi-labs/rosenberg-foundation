@@ -83,6 +83,7 @@
 .wpcf7-form-control.wpcf7-submit.btn {
     font-family: $alt-family;
     position: relative;
+    text-decoration: none;
     &:after {
         content: "";
         width: 24px;
