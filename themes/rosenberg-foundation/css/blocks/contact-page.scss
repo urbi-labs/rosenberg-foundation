@@ -1,7 +1,13 @@
 .contact-page__container {
     display: flex;
+    align-items: flex-start;
     margin-top: 64px;
     margin-bottom: 64px;
+}
+
+.contact-page__map {
+    padding: 32px;
+    background-color: $lighter-gray;
 }
 
 .contact-page__map-iframe {
@@ -52,33 +58,24 @@
     }
 
     .wpcf7-form-control.wpcf7-text,
-    .wpcf7-form-control.wpcf7-textarea{
+    .wpcf7-form-control.wpcf7-textarea {
         border-bottom: solid $gray_3 1px;
-    }
-
-    .wpcf7-form-control.wpcf7-submit {
-        font-family: $alt-family;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 20.25px;
-        line-height: 150%;
-        text-align: center;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: $bright;
-        background: $orange;
-        border-radius: 2px;
-        padding-top: 12px;
-        padding-bottom: 12px;
-        padding-left: 24px;
-        padding-right: 24px;
-        margin-top: 44px;
+        width: 100%;
     }
 
 }
 
+.wpcf7-submit {
+    margin-top: 32px!important;
+}
+
 :focus-visible {
     outline: none!important;
+}
+
+.wpcf7 form  .wpcf7-response-output {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 @media screen  and (max-width: $phone-width) {

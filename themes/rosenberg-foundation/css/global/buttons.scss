@@ -1,5 +1,6 @@
 .btn,
-.wp-block-button__link {
+.wp-block-button__link,
+.wpcf7-form-control.wpcf7-submit.btn {
     display: inline-flex;
     align-items: center;
     vertical-align: top;
@@ -77,8 +78,12 @@
 .btn-blue,
 .btn-blue__outline,
 .wp-block-button.is-style-outline .wp-block-button__link,
+<<<<<<< HEAD
 .styled-link,
 .wp-block-button.is-style-styled-link .wp-block-button__link {
+=======
+.wpcf7-form-control.wpcf7-submit.btn {
+>>>>>>> Adjustments to contact form component and added dynamic fields
     font-family: $alt-family;
     position: relative;
     &:after {
