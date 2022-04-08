@@ -22,9 +22,9 @@ if (function_exists("register_block_style")) {
         /**
          * Register block style
          */
-        register_block_style("core/paragraph", [
-            "name" => "paragraph-blue-border",
-            "label" => "Paragraph Blue Border",
+        register_block_style("core/cover", [
+            "name" => "block-cover-full-width",
+            "label" => "Full Width Cover",
             "style_handle" => "block-alt-styles",
         ]);
 
