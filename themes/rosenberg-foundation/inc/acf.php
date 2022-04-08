@@ -95,8 +95,6 @@ function urbi_acf_init_block_types()
             )
         );
 
-
-
         acf_register_block_type(
             array(
                 'name'              => 'rosenberg-contact-form',
