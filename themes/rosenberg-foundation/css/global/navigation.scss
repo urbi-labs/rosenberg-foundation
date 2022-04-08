@@ -197,7 +197,7 @@
         display: inline-block;
         background-image: url('images/icons/LEADINGEDGEFUND-gray.svg');
         &::after {
-            bottom: -10px;
+            display: none;
         }
     }
 }

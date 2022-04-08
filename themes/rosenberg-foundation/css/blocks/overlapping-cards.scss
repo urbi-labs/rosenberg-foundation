@@ -126,25 +126,43 @@
     border-bottom: 2px solid $orange;
 }
 
+@media screen and (max-width: $tablet-width) {
+    
+    .overlapping-cards__container {
+
+        .overlapping-cards__text {
+            margin-left: -35%;
+        }
+
+    }
+
+}
+
+
 @media screen and (max-width: $phone-width) {
     
     .overlapping-cards__container {
+
         flex-direction: column;
         &.image-right {
             flex-direction: column;
         }
-    }
-    
-    .overlapping-cards__image, .overlapping-cards__text {
-        width: 100%;
-        max-width: 100%;
-    }
-    
-    .overlapping-cards__text {
-        margin-left: 0;
-        &.image-right {
-            margin-right: 0;
+        .overlapping-cards__image,
+        .overlapping-cards__image__image,
+        .overlapping-cards__text {
+            width: 100%;
+            max-width: 100%;
         }
+        
+        .overlapping-cards__text,
+        &.is-expandable .overlapping-cards__text {
+            margin-left: 0;
+            margin-top: 0;
+            &.image-right {
+                margin-right: 0;
+            }
+        }
+
     }
 
 }

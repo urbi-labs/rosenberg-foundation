@@ -18,8 +18,8 @@ function urbi_acf_init_block_types()
                 'render_template'   => 'template-parts/blocks/block-people.php',
                 'category'          => 'formatting',
                 'icon'              => 'text',
-                'mode'              => 'edit',
-                'keywords'          => array('text', 'list'),
+                'mode'              => 'preview',
+                'keywords'          => array('people', 'team', 'members'),
             )
         );
 
@@ -32,7 +32,21 @@ function urbi_acf_init_block_types()
                 'category'          => 'formatting',
                 'icon'              => 'text',
                 'mode'              => 'edit',
-                'keywords'          => array('text', 'list'),
+                'keywords'          => array('text', 'intro', 'featured'),
+            )
+        );
+
+
+        acf_register_block_type(
+            array(
+                'name'              => 'feature-slider',
+                'title'             => __('Rosenberg: Featured slider'),
+                'description'       => __('Add sliders with images and text.'),
+                'render_template'   => 'template-parts/blocks/block-feature-slider.php',
+                'category'          => 'formatting',
+                'icon'              => 'text',
+                'mode'              => 'edit',
+                'keywords'          => array('slider', 'featured', 'carousel'),
             )
         );
 
@@ -53,27 +67,40 @@ function urbi_acf_init_block_types()
             array(
                 'name'              => 'hero-internal',
                 'title'             => __('Rosenberg: Inner Page Hero'),
-                'description'       => __('Cards with an overlap effect on their text.'),
+                'description'       => __('Inner page hero section.'),
                 'render_template'   => 'template-parts/blocks/block-hero-internal.php',
+                'category'          => 'formatting',
+                'icon'              => 'text',
+                'mode'              => 'preview',
+                'keywords'          => array('text', 'card'),
+            )
+        );
+
+        acf_register_block_type(
+            array(
+                'name'              => 'divider-image-text',
+                'title'             => __('Rosenberg: Divider Image/Text'),
+                'description'       => __('A content divider with support for image and text.'),
+                'render_template'   => 'template-parts/blocks/block-divider-image-text.php',
+                'category'          => 'formatting',
+                'icon'              => 'text',
+                'mode'              => 'preview',
+                'keywords'          => array('text', 'card'),
+            )
+        );
+
+        acf_register_block_type(
+            array(
+                'name'              => 'rosenberg-contact-form',
+                'title'             => __('Rosenberg: Contact Form'),
+                'description'       => __('A contact form with a map section.'),
+                'render_template'   => 'template-parts/blocks/block-contact-page.php',
                 'category'          => 'formatting',
                 'icon'              => 'text',
                 'mode'              => 'edit',
                 'keywords'          => array('text', 'card'),
             )
         );
-
-        // acf_register_block_type(
-        //     array(
-        //         'name'              => 'hero-internal',
-        //         'title'             => __('Rosenberg: Divider (Image/Text)'),
-        //         'description'       => __('Cards with an overlap effect on their text.'),
-        //         'render_template'   => 'template-parts/blocks/block-hero-internal.php',
-        //         'category'          => 'formatting',
-        //         'icon'              => 'text',
-        //         'mode'              => 'edit',
-        //         'keywords'          => array('text', 'card'),
-        //     )
-        // );
 
     }
 }
@@ -106,22 +133,23 @@ function my_acf_json_load_point($paths)
 
 // Fix Media Library issue: Uncaught TypeError: Cannot read properties of undefined (reading ‘removeAllPlayers’) at n.render (media-views.min.js?ver=5.9.1:2:91463)
 
-add_filter( 'block_editor_rest_api_preload_paths', 'acf_filter_rest_api_preload_paths', 10, 1 );
+add_filter('block_editor_rest_api_preload_paths', 'acf_filter_rest_api_preload_paths', 10, 1);
 
-function acf_filter_rest_api_preload_paths( $preload_paths ) {
-	global $post;
-	$rest_path    = rest_get_route_for_post( $post );
-	$remove_paths = array(
-		add_query_arg( 'context', 'edit', $rest_path ),
-		sprintf( '%s/autosaves?context=edit', $rest_path ),
-	);
+function acf_filter_rest_api_preload_paths($preload_paths)
+{
+    global $post;
+    $rest_path    = rest_get_route_for_post($post);
+    $remove_paths = array(
+        add_query_arg('context', 'edit', $rest_path),
+        sprintf('%s/autosaves?context=edit', $rest_path),
+    );
 
-	return array_filter(
-		$preload_paths,
-		function( $url ) use ( $remove_paths ) {
-			return ! in_array( $url, $remove_paths, true );
-		}
-	);
+    return array_filter(
+        $preload_paths,
+        function ($url) use ($remove_paths) {
+            return !in_array($url, $remove_paths, true);
+        }
+    );
 }
 
 // function my_acf_init() {

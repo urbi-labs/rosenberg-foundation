@@ -8,15 +8,16 @@ Version:      1.0.0
 */
 
 // Libs
-@import 'css/libs/reset.scss';
-@import 'css/libs/slick.scss';
-@import 'css/libs/fancybox.scss';
-@import 'css/libs/wp-core.scss';
+@import 'css/libs/reset';
+@import 'css/libs/slick';
+@import 'css/libs/fancybox';
+@import 'css/libs/wp-core';
 
 // Includes
-@import 'css/includes/vars.scss';
+@import 'css/includes/vars';
 @import 'css/includes/fonts';
-@import 'css/includes/extends.scss';
+@import 'css/includes/extends';
+@import 'css/includes/core-block-extended';
 
 // Global
 @import 'css/global/buttons';
@@ -27,12 +28,7 @@ Version:      1.0.0
 @import 'css/global/footer';
 @import 'css/global/mixins';
 @import 'css/global/navigation';
-@import 'css/global/cards.scss';
+@import 'css/global/cards';
 
 //blocks
-@import 'css/blocks/hero-home';
-@import 'css/blocks/hero-internal';
-@import 'css/blocks/internal-intro-section';
-@import 'css/blocks/overlapping-cards';
-@import 'css/blocks/divider-image-text.scss';
-@import 'css/blocks/people';
+@import './style-blocks'

@@ -10,7 +10,7 @@
 				Our History
 			</p>
 			<p class="divider-image-text__content">Mauris ultrices eros in cursus turpis massa tincidunt dui. Tortor posuere ac ut consequat semper viverra nam libero. Vitae ultricies leo integer malesuada nunc. Enim praesent elementum facilisis leo vel fringilla est ullamcorper. Orci a scelerisque purus semper eget duis at tellus at. Velit laoreet id donec ultrices tincidunt arcu non sodales neque. At tellus at urna condimentum mattis pellentesque id.</p>
-			<a class="divider-image-text__link" href="#">Rosenberg’s Foundation Timeline</a>
+			<a class="styled-link" href="#">Rosenberg’s Foundation Timeline</a>
 			
 		</div>
 	</div>
