@@ -1,21 +1,18 @@
 .contact-page__container {
     display: flex;
-<<<<<<< HEAD
+
     align-items: flex-start;
-=======
->>>>>>> Added litle change in css to contact-form-7
+
+    align-items: flex-start;
     margin-top: 64px;
     margin-bottom: 64px;
 }
 
-<<<<<<< HEAD
 .contact-page__map {
     padding: 32px;
     background-color: $lighter-gray;
 }
 
-=======
->>>>>>> Added litle change in css to contact-form-7
 .contact-page__map-iframe {
     max-width: 100%;
 }
@@ -65,6 +62,7 @@
 
     .wpcf7-form-control.wpcf7-text,
 <<<<<<< HEAD
+<<<<<<< HEAD
     .wpcf7-form-control.wpcf7-textarea {
         border-bottom: solid $gray_3 1px;
         width: 100%;
@@ -74,45 +72,32 @@
 
 .wpcf7-submit {
     margin-top: 32px!important;
-=======
+
     .wpcf7-form-control.wpcf7-textarea{
+
+    .wpcf7-form-control.wpcf7-textarea {
         border-bottom: solid $gray_3 1px;
+        width: 100%;
     }
 
-    .wpcf7-form-control.wpcf7-submit {
-        font-family: $alt-family;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 20.25px;
-        line-height: 150%;
-        text-align: center;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: $bright;
-        background: $orange;
-        border-radius: 2px;
-        padding-top: 12px;
-        padding-bottom: 12px;
-        padding-left: 24px;
-        padding-right: 24px;
-        margin-top: 44px;
-    }
+}
 
->>>>>>> Added litle change in css to contact-form-7
+
+.wpcf7-submit {
+    margin-top: 32px!important;
 }
 
 :focus-visible {
     outline: none!important;
 }
 
-<<<<<<< HEAD
+
 .wpcf7 form  .wpcf7-response-output {
     margin-left: 0;
     margin-right: 0;
 }
 
-=======
->>>>>>> Added litle change in css to contact-form-7
+
 @media screen  and (max-width: $phone-width) {
     .contact-page__container {
         flex-direction: column;

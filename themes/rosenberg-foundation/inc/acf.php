@@ -107,6 +107,10 @@ function urbi_acf_init_block_types()
                 'keywords'          => array('text', 'card'),
             )
         );
+<<<<<<< HEAD
+=======
+
+>>>>>>> Adjustments to contact form component and added dynamic fields
     }
 }
 
