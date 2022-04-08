@@ -1,5 +1,8 @@
+// Core Blocks
+@import 'css/includes/core-block-extended';
+
 // Variables
-@import 'css/includes/vars.scss';
+@import 'css/includes/vars';
 
 // Global
 @import 'css/global/buttons';
@@ -9,6 +12,6 @@
 @import 'css/blocks/hero-internal';
 @import 'css/blocks/internal-intro-section';
 @import 'css/blocks/overlapping-cards';
-@import 'css/blocks/divider-image-text.scss';
+@import 'css/blocks/divider-image-text';
 @import 'css/blocks/people';
 @import 'css/blocks/feature-slider';
