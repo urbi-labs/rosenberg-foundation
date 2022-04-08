@@ -17,7 +17,7 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args_recenpost = array(
     'orderby' => 'date',
     'order' => 'desc',
-    'posts_per_page' => 1,
+    'posts_per_page' => 6,
     'paged' => $paged,
     'cat' => $cat_id
 
@@ -161,7 +161,7 @@ $recent_posts = new WP_Query($args_recenpost);;
                     'add_args' => false,
                     'type' => 'array'
                 ));
-                print_r($pages);
+
             ?>
         <div class="news__pagination">
             <?php user_pagination($max_num_pages, $recent_posts->found_posts, $paged == 0 ? 1 : $paged); ?>
