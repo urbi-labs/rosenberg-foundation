@@ -15,7 +15,7 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args_recenpost = array(
     'orderby' => 'date',
     'order' => 'desc',
-    'posts_per_page' => 1,
+    'posts_per_page' => 3,
     'paged' => $paged
 
 );
@@ -52,7 +52,7 @@ $placeholder = get_template_directory_uri() . '/images/rosenberg-logo.svg';
                 <h3 class="h3"><?php echo esc_html($last_post[0]["post_title"]); ?></h3>
                 <p>
                     <a href="<?php echo get_permalink($last_post[0]['ID']); ?>">Read more <img
-                            src="<?php echo get_template_directory_uri() ?>/images/icons/icon-arrow-right-small-fill.svg"></a>
+                            src="<?php echo get_template_directory_uri() ?>/images/icon-arrow-right-small-fill.png"></a>
                 </p>
             </div>
 
@@ -96,7 +96,7 @@ $placeholder = get_template_directory_uri() . '/images/rosenberg-logo.svg';
                 if ($author) {
                     $author =  get_the_author_meta("display_name");
                 }
-                $image = false;
+
 
             ?>
         <div class="card new__list__item">
@@ -146,8 +146,6 @@ $placeholder = get_template_directory_uri() . '/images/rosenberg-logo.svg';
     </div>
     <?php $max_num_pages = $recent_posts->max_num_pages;
 
-        echo $max_num_pages . "<br/>";
-        echo $paged;
 
         if ($max_num_pages > 1) :
 
@@ -164,10 +162,10 @@ $placeholder = get_template_directory_uri() . '/images/rosenberg-logo.svg';
                 'add_args' => false,
                 'type' => 'array'
             ));
-            print_r($pages);
         ?>
     <div class="news_pagination">
-        <?php news_pagination($max_num_pages, $recent_posts->found_posts, $paged == 0 ? 1 : $paged);; ?>
+        <?php // news_pagination($max_num_pages, $recent_posts->found_posts, $paged == 0 ? 1 : $paged);; 
+                ?>
     </div>
     <div class="news__pagination">
 
