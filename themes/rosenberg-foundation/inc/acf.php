@@ -18,8 +18,8 @@ function urbi_acf_init_block_types()
                 'render_template'   => 'template-parts/blocks/block-people.php',
                 'category'          => 'formatting',
                 'icon'              => 'text',
-                'mode'              => 'edit',
-                'keywords'          => array('text', 'list'),
+                'mode'              => 'preview',
+                'keywords'          => array('people', 'team', 'members'),
             )
         );
 
@@ -32,7 +32,7 @@ function urbi_acf_init_block_types()
                 'category'          => 'formatting',
                 'icon'              => 'text',
                 'mode'              => 'edit',
-                'keywords'          => array('text', 'list'),
+                'keywords'          => array('text', 'intro', 'featured'),
             )
         );
 
@@ -40,13 +40,13 @@ function urbi_acf_init_block_types()
         acf_register_block_type(
             array(
                 'name'              => 'feature-slider',
-                'title'             => __('Rosenberg: Feature slider'),
+                'title'             => __('Rosenberg: Featured slider'),
                 'description'       => __('Add sliders with images and text.'),
                 'render_template'   => 'template-parts/blocks/block-feature-slider.php',
                 'category'          => 'formatting',
                 'icon'              => 'text',
                 'mode'              => 'edit',
-                'keywords'          => array('text', 'list'),
+                'keywords'          => array('slider', 'featured', 'carousel'),
             )
         );
 
@@ -71,7 +71,7 @@ function urbi_acf_init_block_types()
                 'render_template'   => 'template-parts/blocks/block-hero-internal.php',
                 'category'          => 'formatting',
                 'icon'              => 'text',
-                'mode'              => 'edit',
+                'mode'              => 'preview',
                 'keywords'          => array('text', 'card'),
             )
         );
@@ -84,7 +84,7 @@ function urbi_acf_init_block_types()
                 'render_template'   => 'template-parts/blocks/block-divider-image-text.php',
                 'category'          => 'formatting',
                 'icon'              => 'text',
-                'mode'              => 'edit',
+                'mode'              => 'preview',
                 'keywords'          => array('text', 'card'),
             )
         );
