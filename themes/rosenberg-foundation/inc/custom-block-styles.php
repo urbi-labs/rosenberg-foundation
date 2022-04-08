@@ -28,6 +28,12 @@ if (function_exists("register_block_style")) {
             "style_handle" => "block-alt-styles",
         ]);
 
+        register_block_style("core/paragraph", [
+            "name" => "block-paragraph-left-border",
+            "label" => "Left border",
+            "style_handle" => "block-alt-styles",
+        ]);
+
     }
 
     add_action("init", "block_styles_register_block_styles");
