@@ -89,6 +89,19 @@ function urbi_acf_init_block_types()
             )
         );
 
+        acf_register_block_type(
+            array(
+                'name'              => 'rosenberg-contact-form',
+                'title'             => __('Rosenberg: Contact Form'),
+                'description'       => __('A contact form with a map section.'),
+                'render_template'   => 'template-parts/blocks/block-contact-page.php',
+                'category'          => 'formatting',
+                'icon'              => 'text',
+                'mode'              => 'edit',
+                'keywords'          => array('text', 'card'),
+            )
+        );
+
     }
 }
 
