@@ -8,15 +8,16 @@ Version:      1.0.0
 */
 
 // Libs
-@import 'css/libs/reset.scss';
-@import 'css/libs/slick.scss';
-@import 'css/libs/fancybox.scss';
-@import 'css/libs/wp-core.scss';
+@import 'css/libs/reset';
+@import 'css/libs/slick';
+@import 'css/libs/fancybox';
+@import 'css/libs/wp-core';
 
 // Includes
-@import 'css/includes/vars.scss';
+@import 'css/includes/vars';
 @import 'css/includes/fonts';
-@import 'css/includes/extends.scss';
+@import 'css/includes/extends';
+@import 'css/includes/core-block-extended';
 
 // Global
 @import 'css/global/buttons';
