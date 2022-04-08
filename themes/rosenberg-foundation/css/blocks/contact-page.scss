@@ -1,0 +1,102 @@
+.contact-page__container {
+    display: flex;
+    margin-top: 64px;
+    margin-bottom: 64px;
+}
+
+.contact-page__map-iframe {
+    max-width: 100%;
+}
+
+.contact-page__form {
+    margin-top: 64px;
+    padding: 32px;
+    background-color: $bright;
+    margin-left: -177px;
+    box-shadow: 0px 4px 8px rgba(65, 64, 63, 0.08);
+}
+
+.contact-page__form-title {
+    margin-left: -76px;
+    max-width: 496px;
+}
+
+.contact-page__form-title-text {
+    display: inline;
+    box-decoration-break: clone;
+    background-color: $orange;
+    padding: 12px;
+    font-family: $alt-family;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36.491px;
+    line-height: 190%;
+    letter-spacing: -0.03em;
+    color: $bright;
+}
+
+.contact-page__contact-form {
+
+    p {
+        margin-bottom: 0%;
+    }
+
+    .wpcf7-form-control {
+        font-family: $standard-family;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: $gray_3;
+        max-width: 100%;
+    }
+
+    .wpcf7-form-control.wpcf7-text,
+    .wpcf7-form-control.wpcf7-textarea{
+        border-bottom: solid $gray_3 1px;
+    }
+
+    .wpcf7-form-control.wpcf7-submit {
+        font-family: $alt-family;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20.25px;
+        line-height: 150%;
+        text-align: center;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: $bright;
+        background: $orange;
+        border-radius: 2px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 24px;
+        padding-right: 24px;
+        margin-top: 44px;
+    }
+
+}
+
+:focus-visible {
+    outline: none!important;
+}
+
+@media screen  and (max-width: $phone-width) {
+    .contact-page__container {
+        flex-direction: column;
+    }
+
+    .contact-page__contact-form {
+        margin-top: 40px;
+    }
+
+    .contact-page__form {
+        margin-top: 0%;
+        margin-left: 0%;
+    }
+
+    .contact-page__form-title {
+        margin-left: 0%;
+        max-width: 100%;
+    }
+}
