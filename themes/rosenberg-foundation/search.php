@@ -16,6 +16,7 @@ $args_recenpost = array(
     'orderby' => 'date',
     'order' => 'desc',
     'posts_per_page' => 6,
+    'post_type' => 'post',
     'paged' => $paged,
     "s" => get_query_var('s')
 
