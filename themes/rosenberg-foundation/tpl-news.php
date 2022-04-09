@@ -45,18 +45,15 @@ $args_recenpost = array(
             <div class="internal-intro-section__img news__last-post__img">
                 <img srcset="<?php echo $image  ?>" alt="<?php echo esc_html($last_post[0]["post_title"]) ?>" />
             </div>
-            <div class="internal-intro-section__content news__last-post__content">
 
-                <div class="news__last-post__container-text">
-                    <h3 class="h3"><?php echo esc_html($last_post[0]["post_title"]); ?></h3>
-                    <p>
-                        <a href="<?php echo get_permalink($last_post[0]['ID']); ?>">Read more <img
-                                src="<?php echo get_template_directory_uri() ?>/images/icons/icon-arrow-right-small-fill.svg"></a>
-                    </p>
-                </div>
-
-
+            <div class="news__last-post__container-text">
+                <h3 class="h3"><?php echo esc_html($last_post[0]["post_title"]); ?></h3>
+                <p>
+                    <a href="<?php echo get_permalink($last_post[0]['ID']); ?>">Read more <img
+                            src="<?php echo get_template_directory_uri() ?>/images/icons/icon-arrow-right-small-fill.svg"></a>
+                </p>
             </div>
+
         </div>
         <?php
             if ($categories) : ?>
@@ -107,8 +104,13 @@ $args_recenpost = array(
         echo get_template_part('template-parts/posts/posts', "news-list", ['args' => $args_recenpost]);
         ?>
 
+            <div class="news_pagination">
+                <?php // news_pagination($max_num_pages, $recent_posts->found_posts, $paged == 0 ? 1 : $paged);; 
+                ?>
+            </div>
+            <div class="news__pagination">
 
 
-            <?php endif; ?>
+                <?php endif; ?>
 </main>
 <?php get_footer(); ?>
