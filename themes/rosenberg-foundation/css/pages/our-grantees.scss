@@ -1,0 +1,21 @@
+.our-grantees {
+    padding: 64px;
+    .our-grantees__title {
+        text-align: center;
+    }
+    .our-grantees__subtitle {
+        width: 752px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 64px;
+        p {
+            margin-bottom: 0;
+        }
+    }
+    .our-grantees__forms-container {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        margin-bottom: 64px;
+    }
+}
