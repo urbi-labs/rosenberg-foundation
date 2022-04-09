@@ -1,4 +1,9 @@
 <?php global $post; ?>
+<?php
+/*
+Template Name: Our grantees
+*/
+?>
 <?php get_header();
 
 /**
