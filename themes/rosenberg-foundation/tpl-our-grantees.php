@@ -90,7 +90,7 @@ $placeholder = get_template_directory_uri() . '/images/rosenberg-logo.svg';
                     </div>
 
                     <div class="card__post-title">
-                        <a class="h4 new__title"
+                        <a class="h5 new__title"
                             href="<?php echo get_the_permalink() ?>"><?php echo get_the_title() ?></a>
                     </div>
 
