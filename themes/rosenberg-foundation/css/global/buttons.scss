@@ -78,17 +78,12 @@
 .btn-blue,
 .btn-blue__outline,
 .wp-block-button.is-style-outline .wp-block-button__link,
-<<<<<<< HEAD
-.styled-link,
-.wp-block-button.is-style-styled-link .wp-block-button__link {
-=======
 .wpcf7-form-control.wpcf7-submit.btn {
->>>>>>> Adjustments to contact form component and added dynamic fields
     font-family: $alt-family;
     position: relative;
     text-decoration: none;
     &:after {
-        content: "";
+        content: '';
         width: 24px;
         height: 8px;
         background-size: contain;
@@ -109,12 +104,12 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 150%;
-    color: #FFFFFF!important;
+    color: #ffffff !important;
     width: max-content;
     border-bottom: 2px solid $orange;
     padding-bottom: 8px;
     padding-right: 48px;
-    text-decoration: none!important;
+    text-decoration: none !important;
     align-items: center;
     display: inline-flex;
     &:after {
