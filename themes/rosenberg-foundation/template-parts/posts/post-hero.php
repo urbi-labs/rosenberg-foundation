@@ -22,10 +22,14 @@ if (!empty($args) && isset($args['hero_post'])) :
     <div class="internal-intro-section__content news__last-post__content">
 
         <div class="news__last-post__container-text">
-            <h3 class="h3"><?php echo esc_html($hero_post->post_title); ?></h3>
+
+            <a class="h3"
+                href="<?php echo get_the_permalink($hero_post->ID) ?>"><?php echo esc_html($hero_post->post_title); ?></a>
+
             <p>
-                <a href="<?php echo get_permalink($hero_post->ID); ?>">Read more <img
-                        src="<?php echo get_template_directory_uri() ?>/images/icon-arrow-right-small-fill.png"></a>
+                <a href="<?php echo get_permalink($hero_post->ID); ?>"
+                    class="news__last-post__container-text__link">Read more <img
+                        src="<?php echo get_template_directory_uri() ?>/images/icon-arrow-right-small-fill-1.png"></a>
             </p>
         </div>
 
