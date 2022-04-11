@@ -26,35 +26,80 @@ function user_pagination($max_num_pages, $found_posts, $paged)
 }
 
 
-function news_pagination($max_num_pages,  $found_posts, $paged)
-{ ?>
+function news_pagination($max_num_pages, $paged, $total_found, $range = 2, $show_numbers = true)
+{
+
+    /**
+     * if $show_numbers is false then hide numbers, first and last.
+     * It's for mobile devices
+     */
+    ?>
 <?php if ($max_num_pages) :
+        $start      = (($paged - $range) > 0) ? $paged - $range : 1;
+        $end        = (($paged + $range) < $max_num_pages) ? $paged + $range : $max_num_pages;
 
     ?>
-<nav class="pagination" role="pagination">
-    <ul>
+<nav class="post-pagination" role="pagination">
+    <ul class="post-pagination__list">
         <?php
                 //current page isn't the first page
                 if ($paged > 1) : ?>
-        <li>
-            <a href="<?php echo get_pagenum_link(1);  ?>">First</a>
+        <?php
+                    if ($show_numbers) : ?>
+        <li class="post-pagination__item">
+            <a href="<?php echo get_pagenum_link(1);  ?>" class="post-pagination__link especial ">
+                <img src="<?php echo get_template_directory_uri() ?>/images/icon-arrow-right-small-fill-1.png"
+                    class="arrow-left"> First
+            </a>
         </li>
-        <li>
-            <a href="<?php echo get_pagenum_link($paged - 1);  ?>">Previous</a>
+        <?php endif ?>
+        <li class="post-pagination__item">
+            <a class="post-pagination__link especial " href="<?php echo get_pagenum_link($paged - 1);  ?>">
+                <img src="<?php echo get_template_directory_uri() ?>/images/icon-arrow-right-small-fill-1.png"
+                    class="arrow-left">
+                Previous
+            </a>
         </li>
 
         <?php endif; ?>
 
+
+
+        <?php
+                if ($show_numbers) :
+                    $i = $start;
+                    while ($i <= $end) :
+                ?>
+        <li class="post-pagination__item">
+            <?php
+                            if ($paged == $i) :
+                                echo '<span class="post-pagination__link current">' . $i . '</span>';
+                            else :
+                            ?>
+            <a href="<?php echo get_pagenum_link($i);  ?>" class="post-pagination__link ">
+                <?php echo $i; ?>
+            </a>
+            <?php endif; ?>
+        </li>
+
+        <?php $i++;
+                    endwhile; ?>
+        <?php endif; ?>
         <?php
                 if ($paged < $max_num_pages) : ?>
 
-        <li>
-            <a href="<?php echo get_pagenum_link($paged + 1);  ?>">Next</a>
-        </li>
-        <li>
-            <a href="<?php echo get_pagenum_link($max_num_pages);  ?>">Last</a>
+        <li class="post-pagination__item">
+            <a class="post-pagination__link especial" href="<?php echo get_pagenum_link($paged + 1);  ?>">Next <img
+                    src="<?php echo get_template_directory_uri() ?>/images/icon-arrow-right-small-fill-1.png"></a>
         </li>
 
+        <?php
+                    if ($show_numbers) : ?>
+        <li class="post-pagination__item">
+            <a href="<?php echo get_pagenum_link($max_num_pages);  ?>" class="post-pagination__link especial">Last <img
+                    src="<?php echo get_template_directory_uri() ?>/images/icon-arrow-right-small-fill-1.png"></a>
+        </li>
+        <?php endif ?>
         <?php endif;
                 ?>
     </ul>
