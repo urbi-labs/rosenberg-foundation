@@ -13,11 +13,11 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $default_args = array(
     'orderby' => 'date',
     'order' => 'desc',
-
     'paged' => $paged
 
 );
 $posts_args = isset($args['args']) && is_array($args['args']) ? array_merge($default_args, $args['args']) : $default_args;
+
 $posts = new WP_Query($posts_args);
 ?>
 
