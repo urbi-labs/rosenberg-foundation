@@ -20,6 +20,15 @@ function user_register_post_types()
             'cpt_icon' => 'dashicons-images-alt',
             'has_archive' => true,
             'exclude_from_search' => true,
+        ),
+        array(
+            'cpt_single' => 'Grantee',
+            'cpt_plural' => 'Grantees',
+            'slug' => 'grantee',
+            'cpt_icon' => 'dashicons-images-alt',
+            'has_archive' => true,
+            'taxonomies'  => array('category'),
+            'exclude_from_search' => false,
         )
     );
 
@@ -46,16 +55,7 @@ function user_register_post_types()
 add_action('init', 'user_register_post_types', 0);
 
 
-add_action('admin_footer', function () {
-    if (isset($_REQUEST['post_type']) && $_REQUEST['post_type'] == "person")
-?>
-<style>
-#rank_math_metabox {
-    display: none;
-}
-</style>
-<?php
-});
+
 
 /*** */
 function user_generate_label_array($cpt_plural, $cpt_single)
@@ -90,7 +90,9 @@ function user_generate_post_type_args($labels, $cpt_plural, $cpt_icon, $exclude_
         'supports'            => array('title', 'editor', 'page-attributes', 'thumbnail', 'excerpt'),
         'has_archive'         => true,
         'menu_icon'              => $cpt_icon,
-        'exclude_from_search' => $exclude_from_search
+        'exclude_from_search' => $exclude_from_search,
+        'taxonomies'  => array('grantee-category'),
+
     );
 
     return $args;
@@ -101,6 +103,55 @@ function add_tags_categories()
     register_taxonomy_for_object_type('category', 'auto-gallery');
 }
 add_action('init', 'add_tags_categories');
+
+/***
+ * add taxonomies to post types
+ */
+
+if (!function_exists('add_taxonomies_to_post_types')) {
+    function add_taxonomies_to_post_types($taxonomy)
+    {
+
+        $taxonomies = array(
+            array(
+                'name' => 'grantee-category',
+                'post_type' => 'grantee',
+                'plural' => 'Grantee Categories',
+                'singular' => 'Grantee Category',
+                'slug' => 'grantee-category',
+            )
+        );
+        foreach ($taxonomies as $taxonomy) :
+            // Add new  taxonomy to Posts
+            register_taxonomy($taxonomy['name'], $taxonomy['post_type'], array(
+                // Hierarchical taxonomy (like categories)
+                'hierarchical' => true,
+                // This array of options controls the labels displayed in the WordPress Admin UI
+                'labels' => array(
+                    'name' => _x($taxonomy['plural'], 'taxonomy general name'),
+                    'singular_name' => _x($taxonomy['singular'], 'taxonomy singular name'),
+                    'search_items' =>  __('Search ' . $taxonomy['plural']),
+                    'all_items' => __('All ' . $taxonomy['plural']),
+                    'parent_item' => __('Parent ' . $taxonomy['singular']),
+                    'parent_item_colon' => __('Parent ' . $taxonomy['singular'] . ':'),
+                    'edit_item' => __('Edit ' . $taxonomy['singular']),
+                    'update_item' => __('Update ' . $taxonomy['singular']),
+                    'add_new_item' => __('Add New ' . $taxonomy['singular']),
+                    'new_item_name' => __('New Location ' . $taxonomy['singular']),
+                    'menu_name' => __($taxonomy['plural']),
+                ),
+                // Control the slugs used for this taxonomy
+                'rewrite' => array(
+                    'slug' => $taxonomy['slug'], // This controls the base slug that will display before each term
+                    'with_front' => false, // Don't display the category base before "/locations/"
+                    'hierarchical' => true // This will allow URL's like "/locations/boston/cambridge/"
+                ),
+            ));
+        endforeach;
+    }
+}
+
+add_action('init', 'add_taxonomies_to_post_types', 0);
 
 function reorder_admin_menu($__return_true)
 {
