@@ -13,7 +13,8 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $default_args = array(
     'orderby' => 'date',
     'order' => 'desc',
-    'paged' => $paged
+    'paged' => $paged,
+    'post_type' => 'post'
 
 );
 $posts_args = isset($args['args']) && is_array($args['args']) ? array_merge($default_args, $args['args']) : $default_args;
