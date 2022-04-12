@@ -1,34 +1,50 @@
-<?php get_header(); ?>
-<div class="search-page">
-    <div class="search-page-container">
-        <?php
-        global $query_string;
-        $query_args = explode("&", $query_string);
-        $search_query = array(
-            's' => $_REQUEST[ 's' ]
-        );
-        foreach($query_args as $key => $string) {
-        $query_split = explode("=", $string);
-        $search_query[$query_split[0]] = urldecode($query_split[1]);
-        }
-        $search = new WP_Query($search_query);
-        global $wp_query;
-        $total_results = $wp_query->found_posts;
-        ?>
-        <div class="search-page-header">
-            <h1 class="section-title">"<?php echo esc_html( get_search_query( false ) ); ?>"</h1>
-            <p class="search-results"><span class="search-results-number"><?php echo $total_results; ?></span> Result<?php if ( $total_results > 1 ) : ?>s<?php endif; ?></p>
-        </div>
-        <section class="search-section">
-            <?php if ( $search->have_posts() ) : while ( $search->have_posts() ) : $search->the_post(); ?>
-                <?php $featuredImageUrl = get_the_post_thumbnail_url( $post->ID, 'post-thumbnail' ); ?>
-                <article class="search-result-container">
-                    <h1 class="search-result-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-                </article>
-            <?php endwhile; else : ?>
-            <p class="no-results"><?php _e( 'Sorry, no results matched your search.' ); ?></p>
-            <?php endif; ?>
-        </section>
+<?php
+global $post;
+/*
+Template Name: News
+*/
+get_header();
+
+$post_slug = $post->post_name;
+$args_hero_post = array('numberposts' => '1');
+$last_post = wp_get_recent_posts($args_hero_post, 1);
+$s = get_query_var('s');
+
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
+$args_recenpost = array(
+    'orderby' => 'date',
+    'order' => 'desc',
+    's' => $s,
+    'paged' => $paged,
+    'post_type' => 'post'
+);
+
+
+?>
+<main class="page__news container">
+
+    <div class="page__news__header">
+        <h1>Search results for "<?php echo esc_html($s); ?>"</h1>
+        <?php get_search_form(array(
+            "echo" => true,
+            "aria_label" => 'Search news'
+        )); ?>
     </div>
-</div>
+    <?php
+    //if there isn't post show 
+    if (!$last_post) : ?>
+    <div class="news__nopost">
+        <h3>No results were found.</h3>
+    </div>
+    <?php else : ?>
+
+    <?php
+
+        /** news post list with pagination */
+        echo get_template_part('template-parts/posts/posts', "news-list", ['args' => $args_recenpost]);
+        ?>
+
+    <?php endif; ?>
+</main>
 <?php get_footer(); ?>
