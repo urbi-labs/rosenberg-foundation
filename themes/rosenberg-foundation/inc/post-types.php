@@ -27,7 +27,7 @@ function user_register_post_types()
             'slug' => 'grantee',
             'cpt_icon' => 'dashicons-images-alt',
             'has_archive' => true,
-            'taxonomies'  => array('category'),
+            'taxonomies'  => array('grantee-category'),
             'exclude_from_search' => false,
         )
     );
@@ -40,11 +40,12 @@ function user_register_post_types()
         $cpt_icon = $post_type['cpt_icon'];
         $exclude_from_search = $post_type['exclude_from_search'];
 
+        $taxonomies = isset($post_type['taxonomies']) ? $post_type['taxonomies'] : array();
         // Admin Labels
         $labels = user_generate_label_array($cpt_plural, $cpt_single);
 
         // Arguments
-        $args = user_generate_post_type_args($labels, $cpt_plural, $cpt_icon, $exclude_from_search);
+        $args = user_generate_post_type_args($labels, $cpt_plural, $cpt_icon, $exclude_from_search, $taxonomies);
 
         // Just do it
         register_post_type($slug, $args);
@@ -79,7 +80,7 @@ function user_generate_label_array($cpt_plural, $cpt_single)
     return $labels;
 }
 
-function user_generate_post_type_args($labels, $cpt_plural, $cpt_icon, $exclude_from_search)
+function user_generate_post_type_args($labels, $cpt_plural, $cpt_icon, $exclude_from_search, $taxonomies = array())
 {
     $args = array(
         'labels'              => $labels,
@@ -91,9 +92,12 @@ function user_generate_post_type_args($labels, $cpt_plural, $cpt_icon, $exclude_
         'has_archive'         => true,
         'menu_icon'              => $cpt_icon,
         'exclude_from_search' => $exclude_from_search,
-        'taxonomies'  => array('grantee-category'),
+
 
     );
+    if (!empty($taxonomies)) {
+        $args['taxonomies']  = $taxonomies;
+    }
 
     return $args;
 }
@@ -107,7 +111,7 @@ add_action('init', 'add_tags_categories');
 /***
  * add taxonomies to post types
  */
-
+/*
 if (!function_exists('add_taxonomies_to_post_types')) {
     function add_taxonomies_to_post_types($taxonomy)
     {
@@ -152,7 +156,7 @@ if (!function_exists('add_taxonomies_to_post_types')) {
 }
 
 add_action('init', 'add_taxonomies_to_post_types', 0);
-
+*/
 function reorder_admin_menu($__return_true)
 {
     return array(
