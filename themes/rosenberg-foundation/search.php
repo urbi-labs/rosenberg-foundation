@@ -43,8 +43,6 @@ $args_recenpost = array(
         /* choice last post as hero post */
         echo get_template_part('template-parts/posts/post', "hero", array('hero_post' => $last_post[0]));
 
-        /* category list from posts*/
-        echo get_template_part('template-parts/posts/posts', 'categories');
 
         /** news post list with pagination */
         echo get_template_part('template-parts/posts/posts', "news-list", ['args' => $args_recenpost]);
