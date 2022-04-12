@@ -15,7 +15,7 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args_recenpost = array(
     'orderby' => 'date',
     'order' => 'desc',
-    'posts_per_page' => 1,
+
     'paged' => $paged
 
 );
