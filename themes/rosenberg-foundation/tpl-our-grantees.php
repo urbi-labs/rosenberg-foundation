@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php global $post; ?>
 <?php
 /*
@@ -40,9 +39,10 @@ $placeholder = get_template_directory_uri() . '/images/rosenberg-logo.svg';
         <div class="our-grantees__forms-container">
             <?php get_search_form(array(
                 "echo" => true,
-                "aria_label" => 'Search news'
+                "aria_label" => 'Search news',
+                "post_type" => 'grantee'
             )); ?>
-            <?php echo get_template_part("template-parts/forms/form", "filters") ?>
+            <?php echo get_template_part("template-parts/forms/form", "filters", array('post_type' => 'grantee')) ?>
         </div>
         <div class="news__list">
             <?php
@@ -105,17 +105,4 @@ $placeholder = get_template_directory_uri() . '/images/rosenberg-logo.svg';
     </div>
 </main>
 
-=======
-<?php get_header(); ?>
-<?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
-<main class="page__our-grantees">
-    <h1 class="accessible-text"><?php the_title(); ?></h1>
-    <div class="container">
-        <div class="entry-content">
-            <?php the_content(); ?>
-        </div>
-    </div>
-</main>
-<?php endwhile; ?>
->>>>>>> init our-grantees template
 <?php get_footer(); ?>

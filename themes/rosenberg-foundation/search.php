@@ -5,7 +5,7 @@ Template Name: News
 */
 get_header();
 $s = get_query_var('s');
-$post_slug = $post->post_name;
+
 $args_hero_post = array('numberposts' => '1', 's' => $s);
 $last_post = wp_get_recent_posts($args_hero_post, 1);
 
