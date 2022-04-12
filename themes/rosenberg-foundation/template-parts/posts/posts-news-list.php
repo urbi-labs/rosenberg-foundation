@@ -13,7 +13,7 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $default_args = array(
     'orderby' => 'date',
     'order' => 'desc',
-    'posts_per_page' => 6,
+
     'paged' => $paged
 
 );
@@ -69,15 +69,15 @@ $posts = new WP_Query($posts_args);
 
                     ?>
             </div>
+
+            <div class="card__post-title">
+                <a class="h4 new__title" href="<?php echo get_the_permalink() ?>"><?php echo get_the_title() ?></a>
+            </div>
             <div class="card__post-data">
                 <?php echo $author ?>
                 &#183;
                 <?php echo get_the_date("F d, Y") ?>
             </div>
-            <div class="card__post-title">
-                <a class="h4 new__title" href="<?php echo get_the_permalink() ?>"><?php echo get_the_title() ?></a>
-            </div>
-
             <div class="card__post-excerpt">
                 <?php echo $excerpt; ?>
             </div>
