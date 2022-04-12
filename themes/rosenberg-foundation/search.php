@@ -4,11 +4,11 @@ global $post;
 Template Name: News
 */
 get_header();
-
-$post_slug = $post->post_name;
-$args_hero_post = array('numberposts' => '1');
-$last_post = wp_get_recent_posts($args_hero_post, 1);
 $s = get_query_var('s');
+$post_slug = $post->post_name;
+$args_hero_post = array('numberposts' => '1', 's' => $s);
+$last_post = wp_get_recent_posts($args_hero_post, 1);
+
 
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
