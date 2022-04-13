@@ -61,8 +61,6 @@
     }
 
     .wpcf7-form-control.wpcf7-text,
-<<<<<<< HEAD
-<<<<<<< HEAD
     .wpcf7-form-control.wpcf7-textarea {
         border-bottom: solid $gray_3 1px;
         width: 100%;
@@ -71,9 +69,10 @@
 }
 
 .wpcf7-submit {
-    margin-top: 32px!important;
+    margin-top: 32px !important;
+}
 
-    .wpcf7-form-control.wpcf7-textarea{
+.wpcf7-form-control.wpcf7-textarea {
 
     .wpcf7-form-control.wpcf7-textarea {
         border-bottom: solid $gray_3 1px;
@@ -84,21 +83,21 @@
 
 
 .wpcf7-submit {
-    margin-top: 32px!important;
+    margin-top: 32px !important;
 }
 
 :focus-visible {
-    outline: none!important;
+    outline: none !important;
 }
 
 
-.wpcf7 form  .wpcf7-response-output {
+.wpcf7 form .wpcf7-response-output {
     margin-left: 0;
     margin-right: 0;
 }
 
 
-@media screen  and (max-width: $phone-width) {
+@media screen and (max-width: $phone-width) {
     .contact-page__container {
         flex-direction: column;
     }
