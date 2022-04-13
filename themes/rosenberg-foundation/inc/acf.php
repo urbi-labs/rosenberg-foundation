@@ -90,7 +90,7 @@ function urbi_acf_init_block_types()
 
                 'category'          => 'formatting',
                 'icon'              => 'text',
-                'mode'              => 'preview',
+                'mode'              => 'edit',
                 'keywords'          => array('text', 'card'),
             )
         );

@@ -1,18 +1,48 @@
-<div class="divider-image-text__container">
+<?php
+
+$image = wp_get_attachment_image_srcset(get_field('image'));
+$image_placement = get_field('image_placement');
+$vertical_alignment = get_field('vertical_alignment');
+$title = get_field('title');
+$body = get_field('body');
+$link_text = get_field('link_text');
+$link_url = get_field('link_url');
+$link_url = !empty($link_url) ? $link_url['url'] : null;
+
+?>
+
+<?php if(!empty($title) || !empty($body)) : ?>
+
+<div class="divider-image-text__container <?php echo $vertical_alignment ?>">
 
 	<div class="divider-image-text__container__inner container">
 
-		<div class="divider-image-text__image" style="background-image: url(<?php echo get_stylesheet_directory_uri() . '/images/our-history-1.png' ?>)"></div>
+		<?php if(!empty($image) && $image_placement === 'left') : ?>
+			<img class="divider-image-text__image <?php echo $vertical_alignment ?>" srcset="<?php echo $image ?>"/>
+		<?php endif; ?>
 		
 		<div class="divider-image-text__text">
 
-			<p class="divider-image-text__title">
-				Our History
-			</p>
-			<p class="divider-image-text__content">Mauris ultrices eros in cursus turpis massa tincidunt dui. Tortor posuere ac ut consequat semper viverra nam libero. Vitae ultricies leo integer malesuada nunc. Enim praesent elementum facilisis leo vel fringilla est ullamcorper. Orci a scelerisque purus semper eget duis at tellus at. Velit laoreet id donec ultrices tincidunt arcu non sodales neque. At tellus at urna condimentum mattis pellentesque id.</p>
-			<a class="styled-link" href="#">Rosenberg’s Foundation Timeline</a>
+			<?php if(!empty($title)) : ?>
+			<h2 class="divider-image-text__title"><?php echo $title ?></h2>
+			<?php endif; ?>
+
+			<?php if(!empty($body)) : ?>
+			<div class="divider-image-text__content"><?php echo $body ?></div>
+			<?php endif; ?>
+
+			<?php if(!empty($link_text)) : ?>
+			<a class="styled-link" href="<?php echo $link_url ?>"><?php echo $link_text ?></a>
+			<?php endif; ?>
 			
 		</div>
+
+		<?php if(!empty($image) && $image_placement === 'right') : ?>
+			<img class="divider-image-text__image <?php echo $vertical_alignment ?>" srcset="<?php echo $image ?>"/>
+		<?php endif; ?>
+
 	</div>
 
 </div>
+
+<?php endif; ?>

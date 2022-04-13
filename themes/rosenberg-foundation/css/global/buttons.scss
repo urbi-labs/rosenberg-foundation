@@ -78,6 +78,8 @@
 .btn-blue,
 .btn-blue__outline,
 .wp-block-button.is-style-outline .wp-block-button__link,
+.styled-link,
+.wp-block-button.is-style-styled-link .wp-block-button__link,
 .wpcf7-form-control.wpcf7-submit.btn {
     font-family: $alt-family;
     position: relative;
@@ -104,12 +106,12 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 150%;
-    color: #ffffff !important;
+    color: #FFFFFF!important;
     width: max-content;
     border-bottom: 2px solid $orange;
     padding-bottom: 8px;
     padding-right: 48px;
-    text-decoration: none !important;
+    text-decoration: none!important;
     align-items: center;
     display: inline-flex;
     &:after {

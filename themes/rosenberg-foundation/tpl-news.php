@@ -11,7 +11,6 @@ $last_post = wp_get_recent_posts($args_hero_post, 1);
 
 
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-
 $args_recenpost = array(
     'orderby' => 'date',
     'order' => 'desc',
