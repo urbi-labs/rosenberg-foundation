@@ -10,27 +10,28 @@ $people = get_posts(array(
 ?>
 
 <?php if ($people) : ?>
-    <div class="people-block">
+<div class="people-block">
 
-        <div class="people-block__list">
+    <div class="people-block__list">
 
-            <?php foreach ($people as $person) : ?>
+        <?php foreach ($people as $person) : ?>
 
-                <?php
+        <?php
                 $image = wp_get_attachment_image_srcset(get_post_thumbnail_id($person->ID));
                 $position = get_field('role', $person->ID);
                 ?>
 
-                <div class="people-block__item">
-                    <img srcset="<?php echo $image ?>" alt="<?php echo esc_html($person->post_title); ?>" class="people-block__item__image" />
-                    <h5 class="h5 people-block__item__name">
-                        <?php echo esc_html($person->post_title); ?></h5>
-                    <p class="people-block__item__position"><?php echo $position; ?></p>
-                </div>
-            <?php endforeach; ?>
-
-
+        <div class="people-block__item">
+            <a href="<?php echo get_the_permalink($person->ID) ?>"><img srcset="<?php echo $image ?>"
+                    alt="<?php echo esc_html($person->post_title); ?>" class="people-block__item__image" /></a>
+            <a href="<?php echo get_the_permalink($person->ID) ?>" class="h5 people-block__item__name">
+                <?php echo esc_html($person->post_title); ?></a>
+            <p class="people-block__item__position"><?php echo $position; ?></p>
         </div>
+        <?php endforeach; ?>
+
 
     </div>
+
+</div>
 <?php endif; ?>
