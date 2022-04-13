@@ -17,6 +17,10 @@ const options = Array.from(document.querySelectorAll('.dropdown__select-option')
 options.forEach((option) => {
     option.addEventListener('click', () => {
         label.textContent = option.textContent
+        if (option.dataset.current != "1") {
+            location.href = option.dataset.link;
+        }
+
     })
 })
 

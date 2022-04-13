@@ -125,21 +125,21 @@
             }
         }
     }
-    .news-pagination-dk {
-        @media screen and (max-width: $phone-width) {
-            display: none;
-        }
+}
+.news-pagination-dk {
+    @media screen and (max-width: $phone-width) {
+        display: none;
     }
-    .news-pagination-mb {
-        @media screen and (min-width: $phone-width - 1px) {
-            display: none;
-        }
-        .post-pagination__list {
-            flex-wrap: wrap;
-            column-gap: 0;
-            row-gap: 32px;
-            justify-content: space-between;
-        }
+}
+.news-pagination-mb {
+    @media screen and (min-width: $phone-width - 1px) {
+        display: none;
+    }
+    .post-pagination__list {
+        flex-wrap: wrap;
+        column-gap: 0;
+        row-gap: 32px;
+        justify-content: space-between;
     }
 }
 .news__list {
