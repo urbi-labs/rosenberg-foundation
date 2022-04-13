@@ -18,7 +18,6 @@ $args_recenpost = array(
     's' => $s,
     'paged' => $paged,
     'post_type' => $post_type
-
 );
 
 ?>
