@@ -6,8 +6,6 @@ Template Name: News
 */
 get_header();
 
-var_dump($wp_query->query_vars);
-var_dump(get_query_var('term'));
 $category = get_term_by("slug", get_query_var('term'), 'grantee-category');
 
 
