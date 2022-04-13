@@ -34,17 +34,7 @@ $categories = get_categories(array('taxonomy' => 'grantee-category', 'hide_empty
     <h1 class="our-grantees__title"><?php the_title(); ?></h1>
     <div class="container">
         <div class="entry-content">
-            <?php // this  content cant be the_content(), now is harcode
-            ?>
-            <div class=" our-grantees__subtitle">
-
-                <p class="has-text-align-center page__our-grantees__subtitle">Gravida neque convallis a cras. Sit
-                    amet venenatis urna cursus eget nunc scelerisque. Tincidunt lobortis feugiat vivamus at augue
-                    eget arcu. Nibh mauris cursus mattis molestie a iaculis. Porta lorem mollis aliquam ut porttitor
-                    leo.</p>
-
-            </div>
-
+            <?php the_content() ?>
         </div>
         <div class="our-grantees__forms-container">
             <?php get_search_form(array(
