@@ -19,7 +19,8 @@
 .divider-image-text__image {
     object-position: center;
     object-fit: cover;
-    min-width: 50%;
+    width: 50%;
+    max-width: 560px!important;
     &.image-overflow__top {
         margin-top: -112px!important;
     }

@@ -7,30 +7,42 @@ $title = get_field('title');
 $body = get_field('body');
 $link_text = get_field('link_text');
 $link_url = get_field('link_url');
-$link_url = $link_url['url'];
+$link_url = !empty($link_url) ? $link_url['url'] : null;
 
 ?>
+
+<?php if(!empty($title) || !empty($body)) : ?>
 
 <div class="divider-image-text__container <?php echo $vertical_alignment ?>">
 
 	<div class="divider-image-text__container__inner container">
 
-		<?php if($image_placement === 'left') : ?>
-			<img class="divider-image-text__image <?php echo $vertical_alignment ?>" src="<?php echo get_stylesheet_directory_uri() . '/images/our-history-1.png' ?>"/>
+		<?php if(!empty($image) && $image_placement === 'left') : ?>
+			<img class="divider-image-text__image <?php echo $vertical_alignment ?>" srcset="<?php echo $image ?>"/>
 		<?php endif; ?>
 		
 		<div class="divider-image-text__text">
 
+			<?php if(!empty($title)) : ?>
 			<h2 class="divider-image-text__title"><?php echo $title ?></h2>
+			<?php endif; ?>
+
+			<?php if(!empty($body)) : ?>
 			<div class="divider-image-text__content"><?php echo $body ?></div>
+			<?php endif; ?>
+
+			<?php if(!empty($link_text)) : ?>
 			<a class="styled-link" href="<?php echo $link_url ?>"><?php echo $link_text ?></a>
+			<?php endif; ?>
 			
 		</div>
 
-		<?php if($image_placement === 'right') : ?>
-			<img class="divider-image-text__image <?php echo $vertical_alignment ?>" src="<?php echo get_stylesheet_directory_uri() . '/images/our-history-1.png' ?>"/>
+		<?php if(!empty($image) && $image_placement === 'right') : ?>
+			<img class="divider-image-text__image <?php echo $vertical_alignment ?>" srcset="<?php echo $image ?>"/>
 		<?php endif; ?>
 
 	</div>
 
 </div>
+
+<?php endif; ?>
