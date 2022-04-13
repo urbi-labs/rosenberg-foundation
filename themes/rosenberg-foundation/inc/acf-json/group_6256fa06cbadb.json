@@ -62,7 +62,7 @@
                 "image-overflow__top": "Overflow Top",
                 "image-overflow__bottom": "Overflow Bottom"
             },
-            "default_value": "overflow-top",
+            "default_value": "image-overflow__top",
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -216,5 +216,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1649869266
+    "modified": 1649872470
 }
