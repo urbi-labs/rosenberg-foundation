@@ -8,7 +8,7 @@
 if (!empty($args) && isset($args['hero_post'])) :
     $hero_post = $args['hero_post'];
 
-    $placeholder = get_template_directory_uri() . '/images/rosenberg-logo.svg';
+    $placeholder = get_template_directory_uri() . '/images/placeholder-80.jpg';
     $image = wp_get_attachment_image_srcset(get_post_thumbnail_id($hero_post->ID));
 
 

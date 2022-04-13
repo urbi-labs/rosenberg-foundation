@@ -31,11 +31,7 @@ $posts = new WP_Query($posts_args);
 
         $excerpt =  get_the_excerpt($posts->post->ID) ? get_the_excerpt($posts->post->ID) : substr(get_the_content(null, null, $posts->post->ID), 0, 200);
         $excerpt  = wp_strip_all_tags($excerpt);
-        $new_categories = wp_get_post_categories($posts->post->ID);
-        $author = get_the_author_meta("first_name") . " " .  get_the_author_meta("last_name");
-        if ($author) {
-            $author =  get_the_author_meta("display_name");
-        }
+        $average_grant = get_field('average_grant', $posts->post->ID);
 
 
 
@@ -50,35 +46,18 @@ $posts = new WP_Query($posts_args);
             </a>
         </div>
         <div class="news__item__content">
-            <div class="card__post-categories new__item__categories">
-                <?php
-                    if ($new_categories) : ?>
-                <ul>
-                    <?php
-                            foreach ($new_categories as $category_id) :
-                                $category = get_category($category_id);
-                            ?>
+            <?php
+                if ($average_grant) : ?>
+            <div class="card__post-categories grantees__item__average">
+                <?php echo $average_grant; ?>
+            </div>
+            <?php endif;
+                ?>
 
-                    <li class=" ">
-                        <a href="<?php echo get_category_link($category) ?>">
-                            <?php echo $category->name; ?>
-                        </a>
-                    </li>
-                    <?php endforeach; ?>
-                </ul>
-                <?php endif;
-
-                    ?>
+            <div class="card__post-title grantees__item__title">
+                <a class="h5 new__title" href="<?php echo get_the_permalink() ?>"><?php echo get_the_title() ?></a>
             </div>
 
-            <div class="card__post-title">
-                <a class="h4 new__title" href="<?php echo get_the_permalink() ?>"><?php echo get_the_title() ?></a>
-            </div>
-            <div class="card__post-data">
-                <?php echo $author ?>
-                &#183;
-                <?php echo get_the_date("F d, Y") ?>
-            </div>
             <div class="card__post-excerpt">
                 <?php echo $excerpt; ?>
             </div>
