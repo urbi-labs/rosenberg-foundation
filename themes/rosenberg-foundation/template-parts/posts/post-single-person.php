@@ -5,12 +5,13 @@ $role = get_field('role', get_the_ID());
 
 ?>
 <div class="person-profile">
-    <div class="person-profile__featured-image">
-        <img <?php echo $image ? "srcset='" . $image . "'" : "src='" . $placeholder . "'"   ?>
-            alt="<?php echo esc_html(get_the_title()); ?>" class="">
-    </div>
-    <div class="person-profile__content">
+    <div class="person-profile__header">
+        <div class="person-profile__featured-image">
+            <img <?php echo $image ? "srcset='" . $image . "'" : "src='" . $placeholder . "'"   ?>
+                alt="<?php echo esc_html(get_the_title()); ?>" class="">
+        </div>
         <div class="person-profile__title">
+
             <div class="title__container">
 
                 <span class="h2 title__blue-bg"><?php the_title(); ?>
@@ -23,12 +24,11 @@ $role = get_field('role', get_the_ID());
                 ?>
             </div>
 
-            <div class="person-profile__text">
-                <div class="text__gray-bg p-mid">
-                    <?php echo the_content(); ?>
-                </div>
-
-            </div>
         </div>
+    </div>
+    <div class="person-profile__content">
+
+        <?php the_content() ?>
+
     </div>
 </div>
