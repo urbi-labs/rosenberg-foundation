@@ -12,8 +12,7 @@ get_header();
     if (have_posts()) :
         the_post();
 
-        $image = wp_get_attachment_image_srcset(get_post_thumbnail_id(get_the_ID()));
-        var_dump($image);
+        get_template_part("template-parts/posts/post", "people.php")
     ?>
 
 
