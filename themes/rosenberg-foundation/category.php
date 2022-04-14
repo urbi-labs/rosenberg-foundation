@@ -5,7 +5,7 @@ Template Name: News
 */
 get_header();
 $category = get_category(get_query_var('cat'));
-
+$all = isset($_GET['term']) && $_GET['term'] == "all" ? true : false;
 
 
 $post_slug = $post->post_name;
@@ -19,10 +19,12 @@ $args_recenpost = array(
     'orderby' => 'date',
     'order' => 'desc',
     'paged' => $paged,
-    'cat' => $category->cat_ID
+
 
 );
-
+if (!$all) {
+    $args_recenpost['cat'] = $category->cat_ID;
+}
 
 
 
