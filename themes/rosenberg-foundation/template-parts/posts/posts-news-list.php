@@ -27,8 +27,8 @@ $posts = new WP_Query($posts_args);
     <?php
     while ($posts->have_posts()) :
         $posts->the_post();
-        $image = get_the_post_thumbnail_url($posts->post->ID, 'medium');
 
+        $image = wp_get_attachment_image_srcset(get_post_thumbnail_id($posts->post->ID));
         $excerpt =  get_the_excerpt($posts->post->ID) ? get_the_excerpt($posts->post->ID) : substr(get_the_content(null, null, $posts->post->ID), 0, 200);
         $excerpt  = wp_strip_all_tags($excerpt);
         $new_categories = wp_get_post_categories($posts->post->ID);
