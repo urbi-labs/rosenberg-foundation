@@ -12,7 +12,7 @@ get_header();
     if (have_posts()) :
         the_post();
 
-        get_template_part("template-parts/posts/post", "people.php")
+        get_template_part("template-parts/posts/post", "single-person")
     ?>
 
 
