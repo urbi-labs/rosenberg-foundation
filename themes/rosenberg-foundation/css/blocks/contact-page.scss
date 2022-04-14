@@ -1,5 +1,8 @@
 .contact-page__container {
     display: flex;
+
+    align-items: flex-start;
+
     align-items: flex-start;
     margin-top: 64px;
     margin-bottom: 64px;
@@ -58,12 +61,26 @@
     }
 
     .wpcf7-form-control.wpcf7-text,
+
     .wpcf7-form-control.wpcf7-textarea {
         border-bottom: solid $gray_3 1px;
         width: 100%;
     }
 
 }
+
+.wpcf7-submit {
+    margin-top: 32px!important;
+
+    .wpcf7-form-control.wpcf7-textarea{
+
+    .wpcf7-form-control.wpcf7-textarea {
+        border-bottom: solid $gray_3 1px;
+        width: 100%;
+    }
+
+}
+
 
 .wpcf7-submit {
     margin-top: 32px!important;
