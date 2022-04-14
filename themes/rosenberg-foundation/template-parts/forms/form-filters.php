@@ -3,6 +3,7 @@ $categories = isset($args['categories']) ? $args['categories'] : array();
 $term = get_query_var('term');
 $current_category = get_term_by("slug", $term, 'grantee-category');
 
+$all_link = is_page() ? get_the_permalink() : ($current_category ? get_category_link($current_category) . "?term=all" : "");
 ?>
 
 <div class="filters__container" data-class="search-container">
@@ -20,8 +21,7 @@ $current_category = get_term_by("slug", $term, 'grantee-category');
                 if (!empty($categories)) : ?>
                 <li>
                     <ul class="dropdown__select">
-                        <li class="dropdown__select-option" role="option"
-                            data-link="<?php echo get_permalink(get_page_by_path('our-grantees')); ?>"
+                        <li class="dropdown__select-option" role="option" data-link="<?php echo $all_link ?>"
                             data-current="<?php echo !$current_category ? "1" : "0" ?>">
                             All
                         </li>

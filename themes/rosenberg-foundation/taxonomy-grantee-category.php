@@ -7,7 +7,7 @@ Template Name: News
 get_header();
 
 $category = get_term_by("slug", get_query_var('term'), 'grantee-category');
-
+$all = isset($_GET['term']) && $_GET['term'] == "all" ? true : false;
 
 $args_last_post = array('numberposts' => '1',     'tax_query' => array(
     array(
@@ -25,16 +25,18 @@ $args_recenpost = array(
     'orderby' => 'date',
     'order' => 'desc',
     'paged' => $paged,
-    'tax_query' => array(
+    'post_type' => 'grantee'
+
+);
+if (!$all) {
+    $args_recenpost['tax_query'] = array(
         array(
             'taxonomy' => 'grantee-category',
             'field'    => 'slug',
             'terms'    => get_query_var('term'),
         ),
-    ),
-    'post_type' => 'grantee'
-
-);
+    );
+}
 $categories = get_categories(array('taxonomy' => 'grantee-category', 'hide_empty' => false));
 ?>
 <main class="our-grantees">
