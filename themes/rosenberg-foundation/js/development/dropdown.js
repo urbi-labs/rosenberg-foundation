@@ -1,27 +1,35 @@
-// Change option selected
-const label = document.querySelector('.dropdown__filter-selected')
-const options = Array.from(document.querySelectorAll('.dropdown__select-option'))
+$(document).ready(function () {
 
-options.forEach((option) => {
-    option.addEventListener('click', () => {
-        label.textContent = option.textContent
-        if (option.dataset.current != "1") {
-            location.href = option.dataset.link;
-        }
+    if ($('.dropdown__filter-selected').length) {
 
-    })
-})
+        // Change option selected
+        const label = document.querySelector('.dropdown__filter-selected')
+        const options = Array.from(document.querySelectorAll('.dropdown__select-option'))
 
-// Close dropdown onclick outside
-document.addEventListener('click', (e) => {
-    const toggle = document.querySelector('.dropdown__switch')
-    const element = e.target
+        options.forEach((option) => {
+            option.addEventListener('click', () => {
+                label.textContent = option.textContent
+                if (option.dataset.current != "1") {
+                    location.href = option.dataset.link;
+                }
 
-    if (element == toggle) return;
+            })
+        })
 
-    const isDropdownChild = element.closest('.dropdown__filter')
+        // Close dropdown onclick outside
+        document.addEventListener('click', (e) => {
+            const toggle = document.querySelector('.dropdown__switch')
+            const element = e.target
 
-    if (!isDropdownChild) {
-        toggle.checked = false
+            if (element == toggle) return;
+
+            const isDropdownChild = element.closest('.dropdown__filter')
+
+            if (!isDropdownChild) {
+                toggle.checked = false
+            }
+        })
+
     }
+
 })
