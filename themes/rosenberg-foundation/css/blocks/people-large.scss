@@ -1,0 +1,47 @@
+.block-people-large {
+    .overlapping-cards__image {
+        z-index: 2;
+        width: 250px;
+        min-width: 250px;
+    }
+    .overlapping-cards__text {
+        width: 100%;
+        padding-left: 150px;
+        z-index: 1;
+    }
+    .overlapping-cards__image__image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .block-people-large__position,
+    .block-people-large__excerpt {
+        font-size: 20px;
+        font-family: $alt-family;
+    }
+
+    .block-people-large__excerpt .p-mid {
+        font-size: 16px;
+    }
+
+    @media screen and (max-width: $tablet-width) {
+        &.overlapping-cards__container {
+
+            .overlapping-cards__text {
+                margin-left: -10%;
+            }
+    
+        }
+    }
+
+    @media screen and (max-width: $phone-width) {
+        &.overlapping-cards__container {
+
+            .overlapping-cards__text {
+                margin-left: 0;
+                padding-left: 32px;
+            }
+    
+        }
+    }
+}

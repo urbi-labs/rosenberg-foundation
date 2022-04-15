@@ -1,0 +1,38 @@
+<?php
+
+/** Get person custom post type */
+$args = array(
+    'post_type' => 'person'
+);
+
+$people = new WP_Query($args);
+
+?>
+
+<?php if($people->have_posts()) : while($people->have_posts()) : $people->the_post() ?>
+
+<?php
+$position = get_field('role', get_the_ID());
+?>
+
+<div class="overlapping-cards__container card-link block-people-large">
+    <div class="overlapping-cards__image card-link-image">
+        <img srcset="<?php echo wp_get_attachment_image_srcset(get_post_thumbnail_id(get_the_ID())) ?>" class="overlapping-cards__image__image">
+    </div>
+    <div class="overlapping-cards__text">
+        <h3 class="overlapping-cards__text-heading"><?php echo get_the_title() ?></h3>
+        <p class="block-people-large__position"><?php echo $position ?></p>
+        <?php if(!empty(get_the_content())) : ?>
+        <div class="block-people-large__excerpt">
+            <?php echo get_the_content() ?>
+        </div>
+        <?php endif; ?>
+        <p class="overlapping-cards__read-more-link__container">
+            <a href="<?php echo get_the_permalink() ?>" class="overlapping-cards__read-more-link">
+                Read more
+            </a>
+        </p>
+    </div>
+</div>
+
+<?php endwhile; endif; ?>

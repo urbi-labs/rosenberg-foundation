@@ -25,6 +25,19 @@ function urbi_acf_init_block_types()
 
         acf_register_block_type(
             array(
+                'name'              => 'people-large-block',
+                'title'             => __('Rosenberg: People Large'),
+                'description'       => __('People block'),
+                'render_template'   => 'template-parts/blocks/block-people-large.php',
+                'category'          => 'formatting',
+                'icon'              => 'text',
+                'mode'              => 'preview',
+                'keywords'          => array('people', 'team', 'members'),
+            )
+        );
+
+        acf_register_block_type(
+            array(
                 'name'              => 'internal-intro-section',
                 'title'             => __('Rosenberg: Intro Section'),
                 'description'       => __('Inner Page intro section.'),
@@ -186,8 +199,9 @@ function yourprefix_acf_load_post_types( $field ) {
 
     $choices = get_post_types( array( 'show_in_nav_menus' => true ), 'objects' );
 
-    foreach ( $choices as $post_type ) :
+    foreach ( $choices as $post_type ) {
         $field['choices'][$post_type->name] = $post_type->labels->singular_name;
-    endforeach;
+    }
+    
     return $field;
 }

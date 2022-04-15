@@ -1,8 +1,6 @@
 <?php
 global $post;
-/*
-Template Name: News
-*/
+
 get_header();
 
 $post_slug = $post->post_name;

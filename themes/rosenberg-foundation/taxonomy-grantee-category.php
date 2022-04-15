@@ -1,9 +1,7 @@
 <?php
 global $post;
 global $wp_query;
-/*
-Template Name: News
-*/
+
 get_header();
 
 $category = get_term_by("slug", get_query_var('term'), 'grantee-category');

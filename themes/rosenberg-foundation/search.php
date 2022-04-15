@@ -1,8 +1,6 @@
 <?php
 global $post;
-/*
-Template Name: News
-*/
+
 get_header();
 $s = get_query_var('s');
 $post_type = get_query_var("post_type") ? get_query_var("post_type") : "news";
