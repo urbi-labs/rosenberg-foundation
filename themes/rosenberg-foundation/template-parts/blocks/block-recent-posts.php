@@ -1,25 +1,17 @@
 <?php
 
-/**
- * post list
- * it receives an array with args to search posts
- */
 $placeholder = get_template_directory_uri() . '/images/placeholder-80.jpg';
 
-$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-
-$default_args = array(
+$args_recenpost = array(
     'orderby' => 'date',
     'order' => 'desc',
-    'paged' => $paged,
-    'post_type' => 'post'
-
+    'posts_per_page' => 3,
+    'post_type' => get_field('select_post_type')
 );
-$posts_args = isset($args['args']) && is_array($args['args']) ? array_merge($default_args, $args['args']) : $default_args;
 
-$posts = new WP_Query($posts_args);
+$posts = new WP_Query($args_recenpost);
+
 ?>
-
 
 <div class="news__list">
     <?php
@@ -62,26 +54,4 @@ $posts = new WP_Query($posts_args);
         </div>
     </div>
     <?php endwhile; ?>
-</div>
-
-
-<?php $max_num_pages = $posts->max_num_pages;
-
-
-if ($max_num_pages > 1) :
-
-?>
-<div class="news-pagination-dk">
-    <?php news_pagination($max_num_pages, $paged == 0 ? 1 : $paged, $posts->found_posts);;
-        ?>
-</div>
-<div class="news-pagination-mb">
-    <?php news_pagination($max_num_pages, $paged == 0 ? 1 : $paged, $posts->found_posts, 2, false);;
-        ?>
-</div>
-
-<?php endif; ?>
-
-<?php wp_reset_postdata(); ?>
-
 </div>
