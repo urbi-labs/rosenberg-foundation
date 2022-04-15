@@ -23,6 +23,27 @@
 
 		</div>
 
+		<div class="hero-home__slide">
+
+			<div class="container">
+				<div class="hero-home__carousel-caption">
+
+					<div class="hero-home__title">
+						<span class="hero-home__title__content">
+							Slide 2
+						</span>
+					</div>
+
+					<div class="hero-home__call-to-action">
+						<p class="hero-home__call-to-action-content">Elit eget gravida und sociis natoque penatibus et. Nisi porta lorem mollis aliquam ut porttitor curabitur vitae.</p>
+						<a class="hero-home__btn-lg btn-lg btn-primary" href="#">Call to action</a>
+					</div>
+					
+				</div>
+			</div>
+
+		</div>
+
 	</div>
 
 	<button class="hero-home__prev-arrow slick-prev" type="button">
