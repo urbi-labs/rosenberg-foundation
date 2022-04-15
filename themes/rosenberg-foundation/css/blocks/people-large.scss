@@ -24,6 +24,17 @@
         font-size: 16px;
     }
 
+    &.image-right {
+        .overlapping-cards__text {
+            padding-right: 150px;
+        }
+        .block-people-large__position,
+        .overlapping-cards__text-heading,
+        .overlapping-cards__read-more-link__container {
+            text-align: left!important;
+        }
+    }
+
     @media screen and (max-width: $tablet-width) {
         &.overlapping-cards__container {
 
@@ -31,6 +42,11 @@
                 margin-left: -10%;
             }
     
+        }
+        &.image-right {
+            .overlapping-cards__text {
+                padding-right: 32px;
+            }
         }
     }
 

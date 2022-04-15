@@ -6,22 +6,24 @@ $args = array(
 );
 
 $people = new WP_Query($args);
-
+$index = 0;
 ?>
 
 <?php if($people->have_posts()) : while($people->have_posts()) : $people->the_post() ?>
 
 <?php
-$position = get_field('role', get_the_ID());
+
+$image_right = $index % 2 === 0;
+
 ?>
 
-<div class="overlapping-cards__container card-link block-people-large">
+<div class="overlapping-cards__container card-link <?php echo $image_right ? 'image-right' : '' ?> block-people-large">
     <div class="overlapping-cards__image card-link-image">
         <img srcset="<?php echo wp_get_attachment_image_srcset(get_post_thumbnail_id(get_the_ID())) ?>" class="overlapping-cards__image__image">
     </div>
-    <div class="overlapping-cards__text">
+    <div class="overlapping-cards__text <?php echo $image_right ? 'image-right' : '' ?>">
         <h3 class="overlapping-cards__text-heading"><?php echo get_the_title() ?></h3>
-        <p class="block-people-large__position"><?php echo $position ?></p>
+        <p class="block-people-large__position"><?php echo get_field('role', get_the_ID()) ?></p>
         <?php if(!empty(get_the_content())) : ?>
         <div class="block-people-large__excerpt">
             <?php echo get_the_content() ?>
@@ -35,4 +37,7 @@ $position = get_field('role', get_the_ID());
     </div>
 </div>
 
-<?php endwhile; endif; ?>
+<?php
+$index ++;
+endwhile; endif; 
+?>
