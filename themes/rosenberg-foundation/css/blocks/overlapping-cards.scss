@@ -136,6 +136,14 @@
 
     }
 
+    .overlapping-cards__container {
+        &.image-right {
+            .overlapping-cards__text-heading {
+                text-align: left;
+            }
+        }
+    }
+
 }
 
 

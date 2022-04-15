@@ -25,6 +25,19 @@ function urbi_acf_init_block_types()
 
         acf_register_block_type(
             array(
+                'name'              => 'people-large-block',
+                'title'             => __('Rosenberg: People Large'),
+                'description'       => __('People block'),
+                'render_template'   => 'template-parts/blocks/block-people-large.php',
+                'category'          => 'formatting',
+                'icon'              => 'text',
+                'mode'              => 'preview',
+                'keywords'          => array('people', 'team', 'members'),
+            )
+        );
+
+        acf_register_block_type(
+            array(
                 'name'              => 'internal-intro-section',
                 'title'             => __('Rosenberg: Intro Section'),
                 'description'       => __('Inner Page intro section.'),
@@ -73,7 +86,7 @@ function urbi_acf_init_block_types()
                 'render_template'   => 'template-parts/blocks/block-hero-internal.php',
                 'category'          => 'formatting',
                 'icon'              => 'text',
-                'mode'              => 'preview',
+                'mode'              => 'edit',
                 'keywords'          => array('text', 'card'),
             )
         );
@@ -83,10 +96,14 @@ function urbi_acf_init_block_types()
                 'name'              => 'divider-image-text',
                 'title'             => __('Rosenberg: Divider Image/Text'),
                 'description'       => __('A content divider with support for image and text.'),
+
+                'render_template'   => 'template-parts/blocks/block-hero-internal.php',
+
                 'render_template'   => 'template-parts/blocks/block-divider-image-text.php',
+
                 'category'          => 'formatting',
                 'icon'              => 'text',
-                'mode'              => 'preview',
+                'mode'              => 'edit',
                 'keywords'          => array('text', 'card'),
             )
         );
@@ -106,14 +123,10 @@ function urbi_acf_init_block_types()
 
         acf_register_block_type(
             array(
-                'name'              => 'divider-image-text',
-                'title'             => __('Rosenberg: Divider Image/Text'),
-                'description'       => __('A content divider with support for image and text.'),
-
-                'render_template'   => 'template-parts/blocks/block-hero-internal.php',
-
-                'render_template'   => 'template-parts/blocks/block-divider-image-text.php',
-
+                'name'              => 'rosenberg-recent-posts',
+                'title'             => __('Rosenberg: Recent Posts'),
+                'description'       => __('Display the last 3 posts of any post type.'),
+                'render_template'   => 'template-parts/blocks/block-recent-posts.php',
                 'category'          => 'formatting',
                 'icon'              => 'text',
                 'mode'              => 'preview',
@@ -176,3 +189,19 @@ function acf_filter_rest_api_preload_paths($preload_paths)
 // }
 
 // add_action('acf/init', 'my_acf_init');
+
+add_filter('acf/load_field/name=select_post_type', 'yourprefix_acf_load_post_types');
+/*
+ *  Load Select Field `select_post_type` populated with the value and labels of the singular 
+ *  name of all public post types
+ */
+function yourprefix_acf_load_post_types( $field ) {
+
+    $choices = get_post_types( array( 'show_in_nav_menus' => true ), 'objects' );
+
+    foreach ( $choices as $post_type ) {
+        $field['choices'][$post_type->name] = $post_type->labels->singular_name;
+    }
+    
+    return $field;
+}

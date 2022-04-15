@@ -1,8 +1,6 @@
 <?php
 global $post;
-/*
-Template Name: News
-*/
+
 get_header();
 $s = get_query_var('s');
 $post_type = get_query_var("post_type") ? get_query_var("post_type") : "news";
@@ -18,7 +16,6 @@ $args_recenpost = array(
     's' => $s,
     'paged' => $paged,
     'post_type' => $post_type
-
 );
 
 ?>
@@ -41,15 +38,10 @@ $args_recenpost = array(
     <?php else : ?>
 
     <?php
-        /* choice last post as hero post */
-        echo get_template_part('template-parts/posts/post', "hero", array('hero_post' => $last_post[0]));
-
 
         /** news post list with pagination */
         echo get_template_part('template-parts/posts/posts', "news-list", ['args' => $args_recenpost]);
         ?>
-
-
 
     <?php endif; ?>
 </main>

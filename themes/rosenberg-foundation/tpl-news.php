@@ -37,10 +37,6 @@ $args_recenpost = array(
     </div>
     <?php else : ?>
 
-
-
-
-
     <?php
         /* choice last post as hero post */
         echo get_template_part('template-parts/posts/post', "hero", array('hero_post' => $last_post[0]));

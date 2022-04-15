@@ -1,8 +1,6 @@
 <?php
 global $post;
-/*
-Template Name: News
-*/
+
 get_header();
 $category = get_category(get_query_var('cat'));
 $all = isset($_GET['term']) && $_GET['term'] == "all" ? true : false;

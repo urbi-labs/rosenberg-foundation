@@ -6,8 +6,6 @@
  */
 $placeholder = get_template_directory_uri() . '/images/placeholder-80.jpg';
 
-
-
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
 $default_args = array(
@@ -49,7 +47,7 @@ $posts = new WP_Query($posts_args);
             <?php
                 if ($average_grant) : ?>
             <div class="card__post-categories grantees__item__average">
-                <?php echo $average_grant; ?>
+                $<?php echo number_format(intval($average_grant)); ?>
             </div>
             <?php endif;
                 ?>
@@ -84,6 +82,6 @@ if ($max_num_pages > 1) :
 
 <?php endif; ?>
 
-<?php wp_reset_postdata();  ?>
+<?php wp_reset_postdata(); ?>
 
 </div>
