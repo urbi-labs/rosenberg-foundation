@@ -129,10 +129,24 @@ function urbi_acf_init_block_types()
                 'render_template'   => 'template-parts/blocks/block-recent-posts.php',
                 'category'          => 'formatting',
                 'icon'              => 'text',
-                'mode'              => 'preview',
+                'mode'              => 'edit',
                 'keywords'          => array('text', 'card'),
             )
         );
+
+        acf_register_block_type(
+            array(
+                'name'              => 'rosenberg-recent-posts-large',
+                'title'             => __('Rosenberg: Recent Posts Large'),
+                'description'       => __('Display the last 4 posts of any post type in overlapping cards.'),
+                'render_template'   => 'template-parts/blocks/block-recent-posts-large.php',
+                'category'          => 'formatting',
+                'icon'              => 'text',
+                'mode'              => 'edit',
+                'keywords'          => array('text', 'card'),
+            )
+        );
+
     }
 }
 

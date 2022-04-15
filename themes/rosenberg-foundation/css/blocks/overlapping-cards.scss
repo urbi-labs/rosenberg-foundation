@@ -19,6 +19,12 @@
             padding: 16px;
             padding-bottom: 24px;
         }
+        .overlapping-cards__text-excerpt {
+            max-height: 96px;
+            &.expanded {
+                max-height: 1000px;
+            }
+        }
     }
 }
 
@@ -43,24 +49,22 @@
     object-fit: cover;
 }
 
-.overlapping-cards__text-heading {
+.overlapping-cards__text-heading,
+.overlapping-cards__text-heading a {
     font-family: $standard-family;
     font-weight: 400;
     line-height: 1.5;
     color: $dark_gray;
     margin-bottom: 0;
     margin-bottom: 16px;
+    @extend h3;
 }
 
 .overlapping-cards__text-excerpt {
     line-height: 1.5;
-    max-height: 96px;
     overflow: hidden;
     margin-bottom: 16px;
     transition: max-height 0.5s ease;
-    &.expanded {
-        max-height: 1000px;
-    }
 }
 
 .overlapping-cards__text {

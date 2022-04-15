@@ -24,9 +24,9 @@ $image_right = $index % 2 === 0;
     <div class="overlapping-cards__text <?php echo $image_right ? 'image-right' : '' ?>">
         <h3 class="overlapping-cards__text-heading"><?php echo get_the_title() ?></h3>
         <p class="block-people-large__position"><?php echo get_field('role', get_the_ID()) ?></p>
-        <?php if(!empty(get_the_content())) : ?>
+        <?php if(!empty(get_the_excerpt())) : ?>
         <div class="block-people-large__excerpt">
-            <?php echo get_the_content() ?>
+            <?php echo get_the_excerpt() ?>
         </div>
         <?php endif; ?>
         <p class="overlapping-cards__read-more-link__container">

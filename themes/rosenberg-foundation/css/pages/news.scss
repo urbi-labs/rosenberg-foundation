@@ -165,14 +165,13 @@
             height: 100%;
             object-fit: cover;
             &.news__placeholder {
-                object-fit: contain;
-
+                object-fit: cover;
                 object-position: center;
             }
         }
     }
     .news__item__content {
-        padding: 16px 24px 48px;
+        padding: 16px 24px;
     }
     .new__item__categories {
         ul {
