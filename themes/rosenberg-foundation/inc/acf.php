@@ -107,6 +107,19 @@ function urbi_acf_init_block_types()
                 'keywords'          => array('text', 'card'),
             )
         );
+
+        acf_register_block_type(
+            array(
+                'name'              => 'rosenberg-recent-posts',
+                'title'             => __('Rosenberg: Recent Posts'),
+                'description'       => __('Display the last 3 posts of any post type.'),
+                'render_template'   => 'template-parts/blocks/block-recent-posts.php',
+                'category'          => 'formatting',
+                'icon'              => 'text',
+                'mode'              => 'preview',
+                'keywords'          => array('text', 'card'),
+            )
+        );
     }
 }
 
@@ -163,3 +176,18 @@ function acf_filter_rest_api_preload_paths($preload_paths)
 // }
 
 // add_action('acf/init', 'my_acf_init');
+
+add_filter('acf/load_field/name=select_post_type', 'yourprefix_acf_load_post_types');
+/*
+ *  Load Select Field `select_post_type` populated with the value and labels of the singular 
+ *  name of all public post types
+ */
+function yourprefix_acf_load_post_types( $field ) {
+
+    $choices = get_post_types( array( 'show_in_nav_menus' => true ), 'objects' );
+
+    foreach ( $choices as $post_type ) :
+        $field['choices'][$post_type->name] = $post_type->labels->singular_name;
+    endforeach;
+    return $field;
+}
