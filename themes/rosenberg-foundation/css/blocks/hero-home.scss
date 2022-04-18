@@ -1,5 +1,10 @@
 .hero-home__container {
     position: relative;
+    width: 100vw;
+    margin-left: calc((100vw - 100%) / -2);
+}
+
+.hero-home__slide {
     padding: 264px 0 84px;
     background-size: cover;
     background-position: center;

@@ -1,21 +1,34 @@
-<div class="hero-home__container" style="background-image: url(<?php echo get_stylesheet_directory_uri() . '/images/hero-home-1.png' ?>)">
+<?php
 
-	<div id="" class="hero-home-slick">
+$slides = get_field('slides');
 
-		<div class="hero-home__slide">
+?>
+
+<div class="hero-home__container">
+
+	<div class="hero-home-slick">
+
+		<?php foreach($slides as $slide) : ?>
+
+		<div class="hero-home__slide" style="background-image: url(<?php echo $slide['background_image'] ?>)">
 
 			<div class="container">
 				<div class="hero-home__carousel-caption">
 
 					<div class="hero-home__title">
 						<span class="hero-home__title__content">
-							Gravida dictum fusce ut placerat orci nulla.
+							<?php echo $slide['title'] ?>
 						</span>
 					</div>
 
 					<div class="hero-home__call-to-action">
-						<p class="hero-home__call-to-action-content">Elit eget gravida und sociis natoque penatibus et. Nisi porta lorem mollis aliquam ut porttitor curabitur vitae.</p>
-						<a class="hero-home__btn-lg btn-lg btn-primary" href="#">Call to action</a>
+						<p class="hero-home__call-to-action-content">
+							<?php echo $slide['description'] ?>
+						</p>
+						
+						<a class="btn" href="<?php echo $slide['button_link'] ?>">
+							<?php echo $slide['button_text'] ?>
+						</a>
 					</div>
 					
 				</div>
@@ -23,26 +36,7 @@
 
 		</div>
 
-		<div class="hero-home__slide">
-
-			<div class="container">
-				<div class="hero-home__carousel-caption">
-
-					<div class="hero-home__title">
-						<span class="hero-home__title__content">
-							Slide 2
-						</span>
-					</div>
-
-					<div class="hero-home__call-to-action">
-						<p class="hero-home__call-to-action-content">Elit eget gravida und sociis natoque penatibus et. Nisi porta lorem mollis aliquam ut porttitor curabitur vitae.</p>
-						<a class="hero-home__btn-lg btn-lg btn-primary" href="#">Call to action</a>
-					</div>
-					
-				</div>
-			</div>
-
-		</div>
+		<?php endforeach; ?>
 
 	</div>
 

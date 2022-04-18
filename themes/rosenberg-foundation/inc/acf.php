@@ -78,6 +78,20 @@ function urbi_acf_init_block_types()
 
         acf_register_block_type(
             array(
+                'name'              => 'hero-home',
+                'title'             => __('Rosenberg: Homepage Hero'),
+                'description'       => __('Homepage hero section.'),
+
+                'render_template'   => 'template-parts/blocks/block-hero-home.php',
+                'category'          => 'formatting',
+                'icon'              => 'text',
+                'mode'              => 'edit',
+                'keywords'          => array('text', 'card'),
+            )
+        );
+
+        acf_register_block_type(
+            array(
                 'name'              => 'hero-internal',
                 'title'             => __('Rosenberg: Inner Page Hero'),
                 'description'       => __('Inner page hero section.'),

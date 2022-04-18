@@ -1,7 +1,7 @@
 <?php global $post; ?>
 <?php
 /*
-Template Name: Our grantees
+Template Name: Our Grantees
 */
 ?>
 <?php get_header();

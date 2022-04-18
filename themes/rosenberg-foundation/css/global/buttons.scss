@@ -12,7 +12,7 @@
     appearance: none;
     cursor: pointer;
     background-color: $orange;
-    color: #ffffff;
+    color: #ffffff!important;
     font-size: 20px;
     font-weight: bold;
     border-radius: 0;
@@ -20,12 +20,13 @@
     text-transform: uppercase;
     transition: background-color 0.25s ease, border 0.25s ease;
     padding-right: 48px;
+    text-decoration: none!important;
     &:after {
         background-image: url('#{$theme-path}/images/icons/icon-arrow-right-small-fill-white.svg');
     }
     &:hover {
         background-color: transparent;
-        color: $orange;
+        color: $orange!important;
         &:after {
             background-image: url('#{$theme-path}/images/icons/icon-arrow-right-small-fill-orange.svg');
         }
