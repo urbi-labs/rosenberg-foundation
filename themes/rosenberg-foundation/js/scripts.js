@@ -128,7 +128,8 @@ $(document).ready(function(){
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplaySpeed: 3000,
+        speed: 500,
+        autoplaySpeed: 4000,
         prevArrow: $('.hero-home__prev-arrow.slick-prev'),
         nextArrow: $('.hero-home__next-arrow.slick-next')
     });
