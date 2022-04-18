@@ -115,8 +115,15 @@
     text-decoration: none!important;
     align-items: center;
     display: inline-flex;
+    &.styled-link__black {
+        color: #000!important;
+        &:after {
+            background-image: url('#{$theme-path}/images/icons/icon-arrow-right-small-fill.svg');
+        }
+    }
     &:after {
         background-image: url('#{$theme-path}/images/icons/icon-arrow-right-small-fill-white.svg');
+        top: 11px;
     }
     &:hover {
         text-decoration: none;

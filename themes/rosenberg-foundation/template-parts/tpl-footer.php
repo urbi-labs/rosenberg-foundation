@@ -59,8 +59,8 @@ if ($footer_image) {
                 <?php } ?>
 
                 <?php if ($phone) { ?>
-                <a href="mailto:<?php echo $email ?>" id="email-button-copy"
-                    class="email-phone"><?php echo $email ?></a>
+                <a href="mailto:<?php echo $email ?>"
+                    class="email-phone email-button-copy"><?php echo $email ?></a>
                 <?php } ?>
             </p>
         </div>

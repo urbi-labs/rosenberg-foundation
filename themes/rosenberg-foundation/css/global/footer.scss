@@ -159,15 +159,15 @@ hr {
 }
 
 /** email contact copied */
-#email-button-copy {
+.email-button-copy {
     position: relative;
     &::before {
         content: 'Email address copied.';
-        background-color: $gray_2;
+        background-color: $gray_3;
         padding: 4px 8px;
         border-radius: 2px;
         font-size: 16px;
-        color: #000;
+        color: #fff;
         position: absolute;
         left: 0%;
         width: auto;

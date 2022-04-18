@@ -26,22 +26,11 @@ $(function () {
             }
         });
 
-    /** scroll fix menu top */
-    // var header = $('header');
-    // $(window).scroll(function () {
-    //     var windowTop = $(window).scrollTop();
-    //     if (windowTop > header.height()) {
-    //         header.addClass('sticky');
-    //     } else {
-    //         header.removeClass('sticky');
-    //     }
-    // })
-
     /** copy text from email footer * */
-    $("#email-button-copy").click(function (e) {
+    $(".email-button-copy").click(function (e) {
         e.preventDefault();
         // Copy Address
-        var copyText = $("#email-button-copy")[0];
+        var copyText = $(e.target)[0];
         var textArea = document.createElement("textarea");
         textArea.value = copyText.textContent;
         document.body.appendChild(textArea);
@@ -51,7 +40,7 @@ $(function () {
         // Show Tooltip
         $(this).addClass("copy-show");
         setTimeout(function () {
-            $("#email-button-copy").removeClass("copy-show");
+            $(".email-button-copy").removeClass("copy-show");
         }, 1200);
     });
 

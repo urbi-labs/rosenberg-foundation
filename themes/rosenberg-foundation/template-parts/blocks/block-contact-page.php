@@ -2,6 +2,11 @@
 
 	<div class="contact-page__map">
 		<?php echo get_field('map_embed_code') ?>
+		<p>
+			<a href="mailto:<?php echo get_field('contact_email', 'option') ?>" class="styled-link styled-link__black email-button-copy">
+				<?php echo get_field('contact_email', 'option') ?>
+			</a>
+		</p>
 	</div>
 	<div class="contact-page__form">
 

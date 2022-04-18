@@ -101,22 +101,11 @@ $(function () {
             }
         });
 
-    /** scroll fix menu top */
-    // var header = $('header');
-    // $(window).scroll(function () {
-    //     var windowTop = $(window).scrollTop();
-    //     if (windowTop > header.height()) {
-    //         header.addClass('sticky');
-    //     } else {
-    //         header.removeClass('sticky');
-    //     }
-    // })
-
     /** copy text from email footer * */
-    $("#email-button-copy").click(function (e) {
+    $(".email-button-copy").click(function (e) {
         e.preventDefault();
         // Copy Address
-        var copyText = $("#email-button-copy")[0];
+        var copyText = $(e.target)[0];
         var textArea = document.createElement("textarea");
         textArea.value = copyText.textContent;
         document.body.appendChild(textArea);
@@ -126,7 +115,7 @@ $(function () {
         // Show Tooltip
         $(this).addClass("copy-show");
         setTimeout(function () {
-            $("#email-button-copy").removeClass("copy-show");
+            $(".email-button-copy").removeClass("copy-show");
         }, 1200);
     });
 
@@ -168,6 +157,11 @@ $(document).ready( function() {
         e.preventDefault()
         $(e.target).closest('.overlapping-cards__text').find('.overlapping-cards__text-excerpt').toggleClass('expanded')
         $(e.target).closest('.overlapping-cards__text').toggleClass('expanded')
-    })
+        if($(e.target).closest('.overlapping-cards__text').hasClass('expanded')) {
+            $(e.target).text('See less')
+        } else {
+            $(e.target).text('Learn more')
+        }
+    });
 
 });
