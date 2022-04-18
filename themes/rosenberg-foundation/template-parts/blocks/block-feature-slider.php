@@ -4,7 +4,6 @@
  * 
  */
 $slider = get_field('slider');
-//var_dump($slider);
 
 ?>
 <?php if ($slider && !empty($slider)) : ?>

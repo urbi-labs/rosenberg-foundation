@@ -4,9 +4,7 @@ $slides = get_field('hero_slides');
 
 ?>
 
-<pre>
-	<?php var_dump($slides) ?>
-</pre>
+<?php if ($slides && !empty($slides)) : ?>
 
 <div class="hero-home__container">
 
@@ -52,3 +50,5 @@ $slides = get_field('hero_slides');
 	</button>
 
 </div>
+
+<?php endif; ?>
