@@ -1,8 +1,12 @@
 <?php
 
-$slides = get_field('slides');
+$slides = get_field('hero_slides');
 
 ?>
+
+<pre>
+	<?php var_dump($slides) ?>
+</pre>
 
 <div class="hero-home__container">
 

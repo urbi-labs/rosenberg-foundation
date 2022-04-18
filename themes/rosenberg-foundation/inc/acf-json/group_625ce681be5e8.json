@@ -5,7 +5,7 @@
         {
             "key": "field_625ce78727001",
             "label": "Slides",
-            "name": "slides",
+            "name": "hero_slides",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -137,5 +137,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1650258086
+    "modified": 1650297535
 }

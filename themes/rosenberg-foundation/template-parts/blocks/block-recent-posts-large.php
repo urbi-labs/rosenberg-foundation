@@ -1,6 +1,5 @@
 <?php
 
-/** Get person custom post type */
 $args = array(
     'post_type' => 'post'
 );
@@ -46,4 +45,5 @@ $index = 0;
         $index++;
     endwhile;
 endif;
+wp_reset_query();
 ?>
