@@ -8,6 +8,7 @@ get_header();
     <h1 class="accessible-text"><?php the_title(); ?></h1>
     <div class="container">
         <div class="entry-content">
+
             <?php the_content(); ?>
         </div>
     </div>

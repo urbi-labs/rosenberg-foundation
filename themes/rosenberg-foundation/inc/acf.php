@@ -36,6 +36,20 @@ function urbi_acf_init_block_types()
             )
         );
 
+
+        acf_register_block_type(
+            array(
+                'name'              => 'categories-block',
+                'title'             => __('Rosenberg: Categories for taxonomy'),
+                'description'       => __('Categories block'),
+                'render_template'   => 'template-parts/blocks/block-people-categories.php',
+                'category'          => 'formatting',
+                'icon'              => 'text',
+                'mode'              => 'edit',
+                'keywords'          => array('categories', 'taxonomy'),
+            )
+        );
+
         acf_register_block_type(
             array(
                 'name'              => 'internal-intro-section',
@@ -160,7 +174,6 @@ function urbi_acf_init_block_types()
                 'keywords'          => array('text', 'card'),
             )
         );
-
     }
 }
 
@@ -212,7 +225,7 @@ function acf_filter_rest_api_preload_paths($preload_paths)
 }
 
 // function my_acf_init() {
-	
+
 // 	acf_update_setting('google_api_key', GMAPS_API_KEY);
 // }
 
@@ -223,13 +236,14 @@ add_filter('acf/load_field/name=select_post_type', 'yourprefix_acf_load_post_typ
  *  Load Select Field `select_post_type` populated with the value and labels of the singular 
  *  name of all public post types
  */
-function yourprefix_acf_load_post_types( $field ) {
+function yourprefix_acf_load_post_types($field)
+{
 
-    $choices = get_post_types( array( 'show_in_nav_menus' => true ), 'objects' );
+    $choices = get_post_types(array('show_in_nav_menus' => true), 'objects');
 
-    foreach ( $choices as $post_type ) {
+    foreach ($choices as $post_type) {
         $field['choices'][$post_type->name] = $post_type->labels->singular_name;
     }
-    
+
     return $field;
 }
