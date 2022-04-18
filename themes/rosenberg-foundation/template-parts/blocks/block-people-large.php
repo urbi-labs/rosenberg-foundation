@@ -9,15 +9,17 @@ $people = new WP_Query($args);
 $index = 0;
 ?>
 
-<?php if($people->have_posts()) : while($people->have_posts()) : $people->the_post() ?>
+<?php // echo get_template_part('template-parts/posts/posts', 'categories'); ?>
 
 <?php
 
+if($people->have_posts()) : while($people->have_posts()) : $people->the_post();
 $image_right = $index % 2 === 0;
 
 ?>
 
 <div class="overlapping-cards__container card-link <?php echo $image_right ? 'image-right' : '' ?> block-people-large">
+
     <div class="overlapping-cards__image card-link-image">
         <img srcset="<?php echo wp_get_attachment_image_srcset(get_post_thumbnail_id(get_the_ID())) ?>" class="overlapping-cards__image__image">
     </div>

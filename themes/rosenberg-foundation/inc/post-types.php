@@ -5,14 +5,6 @@ function user_register_post_types()
 
     // Add all your post type info into this array.
     $user_magic_post_type_maker_array = array(
-        /*array(
-			'cpt_single' => 'Location',
-			'cpt_plural' => 'Locations',
-			'slug' => 'location',
-			'cpt_icon' => 'dashicons-images-alt',
-            'has_archive' => true,
-			'exclude_from_search' => false,
-		)*/
         array(
             'cpt_single' => 'Person',
             'cpt_plural' => 'People',

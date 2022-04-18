@@ -7,6 +7,7 @@
     .overlapping-cards__text {
         width: 100%;
         padding-left: 150px;
+        padding-right: 32px;
         z-index: 1;
     }
     .overlapping-cards__image__image {
@@ -17,6 +18,7 @@
     .block-people-large__position,
     .block-people-large__excerpt {
         font-size: 20px;
+        margin-bottom: 16px;
         font-family: $alt-family;
     }
 
@@ -27,6 +29,7 @@
     &.image-right {
         .overlapping-cards__text {
             padding-right: 150px;
+            padding-left: 32px;
         }
         .block-people-large__position,
         .overlapping-cards__text-heading,

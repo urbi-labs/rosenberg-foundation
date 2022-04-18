@@ -13,8 +13,6 @@
 .dropdown {
     width: 424px;
     z-index: 100;
-    background-color: white;
-
     .dropdown__switch:checked + .dropdown__options-filter .dropdown__select {
         transform: scaleY(1);
     }
@@ -28,7 +26,6 @@
         position: relative;
         display: flex;
         color: $gray_3;
-        background-color: #fff;
         border-bottom: 1px solid $gray_3;
 
         font-size: 14px;
