@@ -21,6 +21,14 @@
         }
         .overlapping-cards__text-excerpt {
             max-height: 96px;
+            p a:only-child {
+                @extend .styled-link;
+                display: inline;
+                color: $dark_gray!important;
+                &:after {
+                    content: url('/wp-content/themes/rosenberg-foundation/images/icons/icon-arrow-right-small-fill.svg');
+                }
+            }
             &.expanded {
                 max-height: 1000px;
             }

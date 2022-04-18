@@ -36,7 +36,7 @@
 .btn--blue,
 .btn-blue {
     background: $blue;
-    color: white;
+    color: white!important;
     border: 2px solid $blue;
     font-family: $alt-family, sans-serif;
     border-radius: 2px;
@@ -44,7 +44,7 @@
     transition: background-color 0.25s ease, border 0.25s ease;
     &.btn--secondary {
         background: none;
-        color: $blue;
+        color: $blue!important;
         &:hover {
             background: $blue;
             color: white;
@@ -57,7 +57,7 @@
 .wp-block-button.is-style-outline .wp-block-button__link {
     @extend .btn;
     background: none;
-    color: $blue;
+    color: $blue!important;
     border: solid 2px $blue;
     transition: background-color 0.25s ease, border 0.25s ease;
     &:after {
@@ -65,7 +65,7 @@
     }
     &:hover {
         background: $blue;
-        color: white;
+        color: white!important;
         transition: background-color 0.2s ease;
         &:after {
             background-image: url('#{$theme-path}/images/icons/icon-arrow-right-small-fill-white.svg');
