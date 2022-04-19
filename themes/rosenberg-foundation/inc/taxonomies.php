@@ -23,7 +23,18 @@ function user_registers_taxonomies()
                 'grantee',
             )
         ),
+
+        array(
+            'tax_singular' => 'Person category',
+            'tax_plural'   => 'People categories',
+            'tax_slug'     => 'person-category', // lowercase letters and dashes only
+            'applicable_post_types' => array(
+                'person',
+            )
+        ),
     );
+
+
 
     foreach ($user_magic_taxonomy_maker_array as $taxonomy) {
         $tax_singular = $taxonomy['tax_singular'];
