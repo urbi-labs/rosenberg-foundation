@@ -17,7 +17,7 @@ if ($categories) : ?>
 
             if ($all) { ?>
         <li
-            class="news__list-categories__list__item <?php echo !isset($current_category) ? " news__list-categories__list__item--active" : " " ?>">
+            class="news__list-categories__list__item <?php echo !isset($args['current_slug']) ||  $args['current_slug'] == "" ? " news__list-categories__list__item--active" : " " ?>">
             <a href="<?php echo $all_link; ?>">All</a>
         </li>
         <?php    }
