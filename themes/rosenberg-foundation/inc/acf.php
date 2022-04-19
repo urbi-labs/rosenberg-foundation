@@ -42,7 +42,7 @@ function urbi_acf_init_block_types()
                 'name'              => 'categories-block',
                 'title'             => __('Rosenberg: Categories for taxonomy'),
                 'description'       => __('Categories block'),
-                'render_template'   => 'template-parts/blocks/block-people-categories.php',
+                'render_template'   => 'template-parts/blocks/block-categories.php',
                 'category'          => 'formatting',
                 'icon'              => 'text',
                 'mode'              => 'edit',
