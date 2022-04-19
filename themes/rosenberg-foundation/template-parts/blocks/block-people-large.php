@@ -1,13 +1,18 @@
 <?php
 
+/** filter by slug category */
+$slug = isset($_GET['category']) ? $_GET['category'] : "staff";
+
 /** Get person custom post type */
+
+
 $args = array(
     'post_type' => 'person',
     'tax_query' => array(
         array(
             'taxonomy' => 'person-category',
             'field'    => 'slug',
-            'terms'    => 'staff',
+            'terms'    => $slug,
         ),
     ),
 );
@@ -18,7 +23,19 @@ $index = 0;
 
 <?php // echo get_template_part('template-parts/posts/posts', 'categories'); 
 ?>
+<div>
+    <?php echo get_template_part(
+        'template-parts/posts/posts',
+        'categories',
+        array(
+            'taxonomy' => 'person-category',
+            'all' => false,
+            'active' => $slug,
+            'current_slug' => $slug
+        )
 
+    ); ?>
+</div>
 <?php
 
 if ($people->have_posts()) : while ($people->have_posts()) : $people->the_post();
