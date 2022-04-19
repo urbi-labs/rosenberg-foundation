@@ -20,21 +20,22 @@ $posts_args = isset($args['args']) && is_array($args['args']) ? array_merge($def
 $posts = new WP_Query($posts_args);
 ?>
 
-
+<?php if ($posts->have_posts()) : ?>
 <div class="news__list">
     <?php
-    while ($posts->have_posts()) :
-        $posts->the_post();
-        $image = wp_get_attachment_image_srcset(get_post_thumbnail_id($posts->post->ID));
 
-        $excerpt =  get_the_excerpt($posts->post->ID) ? get_the_excerpt($posts->post->ID) : substr(get_the_content(null, null, $posts->post->ID), 0, 200);
-        $excerpt  = wp_strip_all_tags($excerpt);
-        $average_grant = get_field('average_grant', $posts->post->ID);
+        while ($posts->have_posts()) :
+            $posts->the_post();
+            $image = wp_get_attachment_image_srcset(get_post_thumbnail_id($posts->post->ID));
+
+            $excerpt =  get_the_excerpt($posts->post->ID) ? get_the_excerpt($posts->post->ID) : substr(get_the_content(null, null, $posts->post->ID), 0, 200);
+            $excerpt  = wp_strip_all_tags($excerpt);
+            $average_grant = get_field('average_grant', $posts->post->ID);
 
 
 
 
-    ?>
+        ?>
     <div class="card new__list__item">
         <div class="card__post-featured-image news__featured-image">
             <a href="<?php the_permalink(); ?>">
@@ -45,12 +46,12 @@ $posts = new WP_Query($posts_args);
         </div>
         <div class="news__item__content">
             <?php
-                if ($average_grant) : ?>
+                    if ($average_grant) : ?>
             <div class="card__post-categories grantees__item__average">
                 $<?php echo number_format(intval($average_grant)); ?>
             </div>
             <?php endif;
-                ?>
+                    ?>
 
             <div class="card__post-title grantees__item__title">
                 <a class="h5 new__title" href="<?php echo get_the_permalink() ?>"><?php echo get_the_title() ?></a>
@@ -62,7 +63,11 @@ $posts = new WP_Query($posts_args);
         </div>
     </div>
     <?php endwhile; ?>
-</div>
+    <?php else : ?>
+    <div class="news__nopost">
+        <h3>No results were found.</h3>
+    </div>
+</div><?php endif; ?>
 
 
 <?php $max_num_pages = $posts->max_num_pages;
