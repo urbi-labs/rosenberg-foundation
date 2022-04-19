@@ -15,6 +15,7 @@ $post_slug = $post->post_name;
 $args_hero_post = array('numberposts' => '1', 'post_type' => 'grantee');
 $last_post = wp_get_recent_posts($args_hero_post, 1);
 
+$slug = isset($_GET['category']) ? $_GET['category'] : "";
 
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
@@ -26,7 +27,17 @@ $args_recenpost = array(
 
 );
 
-$categories = get_categories(array('taxonomy' => 'grantee-category', 'hide_empty' => false));
+if ($slug != "") {
+    $args_recenpost['tax_query'] = array(
+        array(
+            'taxonomy' => 'grantee-category',
+            'field'    => 'slug',
+            'terms'    => $slug,
+        ),
+    );
+}
+
+
 
 
 ?>
@@ -42,7 +53,12 @@ $categories = get_categories(array('taxonomy' => 'grantee-category', 'hide_empty
                 "aria_label" => 'Search news',
                 "post_type" => 'grantee'
             )); ?>
-            <?php echo get_template_part("template-parts/forms/form", "filters", array('categories' => $categories)) ?>
+            <?php echo get_template_part(
+                "template-parts/forms/form",
+                "filters",
+                array('all' => true, 'current_slug' => $slug, 'taxonomy' => 'grantee-category', 'post_type' => 'grantee')
+            ); ?>
+
         </div>
         <?php echo get_template_part('template-parts/posts/posts', "grantees-list", ['args' => $args_recenpost]); ?>
 
