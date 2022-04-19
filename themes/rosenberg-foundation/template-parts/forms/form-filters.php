@@ -1,10 +1,10 @@
 <?php
-$categories = isset($args['categories']) ? $args['categories'] : array();
-$term = get_query_var('term');
-$current_category = get_term_by("slug", $term, 'grantee-category');
+$categories = get_categories(array('taxonomy' => $args['taxonomy'], 'hide_empty' => true));
+$current_slug = isset($args['current_slug']) ? $args['current_slug'] : "";
 
-$all_link = is_page() ? get_the_permalink() : ($current_category ? get_category_link($current_category) . "?term=all" : "");
-?>
+$current_category = get_term_by("slug", $current_slug, 'grantee-category');
+
+$all_link = get_the_permalink(); ?>
 
 <div class="filters__container" data-class="search-container">
     <div class="label__dropdown">
@@ -29,7 +29,7 @@ $all_link = is_page() ? get_the_permalink() : ($current_category ? get_category_
                             foreach ($categories as $category) : ?>
                         <li class="dropdown__select-option" role="option"
                             data-current="<?php echo $current_category && $current_category->term_id == $category->term_id ? "1" : "0" ?>"
-                            data-link="<?php echo  get_category_link($category) ?>">
+                            data-link="<?php echo  get_the_permalink()  ?>?category=<?php echo $category->slug ?>">
                             <?php echo $category->name; ?>
                         </li>
 
