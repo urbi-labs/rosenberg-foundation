@@ -30,7 +30,7 @@ $index = 0;
         array(
             'taxonomy' => 'person-category',
             'all' => false,
-            'active' => $slug,
+
             'current_slug' => $slug
         )
 
