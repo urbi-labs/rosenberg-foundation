@@ -2,21 +2,25 @@
 
 $taxonomy = get_field('taxonomy') ? get_field('taxonomy') : '';
 
-$categories = get_categories($taxonomy);
+if (taxonomy_exists($taxonomy)) :
 
-if ($categories) : ?>
-<div class="news__list-categories">
-    <ul class="news__list-categories__list">
-        <li
-            class="news__list-categories__list__item <?php echo !isset($current_category) ? " news__list-categories__list__item--active" : " " ?>">
-            <a href="<?php echo $all_link; ?>">All</a>
-        </li>
+
+    $categories = get_categories([
+        'taxonomy' => $taxonomy,  'orderby'    => 'term_id',
+        'order'      => 'ASC',
+    ]);
+
+
+    if ($categories) : ?>
+<div class="list-categories">
+    <ul class="list-categories__list">
+
         <?php
-            foreach ($categories as $category) :
+                foreach ($categories as $category) :
 
-            ?>
+                ?>
         <li
-            class="news__list-categories__list__item <?php echo isset($current_category) && $current_category->term_id == $category->term_id ? " news__list-categories__list__item--active" : " " ?> ">
+            class="list-categories__list__item <?php echo isset($current_category) && $current_category->term_id == $category->term_id ? " list-categories__list__item--active" : " " ?> ">
             <a href="<?php echo get_category_link($category) ?>">
                 <?php echo $category->name; ?>
             </a>
@@ -24,6 +28,5 @@ if ($categories) : ?>
         <?php endforeach ?>
     </ul>
 </div>
-<?php else : ?>
-no categorias
+<?php endif  ?>
 <?php endif; ?>
