@@ -177,20 +177,21 @@
     .news__item__content {
         padding: 16px 24px;
     }
-    .new__item__categories {
-        ul {
-            display: flex;
-            gap: 5px;
-            a {
-                color: $orange;
-                font-weight: bold;
-                font-size: 13px;
-                line-height: 19px;
-            }
-        }
-    }
+
     .new__title {
         color: $dark_gray;
+    }
+}
+.new__item__categories {
+    ul {
+        display: flex;
+        gap: 5px;
+        a {
+            color: $orange;
+            font-weight: bold;
+            font-size: 13px;
+            line-height: 19px;
+        }
     }
 }
 .news__search__container {
@@ -220,5 +221,69 @@
     }
     .news__search__button {
         padding-left: 30px;
+    }
+}
+
+.new-post {
+    .new-post__img-container {
+        img {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    .new-post--container {
+        max-width: 752px;
+        margin: 0 auto;
+    }
+
+    .new-post__categories {
+        padding-top: 24px;
+        text-transform: uppercase;
+    }
+    .new-post__title {
+        color: $dark_gray;
+        font-weight: 400;
+        margin-bottom: 0;
+    }
+    hr {
+        height: 1px;
+        background: $gray_2;
+        color: $gray_2;
+        border: none;
+        margin: 24px auto 16px;
+        display: inline-block;
+        width: 100%;
+    }
+    .new-post__subtitle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: $gray_4;
+        font-size: 16px;
+        line-height: 24px;
+        padding-bottom: 48px;
+        @media screen and (max-width: $phone-width) {
+            flex-direction: column;
+            row-gap: 16px;
+            align-items: flex-start;
+        }
+        .new-post__date {
+        }
+        .new-post__share {
+            display: flex;
+            align-items: center;
+            column-gap: 8px;
+            a {
+                display: inherit;
+            }
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+    .entry-content {
+        color: $dark_gray;
     }
 }
