@@ -1,6 +1,5 @@
 <?php get_header();
 $placeholder = get_template_directory_uri() . '/images/placeholder-80.jpg';
-
 ?>
 
 

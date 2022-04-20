@@ -16,8 +16,7 @@ $args_recenpost = array(
     'orderby' => 'date',
     'order' => 'desc',
     'paged' => $paged,
-
-
+    'posts_per_page' => 9
 );
 
 if ($slug != "") {

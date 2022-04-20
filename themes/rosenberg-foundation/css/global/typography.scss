@@ -123,8 +123,9 @@ a {
     }
 
     a {
-        color: #0357ff;
-        text-decoration: none;
+        color: $orange;
+        font-weight: bold;
+        text-decoration: underline;
         -webkit-tap-highlight-color: transparent;
         transition: color 0.2s ease;
 
