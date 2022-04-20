@@ -112,6 +112,14 @@ a {
     font-weight: 400;
 }
 
+.single-post {
+    .entry-content {
+        a {
+            font-weight: bold;
+        }
+    }
+}
+
 .entry-content {
     font-size: 16px;
     line-height: 1.33;
@@ -124,7 +132,6 @@ a {
 
     a {
         color: $orange;
-        font-weight: bold;
         text-decoration: underline;
         -webkit-tap-highlight-color: transparent;
         transition: color 0.2s ease;

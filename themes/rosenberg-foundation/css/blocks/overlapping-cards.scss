@@ -26,7 +26,9 @@
                 display: inline;
                 color: $dark_gray!important;
                 &:after {
-                    content: url('/wp-content/themes/rosenberg-foundation/images/icons/icon-arrow-right-small-fill.svg');
+                    content: '';
+                    background-image: url('/wp-content/themes/rosenberg-foundation/images/icons/icon-arrow-right-small-fill.svg');
+                    top: 8px;
                 }
             }
             &.expanded {
