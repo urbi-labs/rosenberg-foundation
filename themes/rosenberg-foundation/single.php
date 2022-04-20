@@ -39,7 +39,7 @@ $placeholder = get_template_directory_uri() . '/images/placeholder-80.jpg';
                 <hr />
                 <div class="new-post__subtitle">
                     <div class="new-post__date">
-                        <?php echo get_bloginfo("name") ?>
+                        <?php echo get_the_author_meta('nickname') ?>
                         &#183;
                         <?php echo get_the_date("F d, Y") ?>
                     </div>
