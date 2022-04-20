@@ -87,7 +87,7 @@
     gap: 24px;
     justify-content: center;
     align-items: flex-start;
-    margin-bottom: 58px;
+    margin-bottom: 58px!important;
     list-style-type: none!important;
     @media screen and (max-width: $phone-width) {
         flex-wrap: wrap;

@@ -4,8 +4,6 @@
 $slug = isset($_GET['category']) ? $_GET['category'] : "staff";
 
 /** Get person custom post type */
-
-
 $args = array(
     'post_type' => 'person',
     'tax_query' => array(

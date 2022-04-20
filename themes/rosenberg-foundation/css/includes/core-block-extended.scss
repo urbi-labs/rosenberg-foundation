@@ -10,5 +10,6 @@
     margin-left: calc(( 100vw - 100% ) / -2);
     .wp-block-cover__inner-container {
         @extend .container!optional;
+        color: inherit;
     }
 }

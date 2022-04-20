@@ -95,7 +95,6 @@ function urbi_acf_init_block_types()
                 'name'              => 'hero-home',
                 'title'             => __('Rosenberg: Homepage Hero'),
                 'description'       => __('Homepage hero section.'),
-
                 'render_template'   => 'template-parts/blocks/block-hero-home.php',
                 'category'          => 'formatting',
                 'icon'              => 'text',

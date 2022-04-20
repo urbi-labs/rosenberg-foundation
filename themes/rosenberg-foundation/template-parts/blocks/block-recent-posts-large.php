@@ -33,7 +33,7 @@ $index = 0;
                 </p>
 
                 <p class="overlapping-cards__read-more-link__container">
-                    <a href="<?php echo get_the_permalink() ?>" class="overlapping-cards__read-more-link">
+                    <a href="<?php echo get_the_permalink() ?>" class="styled-link styled-link__black">
                         Read more
                     </a>
                 </p>
