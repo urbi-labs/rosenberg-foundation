@@ -148,9 +148,11 @@ $(document).ready(function () {
         $(this).on('click', function (e) {
 
             e.preventDefault();
+
             block_ledge.addClass('block-leadingedgefund--show');
             overlay.removeClass('mobile-menu--overlay--show');
             mobile_menu.removeClass('mobile__menu--show');
+            $(window).scrollTop(0);
         });
     });
     $(".close_leadingedgefund").on('click', function (e) {
