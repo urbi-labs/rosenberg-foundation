@@ -56,7 +56,7 @@ $placeholder = get_template_directory_uri() . '/images/placeholder-80.jpg';
                 <div class="clearfix">
                     <div class="entry-content"><?php the_content(); ?></div>
                 </div>
-                <hr />
+
             </article>
             <?php wp_reset_query(); ?>
         </section>
