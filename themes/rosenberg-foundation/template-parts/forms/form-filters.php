@@ -1,5 +1,8 @@
 <?php
-$categories = get_categories(array('taxonomy' => $args['taxonomy'], 'hide_empty' => true));
+
+$categories = get_categories(
+    array('taxonomy' => isset($args['taxonomy']) ? $args['taxonomy'] : "", 'hide_empty' => true)
+);
 $current_slug = isset($args['current_slug']) ? $args['current_slug'] : "";
 
 $current_category = get_term_by("slug", $current_slug, 'grantee-category');
@@ -22,7 +25,7 @@ $all_link = get_the_permalink(); ?>
                 <li>
                     <ul class="dropdown__select">
                         <li class="dropdown__select-option" role="option" data-link="<?php echo $all_link ?>"
-                            data-current="<?php echo !$current_category ? "1" : "0" ?>">
+                            data-current="<?php echo !$current_category && $current_slug == "" ? "1" : "0" ?>">
                             All
                         </li>
                         <?php
