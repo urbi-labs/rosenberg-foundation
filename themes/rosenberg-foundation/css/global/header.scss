@@ -1,20 +1,20 @@
 .header {
     background-color: $gray_0;
-    padding: 25px 0;
+    padding: 0;
     background-color: #fff;
     &.sticky {
         position: fixed !important;
         top: 0;
         width: 100%;
-        padding-top: 25px;
-        padding-bottom: 25px;
     }
 }
 
 .header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr max-content;
+}
+.header__logo-container {
+    margin: 25px 0;
 }
 .header__logo {
     max-width: 176px;
@@ -32,6 +32,7 @@
     display: flex;
     align-items: center;
     gap: 32px;
+    height: 100%;
     @media screen and (max-width: $header-break) {
         display: none;
     }
