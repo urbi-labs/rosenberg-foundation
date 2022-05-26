@@ -17,7 +17,7 @@ $social_profiles = array(
     </a>
     <nav class="header__navigation">
         <?php echo get_template_part('template-parts/navigation/menu', 'header') ?>
-        <?php if(array_filter($social_profiles)) : ?>
+        <?php if (array_filter($social_profiles)) : ?>
         <?php echo get_template_part('template-parts/navigation/menu', 'social-icons', array('social_profiles' => $social_profiles)) ?>
         <?php endif; ?>
     </nav>
@@ -27,5 +27,5 @@ $social_profiles = array(
         </a>
         <?php echo get_template_part('template-parts/navigation/menu', 'mobile', array('social_profiles' => $social_profiles)) ?>
     </div>
-
+    <?php echo get_template_part('template-parts/blocks/block', 'leading-edge-fund'); ?>
 </div>
