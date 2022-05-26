@@ -43,6 +43,7 @@
 .header-navigation__mobile {
     display: none;
     @media screen and (max-width: $header-break) {
-        display: inline-block;
+        display: flex;
+        align-items: center;
     }
 }
