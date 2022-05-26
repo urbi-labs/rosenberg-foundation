@@ -9,7 +9,7 @@ $social_profiles = array(
 ?>
 
 <div class="container header-container">
-    <a href="<?php echo get_site_url() ?>">
+    <a href="<?php echo get_site_url() ?>" class="header__logo-container">
         <img src="<?php echo get_template_directory_uri()  ?>/images/rosenberg-logo.svg"
             alt="<?php echo get_bloginfo('name') ?>" class="header__logo" />
         <img src="<?php echo get_template_directory_uri() ?>/images/rosenberg-logo-mobile.svg"
