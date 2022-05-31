@@ -1,5 +1,8 @@
 <?php
 
+$placeholder = get_template_directory_uri() . '/images/placeholder-80.jpg';
+
+
 /** filter by slug category */
 $slug = isset($_GET['category']) ? $_GET['category'] : "staff";
 
@@ -38,13 +41,19 @@ $index = 0;
 
 if ($people->have_posts()) : while ($people->have_posts()) : $people->the_post();
         $image_right = $index % 2 === 0;
+        $img = wp_get_attachment_image_srcset(get_post_thumbnail_id(get_the_ID()));
+        $img2 = "";
+        if (!$img) {
+            $img2 = get_the_post_thumbnail_url(get_the_ID());
+        }
 
 ?>
 
 <div class="overlapping-cards__container card-link <?php echo $image_right ? 'image-right' : '' ?> block-people-large">
 
     <div class="overlapping-cards__image card-link-image">
-        <img srcset="<?php echo wp_get_attachment_image_srcset(get_post_thumbnail_id(get_the_ID())) ?>"
+        <img <?php echo $img ? "srcset='" . $img . "'" : "" ?>
+            <?php echo !$img  && $img2 ? "src='" . $img2 . "'" : "src='" . $placeholder . "'" ?>
             class="overlapping-cards__image__image">
     </div>
     <div class="overlapping-cards__text <?php echo $image_right ? 'image-right' : '' ?>">

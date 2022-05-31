@@ -27,40 +27,40 @@
     }
 
     &.image-right {
+        margin-left: 0;
         .overlapping-cards__text {
             padding-right: 150px;
             padding-left: 32px;
+            @media screen and (max-width: $tablet-width) {
+            }
         }
         .block-people-large__position,
         .overlapping-cards__text-heading,
         .overlapping-cards__read-more-link__container {
-            text-align: left!important;
+            text-align: left !important;
         }
     }
 
     @media screen and (max-width: $tablet-width) {
         &.overlapping-cards__container {
-
             .overlapping-cards__text {
                 margin-left: -10%;
             }
-    
         }
         &.image-right {
             .overlapping-cards__text {
                 padding-right: 32px;
+                margin-left: 0;
             }
         }
     }
 
     @media screen and (max-width: $phone-width) {
         &.overlapping-cards__container {
-
             .overlapping-cards__text {
                 margin-left: 0;
                 padding-left: 32px;
             }
-    
         }
     }
 }
