@@ -7,7 +7,7 @@
         <?php endif;
         ?>
         <input class="search__input" data-class="search-input" name="s" id="s" type="search" placeholder="Search"
-            autocomplete="off" />
+            value="<?php echo get_query_var('s'); ?>" autocomplete="off" />
 
         <button type="submit" class="search__button">
             <img src="<?php echo get_template_directory_uri() ?>/images/icon-search-fill.png">

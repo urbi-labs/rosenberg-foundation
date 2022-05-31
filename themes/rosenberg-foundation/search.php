@@ -1,7 +1,7 @@
 <?php
 global $post;
 
-get_header();
+
 $s = get_query_var('s');
 $post_type = get_query_var("post_type") ? get_query_var("post_type") : "news";
 
@@ -19,19 +19,22 @@ $args_recenpost = array(
 );
 
 ?>
+<?php if ($post_type != "grantee") :
+    get_header(); ?>
+
 <main class="page__news container">
 
     <div class="page__news__header">
         <h1>Search results for "<?php echo esc_html($s); ?>"</h1>
         <?php get_search_form(array(
-            "echo" => true,
-            "aria_label" => 'Search news',
-            "post_type" => $post_type
-        )); ?>
+                "echo" => true,
+                "aria_label" => 'Search news',
+                "post_type" => $post_type
+            )); ?>
     </div>
     <?php
-    //if there isn't post show 
-    if (!$last_post) : ?>
+        //if there isn't post show 
+        if (!$last_post) : ?>
     <div class="news__nopost">
         <h3>No results were found.</h3>
     </div>
@@ -39,10 +42,13 @@ $args_recenpost = array(
 
     <?php
 
-        /** news post list with pagination */
-        echo get_template_part('template-parts/posts/posts', "news-list", ['args' => $args_recenpost]);
-        ?>
+            /** news post list with pagination */
+            echo get_template_part('template-parts/posts/posts', "news-list", ['args' => $args_recenpost]);
+            ?>
 
     <?php endif; ?>
 </main>
 <?php get_footer(); ?>
+<?php else : ?>
+<?php @include "tpl-our-grantees.php"; ?>
+<?php endif; ?>
