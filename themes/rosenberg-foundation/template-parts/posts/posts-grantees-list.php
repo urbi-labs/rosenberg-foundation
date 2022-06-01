@@ -31,10 +31,6 @@ $posts = new WP_Query($posts_args);
             $excerpt =  get_the_excerpt($posts->post->ID) ? get_the_excerpt($posts->post->ID) : substr(get_the_content(null, null, $posts->post->ID), 0, 200);
             $excerpt  = wp_strip_all_tags($excerpt);
             $average_grant = get_field('average_grant', $posts->post->ID);
-
-
-
-
         ?>
     <div class="card new__list__item">
         <div class="card__post-featured-image news__featured-image">
@@ -48,7 +44,8 @@ $posts = new WP_Query($posts_args);
             <?php
                     if ($average_grant) : ?>
             <div class="card__post-categories grantees__item__average">
-                $<?php echo number_format(intval($average_grant)); ?>
+                <?php echo intval($average_grant) !== 0 ? '$' : '' ?>
+                <?php echo intval($average_grant) !== 0 ? number_format(intval($average_grant)) : $average_grant; ?>
             </div>
             <?php endif;
                     ?>

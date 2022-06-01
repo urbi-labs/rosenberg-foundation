@@ -18,15 +18,18 @@ $last_post = wp_get_recent_posts($args_hero_post, 1);
 $slug = isset($_GET['category']) ? $_GET['category'] : "";
 
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
 $s = get_query_var('s');
+
 $args_recenpost = array(
     'orderby' => 'date',
-    'order' => 'desc',
+    'order' => 'asc',
     'post_type' => 'grantee',
     'paged' => $paged,
     'posts_per_page' => 9
-
+    
 );
+
 if ($s != "") {
     $args_recenpost['s'] = $s;
 }
@@ -36,8 +39,7 @@ if ($slug != "") {
         array(
             'taxonomy' => 'grantee-category',
             'field'    => 'slug',
-            'terms'    => $slug,
-            'posts_per_page' => 9
+            'terms'    => $slug
         ),
     );
 }
