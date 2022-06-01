@@ -2,6 +2,7 @@
     position: absolute;
     top: 80px;
     left: 23%;
+    visibility: hidden;
     background-color: #fff;
     display: flex;
     width: 60%;
@@ -16,6 +17,7 @@
     &.block-leadingedgefund--show {
         opacity: 1;
         transition: opacity 0.5s ease;
+        visibility: visible;
     }
 
     .block-leadingedgefund__content {
