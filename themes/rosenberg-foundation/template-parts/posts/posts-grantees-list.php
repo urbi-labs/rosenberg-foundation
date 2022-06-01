@@ -69,6 +69,9 @@ $posts = new WP_Query($posts_args);
     </div>
 </div><?php endif; ?>
 
+<?php wp_reset_postdata(); ?>
+
+</div>
 
 <?php $max_num_pages = $posts->max_num_pages;
 
@@ -86,7 +89,3 @@ if ($max_num_pages > 1) :
 </div>
 
 <?php endif; ?>
-
-<?php wp_reset_postdata(); ?>
-
-</div>

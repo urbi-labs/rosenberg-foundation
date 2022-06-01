@@ -23,7 +23,8 @@ $args_recenpost = array(
     'orderby' => 'date',
     'order' => 'desc',
     'post_type' => 'grantee',
-    'paged' => $paged
+    'paged' => $paged,
+    'posts_per_page' => 9
 
 );
 if ($s != "") {
@@ -36,6 +37,7 @@ if ($slug != "") {
             'taxonomy' => 'grantee-category',
             'field'    => 'slug',
             'terms'    => $slug,
+            'posts_per_page' => 9
         ),
     );
 }

@@ -38,7 +38,13 @@ function user_theme_setup(){
 
 	### Theme support stuff
 	add_theme_support( 'menus' ); // Navigation Menus
-	add_theme_support( 'html5' ); // HTML5 in WP Generated Elemements
+	add_theme_support( 'html5', array(
+		'comment-list', 
+		'comment-form',
+		'search-form',
+		'gallery',
+		'caption',
+	) );
 
 }
 add_action( 'after_setup_theme', 'user_theme_setup' );
