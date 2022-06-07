@@ -39,7 +39,8 @@ $posts = new WP_Query($args_recenpost);
             <?php
                 if ($average_grant) : ?>
             <div class="card__post-categories grantees__item__average">
-                $<?php echo number_format(intval($average_grant)); ?>
+                <?php echo intval($average_grant) !== 0 ? '$' : '' ?>
+                <?php echo intval($average_grant) !== 0 ? number_format(intval($average_grant)) : $average_grant; ?>
             </div>
             <?php endif;
                 ?>
