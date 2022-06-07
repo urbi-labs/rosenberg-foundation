@@ -4,28 +4,30 @@ $title = get_field('title');
 $content = get_field('content');
 ?>
 
-<?php
-if ($image) { ?>
+<?php if ($image || $title || $content) : ?>
 <div class="internal-intro-section">
+
+    <?php if($image) : ?>
     <div class="internal-intro-section__img">
         <img src="<?php echo esc_url($image['url'])  ?>" alt="<?php echo $title; ?>" />
     </div>
-    <div class="internal-intro-section__content">
-        <?php
-            if ($title) { ?>
+    <?php endif; ?>
+
+    <div class="internal-intro-section__content <?php echo $image ? 'internal-intro-section__content__has-image' : '' ?>">
+
+        <?php if ($title) : ?>
         <div class="title__orange-bg__container">
             <span class="h2 title__orange-bg"><?php echo $title ?></span>
         </div>
-        <?php    }
-            ?>
-        <?php
-            if ($content) { ?>
+        <?php endif; ?>
+
+        <?php if ($content) : ?>
         <div class="text__gray-bg p-mid">
             <?php echo $content; ?>
         </div>
-        <?php    }
-            ?>
+        <?php endif; ?>
+
     </div>
+
 </div>
-<?php    }
-?>
+<?php endif; ?>
