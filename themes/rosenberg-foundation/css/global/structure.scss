@@ -1,6 +1,11 @@
+* {
+    box-sizing: border-box;
+}
+
 html,
 body {
     height: 100%;
+    background-color: $gray_0;
 }
 
 html {
@@ -39,7 +44,6 @@ body {
     padding-left: $site-gutter;
     padding-right: $site-gutter;
     margin: 0 auto;
-    box-sizing: border-box;
 
     @media #{$phone} {
         padding-left: $mobile-gutter;

@@ -1,0 +1,15 @@
+@import './vars.scss';
+
+.is-style-block-paragraph-left-border {
+    padding-left: 22px;
+    border-left: solid 3px $orange;
+}
+
+.is-style-block-cover-full-width {
+    width: 100vw;
+    margin-left: calc(( 100vw - 100% ) / -2);
+    .wp-block-cover__inner-container {
+        @extend .container!optional;
+        color: inherit;
+    }
+}

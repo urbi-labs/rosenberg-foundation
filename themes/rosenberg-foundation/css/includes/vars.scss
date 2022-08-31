@@ -1,6 +1,10 @@
 //--------------------
+// Theme path
+$theme-path: '/wp-content/themes/rosenberg-foundation';
+
+//--------------------
 // Structure
-$site-width: 1136px;
+$site-width: 1200px;
 $site-gutter: 32px;
 $mobile-gutter: 20px;
 
@@ -8,36 +12,37 @@ $mobile-gutter: 20px;
 // Media Queries
 $tablet-width: 1024px;
 $phone-width: 767px;
+$mobile-width: 500px;
 $header-width: 920px;
+$header-break: 1079px;
 
 $desktop: 'screen and (max-width: #{$site-width})';
 $tablet: 'screen and (max-width: #{$tablet-width})';
 $phone: 'screen and (max-width: #{$phone-width})';
 $header: 'screen and (max-width: #{$header-width})';
 
-//--------------------
-// Other
-
 //--------------------s
 // Colors
 $black: #272727;
-
 $blue: #006cb6;
 $orange: #ff664b;
 $dark_gray: #41403f;
 $light_gray: #e1dcdb;
 $lighter-gray: #f9f8f8;
+$bg_gray: #e5e5e5;
 $gray_0: #fafafa;
-$gray_2: #c6c6c6;
 $gray_1: #f7f7f7;
+$gray_2: #c6c6c6;
+$gray_3: #949494;
+$gray_4: #636363;
 $bright: #ffffff;
 $leading_edge_blue: #207ef2;
 $leading_edge_dark_blue: #0e4275;
 
 //--------------------
 // Fonts
-$standard-family: 'Open Sans', sans-serif;
-$alt-family: 'Work Sans', sans-serif;
+$standard-family: 'DM Sans', sans-serif;
+$alt-family: 'Glacial Indifference', sans-serif;
 
 // Social Colors Guys, Social Colors
 $twitter: #00aced;

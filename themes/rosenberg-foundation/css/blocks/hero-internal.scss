@@ -1,0 +1,29 @@
+.hero-internal__container {
+    width: 100vw;
+    margin-left: calc((100vw - 100%) / -2);
+    background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    background-blend-mode: multiply;
+    background-color: #1f6399;
+    opacity: 0.8;
+    text-align: center;
+}
+
+.hero-internal__text {
+    padding: 106px 0;
+    font-family: $alt-family;
+    line-height: 125%;
+    text-align: center;
+    letter-spacing: -0.03em;
+    font-size: 58px!important;
+    font-weight: 400!important;
+    color: #FFFFFF!important;
+}
+
+@media screen and (max-width: $tablet-width) {
+    .hero-internal__text {
+        padding: 54px 0;
+        font-size: 40px;
+    }
+}

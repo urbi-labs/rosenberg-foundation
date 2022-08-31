@@ -1,11 +1,12 @@
 /*!
-Theme Name: Theme Name
-Theme URI: https://urbilabs.com
-Author: Urbi Labs
-Author URI: https://urbilabs.com
-Description: Custom WordPress theme created by Urbi Labs.
+Theme Name: Rosenberg Foundation
+Theme URI: https://yippa.com/
+Author: Yippa
+Author URI: https://yippa.com/
+Description: Custom WordPress theme for Rosenberg Foundation created by Yippa.
 Version:      1.0.0
 */
+
 // Libs
 @import 'css/libs/reset';
 @import 'css/libs/slick';
@@ -16,6 +17,7 @@ Version:      1.0.0
 @import 'css/includes/vars';
 @import 'css/includes/fonts';
 @import 'css/includes/extends';
+@import 'css/includes/core-block-extended';
 
 // Global
 @import 'css/global/buttons';
@@ -24,11 +26,25 @@ Version:      1.0.0
 @import 'css/global/structure';
 @import 'css/global/header';
 @import 'css/global/footer';
-@import 'css/global/variables';
 @import 'css/global/mixins';
+@import 'css/global/navigation';
+@import 'css/global/cards';
+@import 'css/global/search-form';
+@import 'css/global/form-filters';
 
-// Partials
-//@import 'css/partials/hero';
+@import 'css/global/pagination';
 
-// Pages
-//@import 'css/pages/home';
+//blocks
+@import './style-blocks';
+
+//pages
+@import 'css/pages/news';
+@import 'css/pages/our-grantees';
+@import 'css/pages/people';
+
+@import 'css/blocks/hero-home';
+@import 'css/blocks/internal-intro-section';
+@import 'css/blocks/overlapping-cards';
+@import 'css/blocks/divider-image-text.scss';
+@import 'css/blocks/people';
+@import 'css/blocks/divider-text-large-image.scss';

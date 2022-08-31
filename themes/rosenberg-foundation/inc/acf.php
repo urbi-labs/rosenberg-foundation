@@ -10,63 +10,169 @@ function urbi_acf_init_block_types()
 {
     // Check function exists.
     if (function_exists('acf_register_block_type')) {
-
-        // List with icons
         acf_register_block_type(
             array(
-                'name'              => 'sage-list',
-                'title'             => __('Sage Street: List'),
-                'description'       => __('A simple list with icons.'),
-                'render_template'   => 'template-parts/blocks/block-sage-list.php',
+                'name'              => 'people-block',
+                'title'             => __('Rosenberg: People Block'),
+                'description'       => __('People block'),
+                'render_template'   => 'template-parts/blocks/block-people.php',
                 'category'          => 'formatting',
                 'icon'              => 'text',
-                'mode'              => 'edit',
-                'keywords'          => array('text', 'list'),
+                'mode'              => 'preview',
+                'keywords'          => array('people', 'team', 'members'),
             )
         );
 
-        // Large list with icons
         acf_register_block_type(
             array(
-                'name'              => 'sage-list-large',
-                'title'             => __('Sage Street: List (Large)'),
-                'description'       => __('A large list block.'),
-                'render_template'   => 'template-parts/blocks/block-sage-list-large.php',
+                'name'              => 'people-large-block',
+                'title'             => __('Rosenberg: People Large'),
+                'description'       => __('People block'),
+                'render_template'   => 'template-parts/blocks/block-people-large.php',
                 'category'          => 'formatting',
                 'icon'              => 'text',
-                'mode'              => 'edit',
-                'keywords'          => array('text', 'list'),
+                'mode'              => 'preview',
+                'keywords'          => array('people', 'team', 'members'),
             )
         );
 
-        // Table Slider
+
         acf_register_block_type(
             array(
-                'name'              => 'sage-table-slider',
-                'title'             => __('Sage Street: Table Slider'),
-                'description'       => __('A slider for table data.'),
-                'render_template'   => 'template-parts/blocks/block-sage-table-slider.php',
+                'name'              => 'categories-block',
+                'title'             => __('Rosenberg: Categories for taxonomy'),
+                'description'       => __('Categories block'),
+                'render_template'   => 'template-parts/blocks/block-categories.php',
                 'category'          => 'formatting',
                 'icon'              => 'text',
                 'mode'              => 'edit',
-                'keywords'          => array('text', 'table', 'slider'),
+                'keywords'          => array('categories', 'taxonomy'),
             )
         );
 
-        // Closing Rules
         acf_register_block_type(
             array(
-                'name'              => 'sage-closing-rules',
-                'title'             => __('Sage Street: Closing Rules'),
-                'description'       => __('A block to display a list of closing rules.'),
-                'render_template'   => 'template-parts/blocks/block-sage-closing-rules.php',
+                'name'              => 'internal-intro-section',
+                'title'             => __('Rosenberg: Intro Section'),
+                'description'       => __('Inner Page intro section.'),
+                'render_template'   => 'template-parts/blocks/block-internal-intro-section.php',
                 'category'          => 'formatting',
                 'icon'              => 'text',
                 'mode'              => 'edit',
-                'keywords'          => array('text', 'closing rules'),
+                'keywords'          => array('text', 'intro', 'featured'),
             )
         );
 
+
+        acf_register_block_type(
+            array(
+                'name'              => 'feature-slider',
+                'title'             => __('Rosenberg: Featured slider'),
+                'description'       => __('Add sliders with images and text.'),
+                'render_template'   => 'template-parts/blocks/block-feature-slider.php',
+                'category'          => 'formatting',
+                'icon'              => 'text',
+                'mode'              => 'edit',
+                'keywords'          => array('slider', 'featured', 'carousel'),
+            )
+        );
+
+        acf_register_block_type(
+            array(
+                'name'              => 'overlapping-cards',
+                'title'             => __('Rosenberg: Overlapping Cards'),
+                'description'       => __('Cards with an overlap effect on their text.'),
+                'render_template'   => 'template-parts/blocks/block-overlapping-cards.php',
+                'category'          => 'formatting',
+                'icon'              => 'text',
+                'mode'              => 'preview',
+                'keywords'          => array('text', 'card'),
+            )
+        );
+
+        acf_register_block_type(
+            array(
+                'name'              => 'hero-home',
+                'title'             => __('Rosenberg: Homepage Hero'),
+                'description'       => __('Homepage hero section.'),
+                'render_template'   => 'template-parts/blocks/block-hero-home.php',
+                'category'          => 'formatting',
+                'icon'              => 'text',
+                'mode'              => 'edit',
+                'keywords'          => array('text', 'card'),
+            )
+        );
+
+        acf_register_block_type(
+            array(
+                'name'              => 'hero-internal',
+                'title'             => __('Rosenberg: Inner Page Hero'),
+                'description'       => __('Inner page hero section.'),
+
+
+                'render_template'   => 'template-parts/blocks/block-hero-internal.php',
+                'category'          => 'formatting',
+                'icon'              => 'text',
+                'mode'              => 'edit',
+                'keywords'          => array('text', 'card'),
+            )
+        );
+
+        acf_register_block_type(
+            array(
+                'name'              => 'divider-image-text',
+                'title'             => __('Rosenberg: Divider Image/Text'),
+                'description'       => __('A content divider with support for image and text.'),
+
+                'render_template'   => 'template-parts/blocks/block-hero-internal.php',
+
+                'render_template'   => 'template-parts/blocks/block-divider-image-text.php',
+
+                'category'          => 'formatting',
+                'icon'              => 'text',
+                'mode'              => 'edit',
+                'keywords'          => array('text', 'card'),
+            )
+        );
+
+        acf_register_block_type(
+            array(
+                'name'              => 'rosenberg-contact-form',
+                'title'             => __('Rosenberg: Contact Form'),
+                'description'       => __('A contact form with a map section.'),
+                'render_template'   => 'template-parts/blocks/block-contact-page.php',
+                'category'          => 'formatting',
+                'icon'              => 'text',
+                'mode'              => 'edit',
+                'keywords'          => array('text', 'card'),
+            )
+        );
+
+        acf_register_block_type(
+            array(
+                'name'              => 'rosenberg-recent-posts',
+                'title'             => __('Rosenberg: Recent Posts'),
+                'description'       => __('Display the last 3 posts of any post type.'),
+                'render_template'   => 'template-parts/blocks/block-recent-posts.php',
+                'category'          => 'formatting',
+                'icon'              => 'text',
+                'mode'              => 'edit',
+                'keywords'          => array('text', 'card'),
+            )
+        );
+
+        acf_register_block_type(
+            array(
+                'name'              => 'rosenberg-recent-posts-large',
+                'title'             => __('Rosenberg: Recent Posts Large'),
+                'description'       => __('Display the last 4 posts of any post type in overlapping cards.'),
+                'render_template'   => 'template-parts/blocks/block-recent-posts-large.php',
+                'category'          => 'formatting',
+                'icon'              => 'text',
+                'mode'              => 'edit',
+                'keywords'          => array('text', 'card'),
+            )
+        );
     }
 }
 
@@ -96,9 +202,47 @@ function my_acf_json_load_point($paths)
     return $paths;
 }
 
+// Fix Media Library issue: Uncaught TypeError: Cannot read properties of undefined (reading ‘removeAllPlayers’) at n.render (media-views.min.js?ver=5.9.1:2:91463)
+
+add_filter('block_editor_rest_api_preload_paths', 'acf_filter_rest_api_preload_paths', 10, 1);
+
+function acf_filter_rest_api_preload_paths($preload_paths)
+{
+    global $post;
+    $rest_path    = rest_get_route_for_post($post);
+    $remove_paths = array(
+        add_query_arg('context', 'edit', $rest_path),
+        sprintf('%s/autosaves?context=edit', $rest_path),
+    );
+
+    return array_filter(
+        $preload_paths,
+        function ($url) use ($remove_paths) {
+            return !in_array($url, $remove_paths, true);
+        }
+    );
+}
+
 // function my_acf_init() {
-	
+
 // 	acf_update_setting('google_api_key', GMAPS_API_KEY);
 // }
 
 // add_action('acf/init', 'my_acf_init');
+
+add_filter('acf/load_field/name=select_post_type', 'yourprefix_acf_load_post_types');
+/*
+ *  Load Select Field `select_post_type` populated with the value and labels of the singular 
+ *  name of all public post types
+ */
+function yourprefix_acf_load_post_types($field)
+{
+
+    $choices = get_post_types(array('show_in_nav_menus' => true), 'objects');
+
+    foreach ($choices as $post_type) {
+        $field['choices'][$post_type->name] = $post_type->labels->singular_name;
+    }
+
+    return $field;
+}

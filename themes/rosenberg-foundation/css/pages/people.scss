@@ -1,0 +1,40 @@
+.people-page {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+.person-profile__header {
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: $phone-width) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .person-profile__featured-image {
+        flex-basis: 30%;
+        @media screen and (max-width: $tablet-width) {
+            flex-basis: 50%;
+        }
+        img {
+            max-width: 100%;
+        }
+    }
+    .person-profile__title {
+        flex-basis: 70%;
+        @media screen and (max-width: $tablet-width) {
+            flex-basis: 50%;
+        }
+        @media screen and (max-width: $phone-width) {
+            margin-top: -35px;
+        }
+        .title__container {
+            margin-left: -50px;
+            @media screen and (max-width: $phone-width) {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.person-profile__content {
+    padding: 60px 0;
+}

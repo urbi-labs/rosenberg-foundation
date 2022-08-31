@@ -1,0 +1,75 @@
+.filters__container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.label__dropdown {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 24px;
+    color: $dark_gray;
+}
+
+.dropdown {
+    width: 424px;
+    z-index: 100;
+    .dropdown__switch:checked + .dropdown__options-filter .dropdown__select {
+        transform: scaleY(1);
+    }
+
+    .dropdown__options-filter {
+        width: 100%;
+        cursor: pointer;
+    }
+
+    .dropdown__filter {
+        position: relative;
+        display: flex;
+        color: $gray_3;
+        border-bottom: 1px solid $gray_3;
+
+        font-size: 14px;
+        transition: 0.3s;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 10px;
+            height: 16px;
+            content: url('./images/icon-down-fill.png');
+        }
+    }
+
+    .dropdown__select {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        margin-top: 5px;
+        overflow: hidden;
+        transform: scaleY(0);
+        transform-origin: top;
+        font-weight: 300;
+        transition: 0.2s ease-in-out;
+    }
+
+    .dropdown__select-option {
+        padding: 16px 10px;
+        background-color: $lighter-gray;
+        color: $dark_gray;
+        transition: 0.3s;
+
+        &:last-of-type {
+            border-bottom: 0;
+        }
+
+        &:hover {
+            background-color: $light_gray;
+        }
+    }
+}

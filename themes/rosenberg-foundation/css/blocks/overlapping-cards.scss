@@ -1,0 +1,191 @@
+.overlapping-cards__container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 56px;
+    &.image-right {
+        flex-direction: row-reverse;
+        .overlapping-cards__text-heading,
+        .overlapping-cards__read-more-link__container {
+            text-align: right;
+        }
+    }
+    &.is-expandable {
+        align-items: flex-start;
+       .overlapping-cards__image__image {
+            height: 274px;
+        }
+        .overlapping-cards__text {
+            margin-top: 32px;
+            padding: 16px;
+            padding-bottom: 24px;
+        }
+        .overlapping-cards__text-excerpt {
+            max-height: 96px;
+            p a:only-child {
+                @extend .styled-link;
+                display: inline;
+                color: $dark_gray!important;
+                &:after {
+                    content: '';
+                    background-image: url('/wp-content/themes/rosenberg-foundation/images/icons/icon-arrow-right-small-fill.svg');
+                    top: 8px;
+                }
+            }
+            &.expanded {
+                max-height: 1000px;
+            }
+        }
+    }
+}
+
+.card-expanded {
+    display: flex;
+    align-items: center;
+}
+
+.overlapping-cards__image.card-expanded-image {
+    max-width: 500px;
+}
+
+.overlapping-cards__image {
+    width: 50%;
+    max-width: 752px;
+    display: flex;
+    align-items: center;
+}
+
+.overlapping-cards__image__image {
+    height: 314px;
+    object-fit: cover;
+}
+
+.overlapping-cards__text-heading,
+.overlapping-cards__text-heading a {
+    font-family: $standard-family;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $dark_gray;
+    margin-bottom: 0;
+    margin-bottom: 16px;
+    text-decoration: none!important;
+    @extend h3;
+}
+
+.overlapping-cards__text-excerpt {
+    line-height: 1.5;
+    overflow: hidden;
+    margin-bottom: 16px;
+    transition: max-height 0.5s ease;
+}
+
+.overlapping-cards__text {
+    width: 60%;
+    min-width: 320px;
+    padding: 32px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 8px rgba(65, 64, 63, 0.08);
+    margin-left: -10%;
+    z-index: 2;
+    transition: width 0.25s ease, margin-left 0.25s ease;;
+    &.image-right {
+        margin-left: 0;
+        margin-right: -5%;
+    }
+    &.expanded {
+        width: 90%;
+        margin-left: -20%;
+        .read-more__expand::after {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.overlapping-cards__read-more-link__container {
+    margin: 0;
+}
+
+.overlapping-cards__read-more-link,
+.read-more__link {
+    text-align: left;
+    font-family: $alt-family;
+    font-style: normal;
+    font-weight: 400!important;
+    font-size: 18px;
+    color: #41403F!important;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+.overlapping-cards__read-more-link:not(.read-more__expand):after {
+    content: url('/wp-content/themes/rosenberg-foundation/images/icons/icon-arrow-right-small-fill.svg');
+    margin-left: 7px;
+    margin-bottom: 4px;
+}
+
+.read-more__expand::after {
+    content: "";
+    background-image: url('/wp-content/themes/rosenberg-foundation/images/icons/icon-down-fill.svg');
+    width: 12px;
+    height: 8px;
+    margin-left: 7px;
+    transition: transform 0.25s ease;
+    transition-delay: 0.5s;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.overlapping-cards__read-more-link,
+.read-more__link:hover {
+    text-decoration: none!important;
+    border-bottom: 2px solid $orange;
+}
+
+@media screen and (max-width: $tablet-width) {
+    
+    .overlapping-cards__container {
+
+        .overlapping-cards__text {
+            margin-left: -35%;
+        }
+
+    }
+
+    .overlapping-cards__container {
+        &.image-right {
+            .overlapping-cards__text-heading {
+                text-align: left;
+            }
+        }
+    }
+
+}
+
+
+@media screen and (max-width: $phone-width) {
+    
+    .overlapping-cards__container {
+
+        flex-direction: column;
+        &.image-right {
+            flex-direction: column;
+        }
+        .overlapping-cards__image,
+        .overlapping-cards__image__image,
+        .overlapping-cards__text {
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        .overlapping-cards__text,
+        &.is-expandable .overlapping-cards__text {
+            margin-left: 0;
+            margin-top: 0;
+            &.image-right {
+                margin-right: 0;
+            }
+        }
+
+    }
+
+}

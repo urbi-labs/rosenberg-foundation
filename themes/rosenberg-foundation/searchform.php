@@ -1,12 +1,16 @@
-<div class="search-container" data-class="search-container">
-    <form role="search" method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-        <label class="accessible-text" for="s">Search</label>
-        <div class="search-input-container">
-            <input class="search-input" data-class="search-input" name="s" id="s" type="search" placeholder="Search"/>
-        </div>
-        <div class="search-submit-container">
-            <a class="search-submit" data-class="search-submit" href="#"></a>
-        </div>
+<div class=" search__container" data-class="search-container">
+    <form role="search-form" method="get" id="searchform" class="search-form" action="<?php echo get_site_url() ?>">
+        <label class="accessible-text" for="s">Search news</label>
+        <?php
+        if (isset($args['post_type'])) : ?>
+        <input type="hidden" name="post_type" value="<?php echo $args['post_type']; ?>" />
+        <?php endif;
+        ?>
+        <input class="search__input" data-class="search-input" name="s" id="s" type="search" placeholder="Search"
+            value="<?php echo get_query_var('s'); ?>" autocomplete="off" />
+
+        <button type="submit" class="search__button">
+            <img src="<?php echo get_template_directory_uri() ?>/images/icon-search-fill.png">
+        </button>
     </form>
-    <a href="#" class="search-title" data-class="search-title">Search</a>
 </div>

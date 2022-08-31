@@ -1,9 +1,23 @@
 @font-face {
-    font-family: 'Glacial Indifference-Bold';
-    src: url('../../fonts/GlacialIndifference_1312/TTF/GlacialIndifference-Bold.ttf') format('truetype');
+    font-family: 'Glacial Indifference';
+    font-weight: normal;
+    src: url('../rosenberg-foundation/fonts/GlacialIndifference_1312/TTF/GlacialIndifference-Regular.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Glacial Indifference-Regular';
-    src: url('../../fonts/GlacialIndifference_1312/TTF/GlacialIndifference-Regular.ttf') format('truetype');
+  font-family: 'Glacial Indifference';
+  font-weight: bold;
+  src: url('../rosenberg-foundation/fonts/GlacialIndifference_1312/TTF/GlacialIndifference-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DM-Sans';
+  font-weight: normal;
+  src: url('/wp-content/themes/rosenberg-foundation/fonts/DM-Sans/DMSans-Regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'DM-Sans';
+  font-weight: bold;
+  src: url('/wp-content/themes/rosenberg-foundation/fonts/DM-Sans/DMSans-Bold.ttf') format('ttf');
 }
